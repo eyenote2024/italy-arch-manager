@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 
 /**
@@ -18,7 +18,15 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
     const [isManualFontSize, setIsManualFontSize] = useState(false);
     const [textAlign, setTextAlign] = useState('left');
     const [isCapturing, setIsCapturing] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const postcardRef = useRef(null);
+
+    // 監聽螢幕寬度，實現 RWD
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     // 🕵️ 智慧排版邏輯：以 16級 為核心基準
     React.useEffect(() => {
@@ -99,14 +107,16 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                 </button>
             </header>
 
-            {/* 側邊並列布局 */}
+            {/* 側邊並列布局 / 手機端自動切換為上下堆疊 */}
             <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'minmax(300px, 420px) 1fr', // 略為縮減左側
-                gap: '2.5rem', // 大幅縮減間距
-                maxWidth: '1000px', // 統一最大寬度
+                display: isMobile ? 'flex' : 'grid',
+                flexDirection: isMobile ? 'column' : 'row',
+                gridTemplateColumns: isMobile ? '1fr' : 'minmax(300px, 420px) 1fr',
+                gap: isMobile ? '1.5rem' : '2.5rem',
+                maxWidth: '1000px',
                 margin: '0 auto',
-                width: '100%'
+                width: '100%',
+                padding: isMobile ? '0 15px' : '0'
             }}>
 
                 {/* 左側：預覽畫布 (定軸矯正版) */}
@@ -201,17 +211,18 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                 <div style={{
                     backgroundColor: 'rgba(255,255,255,0.03)',
                     backdropFilter: 'blur(30px)',
-                    padding: '1.2rem', // 進一步縮減內邊距
+                    padding: isMobile ? '1.5rem 1.2rem' : '1.2rem',
                     borderRadius: '16px',
                     border: '1px solid rgba(255,255,255,0.1)',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '0.6rem', // 極致壓縮組件間距
+                    gap: '1rem',
                     boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
-                    height: '100%', // 確保與左側等高
+                    height: isMobile ? 'auto' : '100%',
+                    marginBottom: isMobile ? '40px' : '0'
                 }}>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '2rem' }}>
                         <div className="input-group">
                             <label style={{ color: '#d4af37', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                                 致 (To)
@@ -234,7 +245,7 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                         </div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '2rem' }}>
                         <div className="input-group">
                             <label style={{ color: '#d4af37', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                                 日期 (Date)
@@ -263,7 +274,7 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                         </div>
                     </div>
 
-                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ flex: isMobile ? 'none' : 1, display: 'flex', flexDirection: 'column', minHeight: isMobile ? '120px' : 'auto' }}>
                         <label style={{ color: '#d4af37', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                             美的寄語
                         </label>
@@ -274,7 +285,7 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                         />
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '2rem' }}>
                         <div className="input-group">
                             <label style={{ color: '#666', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px' }}>
                                 水平佈局
