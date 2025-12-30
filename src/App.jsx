@@ -3,6 +3,7 @@ import milanData from './data/milan.json'
 import florenceData from './data/florence.json'
 import veniceData from './data/venice.json'
 import romeData from './data/rome.json'
+import PostcardSandbox from './PostcardSandbox'
 
 function App() {
 
@@ -18,12 +19,43 @@ function App() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [promptModal, setPromptModal] = useState({ isOpen: false, text: '' });
   const [selectedInfo, setSelectedInfo] = useState(null); // 新增：導覽與攻略狀態
+  const [showSandbox, setShowSandbox] = useState(false);
+  const [postcardData, setPostcardData] = useState({ image: '/arch_images/milan_01.png', text: '', source: '' });
 
   const filteredData = activeCity.data.filter(item =>
     item.name.toLowerCase().includes(search.toLowerCase()) ||
     (item.history_text && item.history_text.toLowerCase().includes(search.toLowerCase())) ||
     (item.features && item.features.toLowerCase().includes(search.toLowerCase()))
   );
+
+  // 進入實驗室的智慧邏輯
+  const openSandbox = (imageSrc, buildingData) => {
+    let selectedQuote = { text: '我在大理石的詩篇中，聽見了妳的低語。', source: '— 馬克．吐溫' };
+
+    // 如果該建築有預設金句，則亂數抽籤
+    if (buildingData && buildingData.quotes && buildingData.quotes.length > 0) {
+      const randomIndex = Math.floor(Math.random() * buildingData.quotes.length);
+      selectedQuote = buildingData.quotes[randomIndex];
+    }
+
+    setPostcardData({
+      image: imageSrc,
+      text: selectedQuote.text,
+      source: selectedQuote.source
+    });
+    setShowSandbox(true);
+  };
+
+  if (showSandbox) {
+    return (
+      <PostcardSandbox
+        imageSrc={postcardData.image}
+        initialText={postcardData.text}
+        initialSource={postcardData.source}
+        onBack={() => setShowSandbox(false)}
+      />
+    );
+  }
 
   return (
     <div className="app-container">
@@ -50,8 +82,11 @@ function App() {
             </div>
           ))}
         </nav>
-
-        {/* 原本底部的資訊已移除並整合至 Logo */}
+        <div style={{ marginTop: 'auto', padding: '1rem' }}>
+          <div style={{ color: '#444', fontSize: '0.65rem', textAlign: 'center', letterSpacing: '2px', borderTop: '1px solid #222', paddingTop: '1rem' }}>
+            EYE@note STUDIO
+          </div>
+        </div>
       </aside>
 
       {/* Main Exhibition Area */}
@@ -120,9 +155,13 @@ function App() {
                 </p>
 
                 <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.4rem', width: '100%' }}>
-                  <a href={`/arch_images/${arch.id}.png`} download className="btn-secondary" style={{ flex: 1, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap' }}>
-                    下載原圖
-                  </a>
+                  <button
+                    onClick={() => openSandbox(`/arch_images/${arch.id}.png`, arch)}
+                    className="btn-primary"
+                    style={{ flex: 1.5, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap', backgroundColor: 'var(--accent-gold)', color: '#000' }}
+                  >
+                    🖋️ 留下美的約定
+                  </button>
                   <button className="btn-secondary" onClick={() => setSelectedInfo(arch)} style={{ flex: 1.2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2px', fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap' }}>
                     📍 導覽攻略
                   </button>
@@ -229,7 +268,35 @@ function App() {
                   )}
                 </section>
 
-                <section style={{ marginBottom: '0.5rem', marginTop: '0.5rem' }}>
+                <section style={{ marginBottom: '1rem' }}>
+                  <button
+                    onClick={() => {
+                      openSandbox(`/arch_images/${selectedInfo.id}.png`, selectedInfo);
+                      setSelectedInfo(null);
+                    }}
+                    className="btn-primary"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '8px',
+                      padding: '0.8rem',
+                      width: '100%',
+                      fontSize: '1rem',
+                      fontWeight: '700',
+                      borderRadius: '6px',
+                      backgroundColor: '#d4af37',
+                      color: '#000',
+                      border: 'none',
+                      cursor: 'pointer',
+                      marginBottom: '0.8rem'
+                    }}
+                  >
+                    🖋️ 製作數位明信片 (美的寄語)
+                  </button>
+                </section>
+
+                <section style={{ marginBottom: '0.5rem' }}>
                   {selectedInfo.google_maps_url ? (
                     <a
                       href={selectedInfo.google_maps_url}

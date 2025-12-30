@@ -11,12 +11,22 @@
     "history_text_en": "For over 100 years, rain fell on the altar because the cathedral had a giant hole in its roof. The technology didn't exist until Brunelleschi invented it.",
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=%E8%81%96%E6%AF%8D%E7%99%BE%E8%8A%B1%E8%81%96%E6%AE%BF%20/%20%E8%81%96%E6%AF%8D%E7%99%BE%E8%8A%B1%E5%A4%A7%E6%95%99%E5%A0%82%20%E4%BD%9B%E7%BE%85%E5%80%AB%E6%96%AF%20Italy",
     "visit_highlights": [
-      "文藝復興裝飾細節",
-      "歷史古蹟識別牌",
-      "工藝雕刻精品",
-      "建築全景視野",
-      "古典石造建築",
-      "內部光影藝術"
+      "布魯內萊斯基的傳奇圓頂",
+      "喬托鐘樓與洗禮堂天堂之門",
+      "喬治·瓦薩里的末日審判壁畫",
+      "登頂俯瞰佛羅倫斯全景",
+      "外牆綠白紅三色大理石細節",
+      "地窖內的聖雷帕拉塔遺跡"
+    ],
+    "quotes": [
+      {
+        "text": "我將建造一個比百花大教堂更大的圓頂，\n但絕對不會比它更美。",
+        "source": "— 米開朗基羅"
+      },
+      {
+        "text": "布魯內萊斯基沒留下任何圖紙，\n因大圓頂就刻在他腦海裡。",
+        "source": "— 工程史話"
+      }
     ]
   },
   {
@@ -51,12 +61,22 @@
     "history_text_en": "The only bridge Hitler ordered not to be destroyed. Originally butcher shops, the Medici ordered them replaced with goldsmiths to escape the smell.",
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=%E7%B6%AD%E7%BE%85%E7%B4%8D%E8%80%81%E6%A9%8B%20/%20%E9%98%BF%E8%AB%BE%E6%B2%B3%E8%80%81%E6%A9%8B%20%E4%BD%9B%E7%BE%85%E5%80%AB%E6%96%AF%20Italy",
     "visit_highlights": [
-      "文藝復興裝飾細節",
-      "歷史古蹟識別牌",
-      "工藝雕刻精品",
-      "建築全景視野",
-      "古典石造建築",
-      "內部光影藝術"
+      "二戰後倖存唯一老橋的黃昏景觀",
+      "橋兩側層層疊疊的珠寶工藝店鋪",
+      "瓦薩里走廊在橋頂延伸的線條",
+      "坐在橋邊聽街頭藝人彈唱的氛圍",
+      "從橋中央拱門看阿諾河的流水",
+      "原本作為屠宰鋪如今變為金匠區"
+    ],
+    "quotes": [
+      {
+        "text": "夕陽照在老橋上，彷彿是在為文藝復興的舊夢鍍金。",
+        "source": "— eyenote@gmail.com"
+      },
+      {
+        "text": "希特勒下令禁止炸毀它，因為即使是戰爭也無法摧毀這樣的美。",
+        "source": "— 歷史筆記"
+      }
     ]
   },
   {
@@ -72,11 +92,21 @@
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=%E8%88%8A%E5%AE%AE%20/%20%E5%B8%95%E6%8B%89%E4%BD%90%C2%B7%E9%9F%8B%E5%9F%BA%E5%A5%A7%20%E4%BD%9B%E7%BE%85%E5%80%AB%E6%96%AF%20Italy",
     "visit_highlights": [
       "厚重如堡壘的石牆外牆",
-      "文藝復興裝飾細節",
-      "歷史古蹟識別牌",
-      "工藝雕刻精品",
-      "建築全景視野",
-      "古典石造建築"
+      "五百人大廳內的宏偉天頂畫",
+      "米開朗基羅與達文西競賽壁畫遺址",
+      "鐘塔頂部非對稱的標誌性剪影",
+      "入口處的大衛像複製品（原址）",
+      "美第奇家族權力巔峰的行政中心"
+    ],
+    "quotes": [
+      {
+        "text": "這是一座關於權力的石頭堡壘，也是天才們曾暗中較勁的遺址。",
+        "source": "— eyenote@gmail.com"
+      },
+      {
+        "text": "如果你在牆後聽見了巨人的呼吸，那並不意外。",
+        "source": "— 佛羅倫斯傳說"
+      }
     ]
   },
   {
@@ -93,10 +123,20 @@
     "visit_highlights": [
       "長廊環繞的 U 字型中庭",
       "框景遠處的舊宮塔樓",
-      "文藝復興裝飾細節",
-      "歷史古蹟識別牌",
-      "工藝雕刻精品",
-      "建築全景視野"
+      "由美第奇辦公室轉型的頂級畫廊",
+      "波提切利《維納斯的誕生》展廳",
+      "俯瞰阿諾河與老橋的觀景走廊",
+      "世界首座具備現代公共服務意向的美術館"
+    ],
+    "quotes": [
+      {
+        "text": "美不是要被創造的，它只需在此被看見。",
+        "source": "— eyenote@gmail.com"
+      },
+      {
+        "text": "這裡收藏的不是畫作，而是人類文明最燦爛的黎明。",
+        "source": "— 文藝復興導讀"
+      }
     ]
   },
   {
@@ -191,12 +231,22 @@
     "history_text_en": "Built mainly to house the David, which was moved here from the rain. The statue's eyes are actually crossed so they look correct from below.",
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=%E4%BD%9B%E7%BE%85%E5%80%AB%E6%96%AF%E7%BE%8E%E8%A1%93%E5%AD%B8%E9%99%A2%E7%BE%8E%E8%A1%93%E9%A4%A8%20%E4%BD%9B%E7%BE%85%E5%80%AB%E6%96%AF%20Italy",
     "visit_highlights": [
+      "米開朗基羅大衛像真跡",
       "著名的圓頂採光大廳",
-      "文藝復興裝飾細節",
-      "歷史古蹟識別牌",
-      "工藝雕刻精品",
-      "建築全景視野",
-      "古典石造建築"
+      "未完成的《囚徒》系列雕塑",
+      "教宗與美第奇家族相關藝術品",
+      "古鋼琴與樂器博物館展廳",
+      "大衛像背後細微的鬥雞眼視角"
+    ],
+    "quotes": [
+      {
+        "text": "大衛原本就住在裡面，我只是去掉了大理石中多餘的部分。",
+        "source": "— 米開朗基羅"
+      },
+      {
+        "text": "在那緊繃的動脈中，我聽見了文藝復興的脈搏。",
+        "source": "— eyenote@gmail.com"
+      }
     ]
   },
   {
@@ -271,12 +321,22 @@
     "history_text_en": "It's not a Renaissance square! It was built in the 19th century when Florence was the capital of Italy to give the bourgeoisie a place to drive carriages.",
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=%E7%B1%B3%E9%96%8B%E6%9C%97%E5%9F%BA%E7%BE%85%E5%BB%A3%E5%A0%B4%20%E4%BD%9B%E7%BE%85%E5%80%AB%E6%96%AF%20Italy",
     "visit_highlights": [
-      "矗立著大衛青銅複製品",
-      "文藝復興裝飾細節",
-      "歷史古蹟識別牌",
-      "工藝雕刻精品",
-      "建築全景視野",
-      "古典石造建築"
+      "佛羅倫斯完整天際線全景",
+      "矗立的大衛像青銅複製品",
+      "阿諾河與老橋的老城遠景",
+      "廣場後方的階梯觀景層",
+      "傍晚街頭藝人的音樂演繹",
+      "高處俯瞰聖母百花大教堂紅頂"
+    ],
+    "quotes": [
+      {
+        "text": "夕陽是時光留給佛羅倫斯最溫暖、也最奢華的顏色。",
+        "source": "— eyenote@gmail.com"
+      },
+      {
+        "text": "在這裡，靈魂似乎能隨著阿諾河的流水飄向文藝復興。",
+        "source": "— 旅人札記"
+      }
     ]
   },
   {
