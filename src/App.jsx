@@ -31,7 +31,11 @@ function App() {
         <div className="logo">
           EYE 建築工作室
           <span className="logo-subtext">
-            設計: <span style={{ color: 'var(--accent-gold)' }}>陸拾陸電影</span> | 聯繫: <a href="mailto:eyenote@gmail.com" style={{ color: 'var(--accent-gold)', textDecoration: 'underline' }}>eyenote@gmail.com</a> | 狀態: 創意開發模式
+            設計: <span style={{ color: 'var(--accent-gold)' }}>陸拾陸電影</span>
+            <br />
+            聯繫: <a href="mailto:eyenote@gmail.com" style={{ color: 'var(--accent-gold)', textDecoration: 'underline' }}>eyenote@gmail.com</a>
+            <br />
+            狀態: 創意開發模式
           </span>
         </div>
         <nav className="city-nav">
