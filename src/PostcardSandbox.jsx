@@ -17,7 +17,7 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
     const [fontSize, setFontSize] = useState(14); // 預設下修至 14級 (14px)
     const [isManualFontSize, setIsManualFontSize] = useState(false);
     const [textAlign, setTextAlign] = useState('left');
-    const [isCapturing, setIsCapturing] = useState(false);
+    const [isCapturing, setIsCapturing] = useState(false); const [capturedImageUrl, setCapturedImageUrl] = useState(null);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const postcardRef = useRef(null);
 
@@ -341,6 +341,53 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                         {isCapturing ? '🎞️ 正在沖印...' : '🖋️ 留下美的約定'}
                     </button>
                 </div>
+
+                {/* 手機端長按儲存遮罩層 (覆蓋全螢幕) */}
+                {capturedImageUrl && (
+                    <div style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0,0,0,0.95)',
+                        zIndex: 10000,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '20px'
+                    }}>
+                        <div style={{ color: '#d4af37', marginBottom: '15px', fontSize: '0.9rem', textAlign: 'center' }}>
+                            ✨ 已為您沖印完成 ✨<br />
+                            <span style={{ color: '#fff', fontSize: '0.8rem' }}>長按下方圖片即可「儲存影像」</span>
+                        </div>
+                        <img
+                            src={capturedImageUrl}
+                            alt="Generated Postcard"
+                            style={{
+                                maxWidth: '100%',
+                                maxHeight: '75vh',
+                                borderRadius: '4px',
+                                boxShadow: '0 20px 60px rgba(0,0,0,0.5)'
+                            }}
+                        />
+                        <button
+                            onClick={() => setCapturedImageUrl(null)}
+                            style={{
+                                marginTop: '25px',
+                                padding: '10px 30px',
+                                backgroundColor: 'transparent',
+                                border: '1px solid rgba(255,255,255,0.3)',
+                                color: '#fff',
+                                borderRadius: '50px',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            關閉預覽
+                        </button>
+                    </div>
+                )}
 
             </div>
         </div>
