@@ -288,24 +288,25 @@ header p {
     height: auto;
     position: relative;
     border-right: none;
-    border-bottom: 1px solid #333;
-    padding: 1.5rem;
+    border-bottom: 1px solid #222;
+    /* 讓橫線變暗一點，不那麼突兀 */
+    padding: 1rem 1rem 0.5rem 1rem;
+    /* 壓縮內距：上1，左右1，下0.5 */
     flex-direction: column;
-    /* 改為垂直排列，讓 Logo 和導覽列分開 */
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 0.5rem;
+    /* 縮小與導覽列的距離 */
   }
 
   .logo {
-    font-size: 1.3rem;
-    /* 手機版標題稍微加大 */
-    border-bottom: 2px solid var(--accent-gold);
-    padding-bottom: 0.5rem;
-    margin-right: 0;
+    font-size: 1.25rem;
+    border-bottom: none;
+    /* 移除個別標題橫線 */
+    padding-bottom: 0;
+    margin-bottom: 0.1rem;
     flex-direction: column;
-    /* 強制垂直排列，避免橫向擠壓 */
     align-items: flex-start;
-    gap: 0.3rem;
+    gap: 0.1rem;
     width: 100%;
   }
 
