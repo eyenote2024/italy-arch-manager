@@ -17,7 +17,8 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
     const [fontSize, setFontSize] = useState(14); // 預設下修至 14級 (14px)
     const [isManualFontSize, setIsManualFontSize] = useState(false);
     const [textAlign, setTextAlign] = useState('left');
-    const [isCapturing, setIsCapturing] = useState(false); const [capturedImageUrl, setCapturedImageUrl] = useState(null);
+    const [isCapturing, setIsCapturing] = useState(false);
+    const [capturedImageUrl, setCapturedImageUrl] = useState(null);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const postcardRef = useRef(null);
 
@@ -41,25 +42,39 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
     const handleDownload = async () => {
         if (!postcardRef.current) return;
         setIsCapturing(true);
-        // 给瀏覽器一點時間渲染
+        setCapturedImageUrl(null);
+
+        // 給瀏覽器一點時間渲染
         setTimeout(async () => {
             try {
                 const canvas = await html2canvas(postcardRef.current, {
                     useCORS: true,
-                    backgroundColor: '#f8f8f8',
+                    backgroundColor: '#ffffff',
                     scale: 3,
+                    logging: false
                 });
-                const image = canvas.toDataURL("image/png");
+
+                const imgData = canvas.toDataURL("image/png", 1.0);
+
+                // 行動端（包含 iPhone/Android 等）強制顯示全螢幕預覽，繞過下載封鎖
+                if (isMobile || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                    setCapturedImageUrl(imgData);
+                    setIsCapturing(false);
+                    return;
+                }
+
+                // 電腦端執行直接下載
                 const link = document.createElement('a');
-                link.href = image;
-                link.download = `postcard_${Date.now()}.png`;
+                link.href = imgData;
+                link.download = `EYEnote-Postcard-${Date.now()}.png`;
                 link.click();
+                setIsCapturing(false);
             } catch (err) {
                 console.error('下載出錯:', err);
                 alert('下載失敗，請嘗試再點擊一次');
+                setIsCapturing(false);
             }
-            setIsCapturing(false);
-        }, 200);
+        }, 500);
     };
 
     return (
