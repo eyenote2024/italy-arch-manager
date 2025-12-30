@@ -229,10 +229,7 @@ function App() {
                   )}
                 </section>
 
-                <section style={{ marginBottom: '0.8rem' }}>
-                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '0.4rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem' }}>
-                    🗺️ 實戰導覽
-                  </h4>
+                <section style={{ marginBottom: '0.5rem', marginTop: '0.5rem' }}>
                   {selectedInfo.google_maps_url ? (
                     <a
                       href={selectedInfo.google_maps_url}
@@ -244,11 +241,12 @@ function App() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         gap: '8px',
-                        padding: '0.7rem',
+                        padding: '0.8rem',
                         width: '100%',
                         textDecoration: 'none',
                         fontSize: '1rem',
-                        fontWeight: '700'
+                        fontWeight: '700',
+                        borderRadius: '6px'
                       }}
                     >
                       🚀 在 Google Maps 中開啟定位
