@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+:root {
+  --bg-color: #0c0c0c;
+  --card-bg: #1a1a1a;
+  --accent-gold: #d4af37;
+  --text-main: #f0f0f0;
+  --text-dim: #a0a0a0;
+  --sidebar-w: 260px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: var(--sidebar-w);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #111;
+  border-right: 1px solid #333;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 2px;
+  border-bottom: 2px solid var(--accent-gold);
+  padding-bottom: 0.5rem;
+}
+
+.city-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.city-item {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.city-item:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--text-main);
+}
+
+.city-item.active {
+  background: var(--accent-gold);
+  color: #000;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  padding: 3rem;
+}
+
+header {
+  margin-bottom: 3rem;
+}
+
+header h2 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: var(--text-dim);
+  font-size: 1.1rem;
+}
+
+/* Grid Layout */
+.arch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  /* 稍微加寬卡片 */
+  gap: 2.5rem;
+  align-items: stretch;
+  /* 確保卡片等高 */
+}
+
+.arch-card {
+  background: var(--card-bg);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid #333;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.arch-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.card-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #0c0c0c;
+  border-bottom: 1px solid #333;
+  position: relative;
+}
+
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* 改為 contain 確保不裁切到資訊內容 */
+  background-color: #111;
+  /* 背景深色，避免比例不合時露出亮色 */
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.arch-card:hover .card-image-container img {
+  transform: scale(1.05);
+  /* Subtle zoom effect */
+}
+
+.card-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #1f1f1f, #252525);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  color: #555;
+  padding: 1rem;
+}
+
+.card-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: linear-gradient(180deg, rgba(26, 26, 26, 1) 0%, rgba(20, 20, 20, 1) 100%);
+}
+
+.card-body h3 {
+  color: var(--accent-gold);
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.features {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.history {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #ccc;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  /* 限制顯示 5 行，讓版面極度整齊 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: rgba(212, 175, 55, 0.2);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-gold);
+  color: #000;
+}
+
+.btn-secondary {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #444;
+  border-color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.arch-card {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Responsive Adjustments (Mobile/Tablet) */
+@media (max-width: 900px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #333;
+    padding: 1.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-right: 1.5rem;
+  }
+
+  .city-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    flex: 1;
+    gap: 0.5rem;
+  }
+
+  .city-item {
+    white-space: nowrap;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  header h2 {
+    font-size: 2rem;
+  }
+
+  .sidebar .div:last-child {
+    display: none;
+    /* 隱藏手機版側邊欄底部的版本資訊 */
+  }
+}
+
+@media (max-width: 500px) {
+  .logo {
+    display: none;
+    /* 在極小螢幕下隱藏地圖標，保留更多空間給導覽 */
+  }
+
+  .arch-grid {
+    grid-template-columns: 1fr;
+    /* 手機上一列一個卡片 */
+  }
+}
