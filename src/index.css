@@ -58,6 +58,19 @@ h3 {
   letter-spacing: 2px;
   border-bottom: 2px solid var(--accent-gold);
   padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.logo-subtext {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: #666;
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: 'Outfit', sans-serif;
+  white-space: nowrap;
 }
 
 .city-nav {
@@ -282,7 +295,16 @@ header p {
     font-size: 1.1rem;
     border-bottom: none;
     padding-bottom: 0;
-    margin-right: 1.5rem;
+    margin-right: 0;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.8rem;
+  }
+
+  .logo-subtext {
+    font-size: 0.6rem;
+    white-space: normal;
+    /* 手機版允許換行或是更彈性 */
   }
 
   .city-nav {

@@ -28,7 +28,10 @@ function App() {
     <div className="app-container">
       {/* Sidebar Navigation */}
       <aside className="sidebar">
-        <div className="logo">EYE 建築工作室</div>
+        <div className="logo">
+          EYE 建築工作室
+          <span className="logo-subtext">設計: 陸拾陸電影 | 聯繫: eyenote@gmail.com | 狀態: 創意開發模式</span>
+        </div>
         <nav className="city-nav">
           {cities.map(city => (
             <div
@@ -41,13 +44,7 @@ function App() {
           ))}
         </nav>
 
-        <div style={{ marginTop: 'auto', fontSize: '0.8rem', color: '#888', lineHeight: '1.6' }}>
-          設計: 陸拾陸電影
-          <br />
-          聯繫：eyenote@gmail.com
-          <br />
-          狀態: 創意開發模式
-        </div>
+        {/* 原本底部的資訊已移除並整合至 Logo */}
       </aside>
 
       {/* Main Exhibition Area */}
