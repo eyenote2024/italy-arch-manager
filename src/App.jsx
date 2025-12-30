@@ -196,31 +196,30 @@ function App() {
                   }}
                 >&times;</button>
               </div>
-              <div className="custom-scrollbar" style={{ overflowY: 'auto', paddingRight: '10px', flex: 1 }}>
-                <section style={{ marginBottom: '1.5rem' }}>
-                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.1rem' }}>
+              <div className="custom-scrollbar" style={{ overflowY: 'auto', paddingRight: '5px', flex: 1 }}>
+                <section style={{ marginBottom: '1.2rem' }}>
+                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '0.6rem', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '1.1rem' }}>
                     💡 參觀重點 (Must-See Checklist)
                   </h4>
                   {selectedInfo.visit_highlights && selectedInfo.visit_highlights.length > 0 ? (
                     <div style={{
-                      display: 'grid',
-                      gridTemplateColumns: '1fr 1fr', // 2x3 網格，省空間
-                      gap: '0.5rem'
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.4rem'
                     }}>
                       {selectedInfo.visit_highlights.map((h, i) => (
                         <div key={i} style={{
                           backgroundColor: '#252525',
-                          padding: '0.6rem 0.8rem',
+                          padding: '0.5rem 0.8rem',
                           borderRadius: '4px',
                           borderLeft: '3px solid var(--accent-gold)',
                           color: '#eee',
-                          fontSize: '0.85rem',
+                          fontSize: '0.9rem',
                           display: 'flex',
                           alignItems: 'center',
-                          lineHeight: '1.2',
-                          minHeight: '40px'
+                          lineHeight: '1.3'
                         }}>
-                          <span style={{ marginRight: '6px', opacity: 0.5, fontWeight: 'bold', fontSize: '0.8rem' }}>{i + 1}</span>
+                          <span style={{ marginRight: '8px', opacity: 0.5, fontWeight: 'bold', fontSize: '0.8rem', minWidth: '15px' }}>{i + 1}</span>
                           {h}
                         </div>
                       ))}
@@ -230,8 +229,8 @@ function App() {
                   )}
                 </section>
 
-                <section style={{ marginBottom: '1rem' }}>
-                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem' }}>
+                <section style={{ marginBottom: '0.8rem' }}>
+                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '0.4rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem' }}>
                     🗺️ 實戰導覽
                   </h4>
                   {selectedInfo.google_maps_url ? (
@@ -245,7 +244,7 @@ function App() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         gap: '8px',
-                        padding: '0.8rem',
+                        padding: '0.7rem',
                         width: '100%',
                         textDecoration: 'none',
                         fontSize: '1rem',
