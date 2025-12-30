@@ -1,7 +1,7 @@
 [
   {
     "id": "rome_01",
-    "name": "羅馬競技場 / 鬥獸場",
+    "name": "羅馬競技場",
     "features": "巨大的石灰華石弧形外牆，在夕陽下顯現層次分明的柱式光影。",
     "key_visual": "The massive curved outer wall of travertine glowing in golden hour light, showing the three orders of columns.",
     "history_text": "這座鋼鐵與巨石的怪獸曾能注水進行模擬海戰。據統計有超過 40 萬人與上百萬隻野獸在長年的搏鬥娛樂中葬身於此。",
@@ -21,7 +21,7 @@
   },
   {
     "id": "rome_02",
-    "name": "萬神殿 / 羅馬萬神廟",
+    "name": "萬神殿",
     "features": "從室內仰望完美對稱的無鋼筋混凝土圓頂，陽光透過圓孔灑落。",
     "key_visual": "The massive unreinforced concrete dome seen from inside, with the single beam of light entering through the Oculus.",
     "history_text": "現存世界最大的無筋混凝土圓頂。拉斐爾藏於此，傳說頂端那著名的「圓眼」是惡魔在教堂祝聖逃跑時撞破的孔洞。",
@@ -41,7 +41,7 @@
   },
   {
     "id": "rome_03",
-    "name": "特萊維噴泉 / 許願池",
+    "name": "許願池",
     "features": "中央大海神尼普頓在奔騰的水流與雕塑間，宏偉的巴洛克劇場。",
     "key_visual": "Oceanus standing in the central niche, with water cascading over rough stones.",
     "history_text": "每天約有 3000 歐元的硬幣被投進池中，最後都會捐給慈善超市。有趣的是其石材來源與羅馬競技場是一模一樣的。",
@@ -61,7 +61,7 @@
   },
   {
     "id": "rome_04",
-    "name": "聖彼得大殿 / 梵蒂岡聖伯多祿大殿",
+    "name": "聖彼得大教堂",
     "features": "從漫長中殿望向貝尼尼的青銅華蓋，以及正上方高不可攀的穹頂。",
     "key_visual": "The vast nave looking towards Bernini's bronze Baldachin and the soaring dome above.",
     "history_text": "建於聖徒彼得的埋葬地之上。整座聖殿大到足以讓一整座自由女神像在圓頂下站得直挺挺還有剩餘空間。",
@@ -81,7 +81,7 @@
   },
   {
     "id": "rome_05",
-    "name": "聖天使城堡",
+    "name": "聖天使堡",
     "features": "從天使橋仰望圓柱體造型的堡壘，頂端矗立著振翅的天使長。",
     "key_visual": "The cylindrical fortress view from the Bridge of Angels (Ponte Sant'Angelo).",
     "history_text": "最初是皇帝陵墓，後轉為教宗防禦堡壘。有一條長約 800 公尺的秘密通道「波爾果通道」直通梵蒂岡，供教宗危急時避難。",
@@ -101,7 +101,7 @@
   },
   {
     "id": "rome_06",
-    "name": "古羅馬論壇 / 古羅馬廣場",
+    "name": "古羅馬論壇",
     "features": "殘缺的農神廟石柱矗立在廣大的廢墟遺址中，映背景的晚霞。",
     "key_visual": "The Temple of Saturn columns standing against a dramatic sunset sky.",
     "history_text": "曾是羅馬帝國的權力心臟。衰敗後此處竟被遺忘而埋入土中，成了野草叢生的「牧牛場」，直到 19 世紀才重見天日。",
@@ -121,7 +121,7 @@
   },
   {
     "id": "rome_07",
-    "name": "西班牙階梯 / 破船噴泉",
+    "name": "西班牙階梯",
     "features": "壯麗的曲面蝴蝶形階梯，由底端的噴泉一路向上延伸至雙塔教堂。",
     "key_visual": "The sweeping butterfly-shaped stairs leading up to Trinità dei Monti church.",
     "history_text": "因附近西班牙大使館得名，背後出錢的卻是法國人。總共 135 階，現在為了維護古蹟，現場嚴禁在階梯上飲食或坐臥。",
@@ -141,7 +141,7 @@
   },
   {
     "id": "rome_08",
-    "name": "波格賽別墅 / 波格賽美術館",
+    "name": "波格賽美術館",
     "features": "典雅的白色美術館建築，周圍環繞著標誌性的傘狀松樹林。",
     "key_visual": "The elegant white facade of the Galleria Borghese surrounded by umbrella pines.",
     "history_text": "創辦人波格賽紅衣主教是個著名的「藝術掠奪者」。他曾因太喜歡拉斐爾的《下葬》，竟派直屬私兵去教堂強行偷走。",
@@ -161,7 +161,7 @@
   },
   {
     "id": "rome_09",
-    "name": "納沃納廣場 / 四河噴泉",
+    "name": "納沃納廣場",
     "features": "四河噴泉噴湧的水柱圍繞著方尖碑，映後方的貝尼尼巴洛克教堂。",
     "key_visual": "Bernini's Fountain of the Four Rivers with the obelisk, surrounded by the oval piazza.",
     "history_text": "廣場之所以呈現離奇的長橢圓，是因為它就地蓋在古羅馬體育場的遺址上，你腳下的線條就是當年的賽跑跑道。",
@@ -181,7 +181,7 @@
   },
   {
     "id": "rome_10",
-    "name": "祖國祭壇 / 維托里亞諾紀念堂",
+    "name": "祖國祭壇",
     "features": "巨大的白色大理石建築，威嚴的柯林斯式柱廊與青銅戰車雕像。",
     "key_visual": "The colossal white marble stairs and Corinthian columns topped with bronze chariots.",
     "history_text": "羅馬人譏稱其為「打字機」或「大蛋糕」，因其冷冽的白色大理石在滿城暖黃色調的歷史建築中顯得格外突兀。",

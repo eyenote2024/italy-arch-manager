@@ -1,7 +1,7 @@
 [
   {
     "id": "milan_01",
-    "name": "米蘭主教座堂 / 米蘭大教堂",
+    "name": "米蘭大教堂",
     "features": "壯麗的哥德式中殿內部、彩繪玻璃與戲劇性的室內光影。",
     "key_visual": "Grand Gothic Nave interior with stained glass and dramatic light",
     "history_text": "當時建築用的大理石塊都標記著「A.U.F.」(Ad Usum Fabricae，供工廠免費使用)，得以免稅運輸。這也成了米蘭俚語「a ufo」(免費白拿) 的由來。",
@@ -21,7 +21,7 @@
   },
   {
     "id": "milan_02",
-    "name": "埃馬努埃萊二世拱廊街",
+    "name": "艾曼紐二世迴廊",
     "features": "中央八角形廣場，具有宏偉的鑄鐵和玻璃穹頂及精美的馬賽克地板。",
     "key_visual": "The central Octagon with Iron and Glass dome and mosaic floor",
     "history_text": "根據當地傳統，在馬賽克地板上的公牛蛋蛋上踩著旋轉三圈會帶來好運。這個習俗太受歡迎，甚至在石頭上磨出了一個洞！",
@@ -41,7 +41,7 @@
   },
   {
     "id": "milan_03",
-    "name": "斯福爾扎城堡",
+    "name": "斯福爾扎古堡",
     "features": "指標性的費拉雷特塔樓與紅磚防禦性堡壘城牆。",
     "key_visual": "The main Filarete Tower and fortress walls",
     "history_text": "拿破崙曾下令拆除城堡，但遭米蘭市民極力反對而保存。據傳城堡有一條秘密地道通往聖母教堂，供當年的公爵逃亡或幽會。",
@@ -81,7 +81,7 @@
   },
   {
     "id": "milan_05",
-    "name": "聖母德勒格拉奇教堂 / 最後的晚餐",
+    "name": "聖母恩寵教堂",
     "features": "修道院食堂的廣角視野，正面展示達文西《最後的晚餐》壁畫。",
     "key_visual": "Wide-angle atmospheric view of the Refectory Hall, showing The Last Supper mural on the far wall, rays of light entering from side windows, immersive spatial depth",
     "history_text": "1943年二戰期間，盟軍轟炸將教堂大半夷為平地，唯獨保有《最後的晚餐》的那面牆奇蹟般屹立不倒，當時僅靠著外圍堆疊的沙袋保護。",
@@ -101,7 +101,7 @@
   },
   {
     "id": "milan_06",
-    "name": "斯卡拉歌劇院",
+    "name": "斯卡拉大劇院",
     "features": "宏偉的歌劇大廳，配有標誌性的紅色絲絨包廂與巨大水晶吊燈。",
     "key_visual": "The Grand Opera Hall with red velvet boxes and golden chandelier",
     "history_text": "在 18 世紀，包廂是貴族的私人沙龍。他們甚至會在表演時煮燉飯、賭博或大聲閒聊，只有在聽到喜歡的詠嘆調時才會稍微安靜。",
@@ -141,7 +141,7 @@
   },
   {
     "id": "milan_08",
-    "name": "普拉達基金會 / 米蘭總部",
+    "name": "普拉達基金會",
     "features": "被稱為「鬼屋」的指標建築，整棟建築外表貼滿了 24K 金箔。",
     "key_visual": "The Haunted House building clad in 24k Gold Leaf",
     "history_text": "名導魏斯·安德森在此設計了「Bar Luce」咖啡廳，完美重現 1950 年代米蘭咖啡館的繽紛氛圍，甚至還有古董彈珠台。",
@@ -161,7 +161,7 @@
   },
   {
     "id": "milan_09",
-    "name": "CityLife 三塔區",
+    "name": "CityLife 三塔",
     "features": "分別由 Hadid、Isozaki 與 Libeskind 設計的扭曲、筆直、彎曲三塔天際線。",
     "key_visual": "The Three Towers (Twisted, Straight, Curved) skyline",
     "history_text": "這三座塔分別被取了「直塔」、「扭曲塔」與「曲線塔」的暱稱，它們矗立在昔日繁華的老貿易展覽館舊址上。",
@@ -181,7 +181,7 @@
   },
   {
     "id": "milan_10",
-    "name": "布雷拉宮 / 布雷拉美術館",
+    "name": "布雷拉美術館",
     "features": "古典的雙層拱門中庭，中央矗立著著名的拿破崙銅像。",
     "key_visual": "The Courtyard with Napoleon Statue and arches",
     "history_text": "美術館後方隱藏著一座秘密植物園，曾是耶穌會修士種植藥草之處，如今是米蘭時尚特區中難得的一抹寧靜綠意。",
@@ -201,7 +201,7 @@
   },
   {
     "id": "milan_11",
-    "name": "聖安布羅修聖殿",
+    "name": "聖安布羅修大殿",
     "features": "修道院前庭與兩座高度、風格迥異的鐘塔（修士塔與教士塔）。",
     "key_visual": "The atrium with the two contrasting bell towers (Monks' and Canons')",
     "history_text": "米蘭主保聖人安布羅修葬於地底，入口處有一根「惡魔之柱」，上面的兩個洞傳說是被撒旦的角撞出來的，起因於他想誘惑聖人失敗。",
@@ -241,7 +241,7 @@
   },
   {
     "id": "milan_13",
-    "name": "聖莫里齊奧教堂 / 米蘭的西斯汀",
+    "name": "聖莫里齊奧教堂",
     "features": "壯麗的「修女堂」內部，牆面與天頂佈滿了色彩繽紛的文藝復興壁畫。",
     "key_visual": "The Hall of Nuns completely covered in vibrant Renaissance frescoes",
     "history_text": "被稱為「米蘭的西斯汀小堂」。樸素的外牆內隱藏著每一英吋都繪有精緻壁畫的震撼空間，中央的分隔牆讓隱修修女能在後方聽彌撒不被打擾。",

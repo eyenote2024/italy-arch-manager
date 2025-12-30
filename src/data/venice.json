@@ -1,7 +1,7 @@
 [
   {
     "id": "venice_01",
-    "name": "聖馬可宗座聖殿",
+    "name": "聖馬可大教堂",
     "features": "宏偉的金色聖殿內部，各個圓頂佈滿了敘事性的金箔馬賽克。",
     "key_visual": "The golden interior with domes covered in mosaics and the Pala d'Oro",
     "history_text": "聖馬可的遺體是兩位威尼斯商人從亞歷山大港偷出來的。他們將聖人的遺體藏在重重豬肉堆下，才成功避開回教海關的檢查並運回威尼斯。",
@@ -61,7 +61,7 @@
   },
   {
     "id": "venice_04",
-    "name": "安康聖母聖殿",
+    "name": "安康聖母大殿",
     "features": "從大運河階梯向上仰望宏偉的八角形巴洛克式大圓頂。",
     "key_visual": "The massive octagonal dome rising from the Grand Canal steps",
     "history_text": "這是為了紀念黑死病終結向聖母還願而建。整座重達萬噸的聖殿地基，是靠著打入泥漿中的 100 萬根木樁支撐的。",
@@ -121,7 +121,7 @@
   },
   {
     "id": "venice_07",
-    "name": "金屋 / 法蘭凱提美術館",
+    "name": "黃金宮",
     "features": "大運河旁著名的花飾哥德式建築，以極度精緻的大理石雕花聞名。",
     "key_visual": "The intricate marble tracery facade facing the Grand Canal",
     "history_text": "最初落成時外牆貼滿了真金箔，因而得名。後來法蘭凱提男爵救回了這座頹圮的宮殿，並遺命將骨灰撒於此以永伴藝術。",
@@ -161,7 +161,7 @@
   },
   {
     "id": "venice_09",
-    "name": "威尼斯古根漢美術館",
+    "name": "古根漢美術館",
     "features": "位於大運河河畔，可看見著名的馬里尼雕塑與戶外露台風景。",
     "key_visual": "The terrace on the Grand Canal with Marini's sculpture",
     "history_text": "坐落於半途而廢的「獅子宮」。創辦人佩姬·古根漢就葬在花園裡，伴隨著她生前最愛的 14 隻拉薩犬，是威尼斯難得的現代藝術聖地。",
@@ -201,7 +201,7 @@
   },
   {
     "id": "venice_11",
-    "name": "SAN GIORGIO MAGGIORE",
+    "name": "聖喬治馬焦雷教堂",
     "features": "1610 • PALLADIAN • ISLAND MONASTERY",
     "key_visual": "View from across the basin showing the white facade and campanile",
     "history_text": "The view from this bell tower is better than San Marco's (and has no line). It was Napoleon's headquarters, who famously turned this sacred monastery into a military warehouse.",
