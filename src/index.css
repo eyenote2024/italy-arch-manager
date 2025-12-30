@@ -272,9 +272,10 @@ header p {
     border-right: none;
     border-bottom: 1px solid #333;
     padding: 1.5rem;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    /* 改為垂直排列，讓 Logo 和導覽列分開 */
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 
   .logo {
@@ -285,17 +286,30 @@ header p {
   }
 
   .city-nav {
-    flex-direction: row;
-    overflow-x: auto;
-    padding-bottom: 5px;
-    flex: 1;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 完美的 2x2 全覽 */
+    width: 100%;
+    padding: 0.5rem 0;
+    gap: 0.8rem;
   }
 
   .city-item {
-    white-space: nowrap;
-    padding: 0.5rem 0.8rem;
-    font-size: 0.85rem;
+    text-align: center;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .city-item.active {
+    background: var(--accent-gold);
+    color: #000;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
   }
 
   .main-content {

@@ -41,8 +41,10 @@ function App() {
           ))}
         </nav>
 
-        <div style={{ marginTop: 'auto', fontSize: '0.8rem', color: '#555' }}>
-          資產層級: /Volumes/eye_1Ts
+        <div style={{ marginTop: 'auto', fontSize: '0.8rem', color: '#888', lineHeight: '1.6' }}>
+          設計: 陸拾陸電影
+          <br />
+          聯繫：eyenote@gmail.com
           <br />
           狀態: 創意開發模式
         </div>
