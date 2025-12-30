@@ -154,15 +154,19 @@ function App() {
                   {arch.history_text}
                 </p>
 
-                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.4rem', width: '100%' }}>
+                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.5rem', width: '100%' }}>
                   <button
                     onClick={() => openSandbox(`/arch_images/${arch.id}.png`, arch)}
                     className="btn-primary"
-                    style={{ flex: 1.5, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap', backgroundColor: 'var(--accent-gold)', color: '#000' }}
+                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', backgroundColor: 'var(--accent-gold)', color: '#000', borderRadius: '6px' }}
                   >
                     🖋️ 寫明信片
                   </button>
-                  <button className="btn-secondary" onClick={() => setSelectedInfo(arch)} style={{ flex: 1.2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2px', fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap' }}>
+                  <button
+                    className="btn-secondary"
+                    onClick={() => setSelectedInfo(arch)}
+                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px' }}
+                  >
                     📍 導覽攻略
                   </button>
                   <button
@@ -171,7 +175,7 @@ function App() {
                       e.stopPropagation();
                       setPromptModal({ isOpen: true, text: arch.prompt || "咒語尚未建立" });
                     }}
-                    style={{ flex: 1, fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap' }}
+                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px' }}
                   >
                     🪄 AI 咒語
                   </button>
