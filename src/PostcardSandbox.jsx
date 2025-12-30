@@ -102,7 +102,7 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                 width: '100%'
             }}>
                 <div>
-                    <h1 style={{ color: '#d4af37', margin: 0, fontSize: '2rem', letterSpacing: '2px', fontWeight: '700' }}>EYE 數位明信片實驗室</h1>
+                    <h1 style={{ color: '#d4af37', margin: 0, fontSize: '2rem', letterSpacing: '2px', fontWeight: '700' }}>EYE 數位明信片</h1>
                     <p style={{ color: '#666', margin: '8px 0 0', fontWeight: '300', fontSize: '1rem', letterSpacing: '1px' }}>
                         將建築的永恆，化作美的寄語
                     </p>
