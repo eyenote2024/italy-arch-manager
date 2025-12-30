@@ -353,7 +353,7 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                         onMouseOver={(e) => e.target.style.transform = 'translateY(-3px)'}
                         onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
                     >
-                        {isCapturing ? '🎞️ 正在沖印...' : '🖋️ 留下美的約定'}
+                        {isCapturing ? '🎞️ 正在沖印...' : '📸 沖印明信片'}
                     </button>
                 </div>
 

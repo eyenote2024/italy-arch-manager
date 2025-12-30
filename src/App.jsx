@@ -160,7 +160,7 @@ function App() {
                     className="btn-primary"
                     style={{ flex: 1.5, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap', backgroundColor: 'var(--accent-gold)', color: '#000' }}
                   >
-                    🖋️ 留下美的約定
+                    🖋️ 寫明信片
                   </button>
                   <button className="btn-secondary" onClick={() => setSelectedInfo(arch)} style={{ flex: 1.2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2px', fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap' }}>
                     📍 導覽攻略
@@ -169,11 +169,11 @@ function App() {
                     className="btn-primary"
                     onClick={(e) => {
                       e.stopPropagation();
-                      setPromptModal({ isOpen: true, text: arch.prompt || "提示詞尚未建立" });
+                      setPromptModal({ isOpen: true, text: arch.prompt || "咒語尚未建立" });
                     }}
                     style={{ flex: 1, fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap' }}
                   >
-                    📜 複製提示詞
+                    🪄 AI 咒語
                   </button>
                 </div>
               </div>
@@ -292,7 +292,7 @@ function App() {
                       marginBottom: '0.8rem'
                     }}
                   >
-                    🖋️ 製作數位明信片 (美的寄語)
+                    🖋️ 寫明信片
                   </button>
                 </section>
 
