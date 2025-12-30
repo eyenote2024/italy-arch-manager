@@ -31,7 +31,7 @@ function App() {
         <div className="logo">
           EYE 建築工作室
           <span className="logo-subtext">
-            設計: 陸拾陸電影 | 聯繫: <a href="mailto:eyenote@gmail.com" style={{ color: 'inherit', textDecoration: 'underline' }}>eyenote@gmail.com</a> | 狀態: 創意開發模式
+            設計: 陸拾陸電影 | 聯繫: <a href="mailto:eyenote@gmail.com" style={{ color: 'var(--accent-gold)', textDecoration: 'underline' }}>eyenote@gmail.com</a> | 狀態: 創意開發模式
           </span>
         </div>
         <nav className="city-nav">
