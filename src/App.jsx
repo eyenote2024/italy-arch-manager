@@ -119,11 +119,11 @@ function App() {
                   {arch.history_text}
                 </p>
 
-                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.5rem' }}>
-                  <a href={`/arch_images/${arch.id}.png`} download className="btn-secondary" style={{ flex: 1, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.4rem', width: '100%' }}>
+                  <a href={`/arch_images/${arch.id}.png`} download className="btn-secondary" style={{ flex: 1, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap' }}>
                     下載原圖
                   </a>
-                  <button className="btn-secondary" onClick={() => setSelectedInfo(arch)} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
+                  <button className="btn-secondary" onClick={() => setSelectedInfo(arch)} style={{ flex: 1.2, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2px', fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap' }}>
                     📍 導覽攻略
                   </button>
                   <button
@@ -132,6 +132,7 @@ function App() {
                       e.stopPropagation();
                       setPromptModal({ isOpen: true, text: arch.prompt || "提示詞尚未建立" });
                     }}
+                    style={{ flex: 1, fontSize: '0.85rem', padding: '0.6rem 0.2rem', whiteSpace: 'nowrap' }}
                   >
                     📜 複製提示詞
                   </button>
@@ -195,25 +196,31 @@ function App() {
                   }}
                 >&times;</button>
               </div>
-              <div style={{ overflowY: 'auto', paddingRight: '10px' }}>
-                <section style={{ marginBottom: '2.5rem' }}>
-                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '1.2rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.2rem' }}>
+              <div className="custom-scrollbar" style={{ overflowY: 'auto', paddingRight: '10px', flex: 1 }}>
+                <section style={{ marginBottom: '1.5rem' }}>
+                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.1rem' }}>
                     💡 參觀重點 (Must-See Checklist)
                   </h4>
                   {selectedInfo.visit_highlights && selectedInfo.visit_highlights.length > 0 ? (
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0.8rem' }}>
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr 1fr', // 2x3 網格，省空間
+                      gap: '0.5rem'
+                    }}>
                       {selectedInfo.visit_highlights.map((h, i) => (
                         <div key={i} style={{
                           backgroundColor: '#252525',
-                          padding: '0.8rem 1.2rem',
-                          borderRadius: '6px',
-                          borderLeft: '4px solid var(--accent-gold)',
+                          padding: '0.6rem 0.8rem',
+                          borderRadius: '4px',
+                          borderLeft: '3px solid var(--accent-gold)',
                           color: '#eee',
-                          fontSize: '0.95rem',
+                          fontSize: '0.85rem',
                           display: 'flex',
-                          alignItems: 'center'
+                          alignItems: 'center',
+                          lineHeight: '1.2',
+                          minHeight: '40px'
                         }}>
-                          <span style={{ marginRight: '10px', opacity: 0.5, fontWeight: 'bold' }}>0{i + 1}</span>
+                          <span style={{ marginRight: '6px', opacity: 0.5, fontWeight: 'bold', fontSize: '0.8rem' }}>{i + 1}</span>
                           {h}
                         </div>
                       ))}
@@ -223,8 +230,8 @@ function App() {
                   )}
                 </section>
 
-                <section>
-                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <section style={{ marginBottom: '1rem' }}>
+                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem' }}>
                     🗺️ 實戰導覽
                   </h4>
                   {selectedInfo.google_maps_url ? (
@@ -238,10 +245,10 @@ function App() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         gap: '8px',
-                        padding: '1.2rem',
+                        padding: '0.8rem',
                         width: '100%',
                         textDecoration: 'none',
-                        fontSize: '1.1rem',
+                        fontSize: '1rem',
                         fontWeight: '700'
                       }}
                     >
