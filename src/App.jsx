@@ -196,7 +196,34 @@ function App() {
                 >&times;</button>
               </div>
               <div style={{ overflowY: 'auto', paddingRight: '10px' }}>
-                <section style={{ marginBottom: '2rem' }}>
+                <section style={{ marginBottom: '2.5rem' }}>
+                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '1.2rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.2rem' }}>
+                    💡 參觀重點 (Must-See Checklist)
+                  </h4>
+                  {selectedInfo.visit_highlights && selectedInfo.visit_highlights.length > 0 ? (
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0.8rem' }}>
+                      {selectedInfo.visit_highlights.map((h, i) => (
+                        <div key={i} style={{
+                          backgroundColor: '#252525',
+                          padding: '0.8rem 1.2rem',
+                          borderRadius: '6px',
+                          borderLeft: '4px solid var(--accent-gold)',
+                          color: '#eee',
+                          fontSize: '0.95rem',
+                          display: 'flex',
+                          alignItems: 'center'
+                        }}>
+                          <span style={{ marginRight: '10px', opacity: 0.5, fontWeight: 'bold' }}>0{i + 1}</span>
+                          {h}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p style={{ color: '#ccc' }}>參觀重點尚未提供。</p>
+                  )}
+                </section>
+
+                <section>
                   <h4 style={{ color: 'var(--accent-gold)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                     🗺️ 實戰導覽
                   </h4>
@@ -206,30 +233,22 @@ function App() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-primary"
-                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '1rem', width: '100%', textDecoration: 'none' }}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        padding: '1.2rem',
+                        width: '100%',
+                        textDecoration: 'none',
+                        fontSize: '1.1rem',
+                        fontWeight: '700'
+                      }}
                     >
-                      在 Google Maps 中開啟定位
+                      🚀 在 Google Maps 中開啟定位
                     </a>
                   ) : (
                     <p style={{ color: '#ccc' }}>Google Maps 連結尚未提供。</p>
-                  )}
-                </section>
-
-                <section>
-                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    💡 參觀重點
-                  </h4>
-                  {selectedInfo.visit_highlights && selectedInfo.visit_highlights.length > 0 ? (
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                      {selectedInfo.visit_highlights.map((h, i) => (
-                        <li key={i} style={{ marginBottom: '1rem', color: '#ddd', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                          <span style={{ color: 'var(--accent-gold)', fontSize: '1.2rem' }}>•</span>
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p style={{ color: '#ccc' }}>參觀重點尚未提供。</p>
                   )}
                 </section>
               </div>
