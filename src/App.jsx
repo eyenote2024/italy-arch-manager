@@ -17,6 +17,7 @@ function App() {
   const [search, setSearch] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
   const [promptModal, setPromptModal] = useState({ isOpen: false, text: '' });
+  const [selectedInfo, setSelectedInfo] = useState(null); // 新增：導覽與攻略狀態
 
   const filteredData = activeCity.data.filter(item =>
     item.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -119,15 +120,12 @@ function App() {
                 </p>
 
                 <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.5rem' }}>
-                  <a
-                    href={`/arch_images/${arch.id}.png`}
-                    download={`${arch.id}_${arch.name}.png`}
-                    className="btn-secondary"
-                    style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    ⬇ 下載原圖
+                  <a href={`/arch_images/${arch.id}.png`} download className="btn-secondary" style={{ flex: 1, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    下載原圖
                   </a>
+                  <button className="btn-secondary" onClick={() => setSelectedInfo(arch)} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
+                    📍 導覽攻略
+                  </button>
                   <button
                     className="btn-primary"
                     onClick={(e) => {
@@ -142,6 +140,107 @@ function App() {
             </article>
           ))}
         </section>
+
+        {/* Tourist Info Modal (導覽與攻略) */}
+        {selectedInfo && (
+          <div
+            className="lightbox" // Reusing lightbox class for overlay
+            onClick={() => setSelectedInfo(null)}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(0,0,0,0.8)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 1100,
+            }}
+          >
+            <div
+              onClick={e => e.stopPropagation()}
+              style={{
+                backgroundColor: '#1a1a1a',
+                padding: '2rem',
+                borderRadius: '8px',
+                border: '1px solid var(--accent-gold)',
+                width: '80%',
+                maxWidth: '600px',
+                maxHeight: '80vh',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                position: 'relative'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                <div>
+                  <h3 style={{ color: 'var(--accent-gold)', fontFamily: 'Playfair Display', margin: 0 }}>{selectedInfo.name}</h3>
+                  <p style={{ color: '#888', fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>{selectedInfo.name_en}</p>
+                </div>
+                <button
+                  className="close-btn"
+                  onClick={() => setSelectedInfo(null)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#fff',
+                    fontSize: '2rem',
+                    cursor: 'pointer',
+                    position: 'absolute',
+                    top: '1rem',
+                    right: '1rem'
+                  }}
+                >&times;</button>
+              </div>
+              <div style={{ overflowY: 'auto', paddingRight: '10px' }}>
+                <section style={{ marginBottom: '2rem' }}>
+                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    🗺️ 實戰導覽
+                  </h4>
+                  {selectedInfo.google_maps_url ? (
+                    <a
+                      href={selectedInfo.google_maps_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '1rem', width: '100%', textDecoration: 'none' }}
+                    >
+                      在 Google Maps 中開啟定位
+                    </a>
+                  ) : (
+                    <p style={{ color: '#ccc' }}>Google Maps 連結尚未提供。</p>
+                  )}
+                </section>
+
+                <section>
+                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    💡 參觀重點
+                  </h4>
+                  {selectedInfo.visit_highlights && selectedInfo.visit_highlights.length > 0 ? (
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                      {selectedInfo.visit_highlights.map((h, i) => (
+                        <li key={i} style={{ marginBottom: '1rem', color: '#ddd', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                          <span style={{ color: 'var(--accent-gold)', fontSize: '1.2rem' }}>•</span>
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p style={{ color: '#ccc' }}>參觀重點尚未提供。</p>
+                  )}
+                </section>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1rem' }}>
+                <button className="btn-secondary" onClick={() => setSelectedInfo(null)} style={{ width: '100%' }}>
+                  返回畫廊
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Lightbox Overlay */}
         {selectedImage && (
