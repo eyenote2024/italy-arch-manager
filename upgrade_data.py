@@ -7,62 +7,86 @@ def generate_maps_url(name, city):
     query = f"{name} {city} Italy"
     return f"https://www.google.com/maps/search/?api=1&query={urllib.parse.quote(query)}"
 
-def extract_specific_highlights(prompt_text, features_tw, history_tw):
-    # 從 prompt 中尋找 1. 2. 3. 這種清單
-    # 範例: 1. Main Entrance, 2. Archaeological Area...
-    keywords_en = re.findall(r'\d\.\s*([^,.\n]+)', prompt_text)
-    
-    # 建立一個基礎對照表，將常見的建築術語翻譯成具體的中文標題
-    trans_map = {
+def translate_to_tw(text):
+    # 台灣道地建築與旅遊名詞對照
+    mapping = {
         "Main Entrance": "主入口大門",
-        "Nave": "中殿建築結構",
-        "Stained Glass": "彩繪玻璃窗",
-        "High Altar": "主祭壇",
-        "Dome": "宏偉圓頂",
-        "Facade": "正面立面雕刻",
+        "Nave": "中央中殿",
+        "Stained Glass": "彩繪玻璃花窗",
+        "High Altar": "主祭壇聖所",
+        "Dome": "宏偉大圓頂",
+        "Central Dome": "中央大圓頂",
+        "Facade": "正面裝飾立面",
         "Bell Tower": "指標性鐘樓",
-        "Crypt": "地下聖堂",
+        "Crypt": "地下聖堂墓室",
         "Cloister": "修道院迴廊",
         "Baptistery": "洗禮堂",
-        "Loggia": "露天拱廊",
+        "Loggia" : "開放式拱廊",
         "Apse": "半圓形後殿",
-        "Transept": "翼廊 (十字交會處)",
-        "Spire": "哥德式尖塔",
-        "Flying Buttress": "飛扶壁結構",
+        "Transept": "翼廊(十字交會處)",
+        "Spire": "哥德式尖塔牆",
+        "Flying Buttress": "支撐飛扶壁",
         "Mosaic": "馬賽克鑲嵌畫",
         "Statue": "大理石雕像群",
-        "Courtyard": "中央中庭",
+        "Courtyard": "中央中庭廣場",
         "Tower": "防禦式塔樓",
-        "Palace": "宮殿主建築"
+        "Fortress Walls": "堡疊防禦城牆",
+        "Gothic Arch": "哥德式尖拱",
+        "Corinthian Column": "柯林斯式柱廊",
+        "Skyline": "城市天際線",
+        "Skyscraper": "現代摩天大樓",
+        "Facade Carvings": "立面精細雕刻",
+        "Altar": "神聖祭壇",
+        "Bridge": "石造景觀橋樑",
+        "Canal": "運河水都風景",
+        "Museum Entrance": "美術館入口",
+        "Art Gallery": "藝術畫廊長廊",
+        "Piazza": "公共廣場區",
+        "Foundation": "建築地基構造",
+        "Theater Hall": "歌劇院大廳"
     }
+    
+    # 移除序號與多餘空白
+    clean = re.sub(r'^\d+\.\s*', '', text).strip()
+    
+    # 精確匹配翻譯
+    for en, tw in mapping.items():
+        if en.lower() in clean.lower():
+            return tw
+            
+    return clean # 若沒匹配到，保留原樣(通常已經是從 MD 抓下來的中文)
 
+def extract_specific_highlights(prompt_text, features_tw, history_tw):
+    # 1. 從 prompt 提取英文關鍵標籤
+    raw_keywords = re.findall(r'\d\.\s*([^,.\n]+)', prompt_text)
+    
     highlights = []
-    # 1. 先從 prompt 提取
-    for en in keywords_en[:4]: # 拿前 4 個最具體的
-        clean_en = en.strip()
-        highlights.append(trans_map.get(clean_en, clean_en))
+    # 2. 翻譯提示詞中的具體物體
+    for en in raw_keywords:
+        tw_text = translate_to_tw(en)
+        if tw_text and tw_text not in highlights:
+            highlights.append(tw_text)
+            if len(highlights) >= 4: break
 
-    # 2. 從 features 中提取 1-2 個具體視覺
-    # 嘗試抓取 features 中逗號分隔的第一句
+    # 3. 從 features 中補足具體中文詞彙
     feat_points = re.split(r'[、，。]', features_tw)
     for p in feat_points:
-        if p.strip() and p.strip() not in highlights:
-            highlights.append(p.strip())
-        if len(highlights) >= 5: break
+        p_clean = p.strip()
+        if p_clean and len(p_clean) < 15 and p_clean not in highlights:
+            highlights.append(p_clean)
+        if len(highlights) >= 6: break
 
-    # 3. 從歷史中強行加入一個「故事物體」
-    if "大理石" in history_tw: highlights.append("免稅大理石 AUF 標記")
-    elif "公牛" in history_tw: highlights.append("公牛馬賽克轉圈處")
-    elif "秘密地道" in history_tw: highlights.append("公爵逃亡秘密地道")
-    elif "瓢蟲" in history_tw: highlights.append("綠建築植栽區")
-    elif "手稿" in history_tw or "最後的晚餐" in history_tw: highlights.append("《最後的晚餐》壁畫")
-    elif "大衛" in history_tw: highlights.append("大衛像真跡(及其角度)")
-    elif "硬幣" in history_tw: highlights.append("許願池拋幣處")
-    
-    # 確保有 6 個，不夠就補
+    # 4. 保底機制
     if len(highlights) < 6:
-        highlights.append("歷史英雄/聖人紀念碑")
-        highlights.append("建築裝飾細節 (Detail)")
+        # 從歷史中抓關鍵詞
+        if "大理石" in history_tw: highlights.append("免稅大理石標記")
+        if "地道" in history_tw: highlights.append("公爵秘密地道")
+        if "瓢蟲" in history_tw: highlights.append("自然防蟲植栽層")
+        if "大衛" in history_tw: highlights.append("大衛像真跡角度")
+    
+    # 最終補足
+    while len(highlights) < 6:
+        highlights.append("建築裝飾細部")
 
     return highlights[:6]
 
@@ -87,4 +111,4 @@ for filename in os.listdir(DATA_DIR):
         with open(path, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
 
-print("✅ 所有景點已升級為 6 大具體實體看點清單！")
+print("✅ 所有參觀重點已完成『台灣繁體中文』優化翻譯與對齊！")
