@@ -58,7 +58,7 @@ function App() {
       <main className="main-content">
         <header>
           <h2>{activeCity.name} 建築巡禮</h2>
-          <p>透過 AI 視角，探索義大利跨越時空的經典地標。</p>
+          <p className="subtitle">AI 視角：重構義大利經典</p>
 
           <div style={{ marginTop: '1.5rem' }}>
             <input
