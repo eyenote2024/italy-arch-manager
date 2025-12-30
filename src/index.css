@@ -292,19 +292,23 @@ header p {
   }
 
   .logo {
-    font-size: 1.1rem;
-    border-bottom: none;
-    padding-bottom: 0;
+    font-size: 1.3rem;
+    /* 手機版標題稍微加大 */
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 0.5rem;
     margin-right: 0;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 0.8rem;
+    flex-direction: column;
+    /* 強制垂直排列，避免橫向擠壓 */
+    align-items: flex-start;
+    gap: 0.3rem;
+    width: 100%;
   }
 
   .logo-subtext {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     white-space: normal;
-    /* 手機版允許換行或是更彈性 */
+    /* 允許自動換行 */
+    line-height: 1.4;
   }
 
   .city-nav {
@@ -350,10 +354,7 @@ header p {
 }
 
 @media (max-width: 500px) {
-  .logo {
-    display: none;
-    /* 在極小螢幕下隱藏地圖標，保留更多空間給導覽 */
-  }
+  /* 移除原本隱藏 logo 的設定 */
 
   .arch-grid {
     grid-template-columns: 1fr;
