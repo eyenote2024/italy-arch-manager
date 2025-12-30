@@ -287,20 +287,20 @@ header p {
 
   .city-nav {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* 完美的 2x2 全覽 */
+    grid-template-columns: repeat(4, 1fr);
+    /* 四欄平分寬度 */
     width: 100%;
     padding: 0.5rem 0;
-    gap: 0.8rem;
+    gap: 0.4rem;
   }
 
   .city-item {
     text-align: center;
-    padding: 0.8rem;
-    font-size: 0.95rem;
+    padding: 0.6rem 0.1rem;
+    font-size: 0.8rem;
     background: #1a1a1a;
     border: 1px solid #333;
-    border-radius: 8px;
+    border-radius: 4px;
     color: #fff;
     font-weight: 600;
   }
