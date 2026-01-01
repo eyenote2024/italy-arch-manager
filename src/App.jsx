@@ -584,7 +584,7 @@ function App() {
                       e.stopPropagation();
                       setSelectedStory(arch);
                     }}
-                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px', border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', background: 'transparent' }}
+                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px', border: '1px solid #444', color: '#ccc', background: 'transparent' }}
                   >
                     建築故事
                   </button>
@@ -603,8 +603,8 @@ function App() {
                       whiteSpace: 'nowrap',
                       borderRadius: '6px',
                       background: hasFootprint(arch.id) ? 'var(--accent-gold)' : 'transparent',
-                      border: hasFootprint(arch.id) ? 'none' : '1px solid var(--accent-gold)',
-                      color: hasFootprint(arch.id) ? '#000' : 'var(--accent-gold)',
+                      border: hasFootprint(arch.id) ? 'none' : '1px solid #444',
+                      color: hasFootprint(arch.id) ? '#000' : '#ccc',
                       fontWeight: hasFootprint(arch.id) ? '600' : '400'
                     }}
                   >
