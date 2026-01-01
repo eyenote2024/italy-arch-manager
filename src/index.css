@@ -621,546 +621,545 @@ header p {
   }
 
   .city-nav {
-    .city-nav {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      overflow-x: visible;
-      /* Disable scroll */
-      white-space: normal;
-      gap: 0.5rem;
-      padding-bottom: 0;
-      justify-content: space-between;
-      max-width: 100%;
-    }
-
-    .city-nav::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* Mobile: Reduce thickness to avoid "too thick" look */
-    .grand-ui-control {
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-    }
-
-
-    .city-item {
-      flex: 1;
-      /* Grow equally to fill space */
-      width: auto;
-      min-width: 0;
-      /* Allow shrinking */
-      text-align: center;
-      font-size: 0.8rem;
-      /* Scaled down ~85% */
-      padding: 0.4rem 0.2rem;
-      /* Tighter padding */
-      background: transparent;
-      border: 1px solid #333;
-      border-radius: 6px;
-      color: #888;
-    }
-
-    .city-item.active {
-      background: var(--accent-gold);
-      color: #000;
-      border-color: var(--accent-gold);
-      font-weight: 600;
-    }
-
-    .main-content {
-      margin-left: 0;
-      padding: 1.5rem;
-      padding-top: 1rem;
-    }
-
-    header {
-      margin-bottom: 2rem;
-    }
-
-    header h2 {
-      font-size: 2.1rem;
-      /* Scaled down ~85% */
-    }
-
-    header p {
-      font-size: 0.95rem;
-      /* Scaled down ~85% */
-    }
-
-    .arch-grid {
-      grid-template-columns: 1fr;
-      /* Single column on mobile */
-      gap: 2rem;
-    }
-
-    /* Adjust search bar for mobile */
-    input[type="text"] {
-      font-size: 1.1rem;
-      padding: 0.7rem 1rem !important;
-    }
-
-
-
-
-
-    .sidebar>div:last-child {
-      display: none !important;
-      /* Hide footer credits on mobile as requested */
-    }
-
-    /* Target the inner div via extensive selector to override inline styles */
-    .sidebar>div:last-child>div {
-      border-top: none !important;
-      padding-top: 0 !important;
-      text-align: left !important;
-      padding-bottom: 0.2rem;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    /* Hide the break tag to make it one line if possible */
-    .sidebar>div:last-child br {
-      display: none;
-    }
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: visible;
+    white-space: normal;
+    gap: 0.3rem;
+    /* Reduced from 0.5rem */
+    padding-bottom: 0;
+    justify-content: space-between;
+    max-width: 100%;
   }
 
-  /* --- Portal Mobile Responsive (Restored from Backup) --- */
-  @media (max-width: 768px) {
-    .portal-content {
-      gap: 3rem;
-      padding: 0 20px;
-    }
-
-    .portal-logo {
-      font-size: 3.5rem;
-      letter-spacing: .2em;
-      padding-left: .2em;
-      line-height: 1.1;
-    }
-
-    .portal-menu {
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .portal-menu-item {
-      font-size: 1.4rem;
-      letter-spacing: .1em;
-      padding: .5rem 0;
-      width: 100%;
-    }
-
-    .portal-quote {
-      margin-top: 3rem;
-    }
-
-    .quote-zh {
-      font-size: .95rem;
-      letter-spacing: .1em;
-      line-height: 1.6;
-      padding: 0 10px;
-    }
-
-    .quote-en {
-      font-size: .65rem;
-      letter-spacing: .05em;
-      line-height: 1.4;
-    }
+  .city-nav::-webkit-scrollbar {
+    display: none;
   }
 
-  /* --- Print / PDF Export Styles --- */
-  @media print {
-
-    .sidebar,
-    .btn-primary,
-    .control-btn,
-    .portal-container {
-      display: none !important;
-    }
-
-    .main-content {
-      margin-left: 0 !important;
-      padding: 2rem !important;
-      width: 100% !important;
-    }
-
-    .app-container {
-      height: auto !important;
-      overflow: visible !important;
-    }
-
-    body {
-      background-color: #fff !important;
-      color: #000 !important;
-    }
-
-    /* Force light theme for printing to save ink and look like a document */
-    .journey-container h2 {
-      color: #000 !important;
-    }
-
-    .journey-item {
-      background: #fff !important;
-      border: 1px solid #ddd !important;
-      box-shadow: none !important;
-      color: #000 !important;
-      page-break-inside: avoid;
-    }
-
-    .journey-item h3 {
-      color: #000 !important;
-    }
-
-    .journey-timeline-line {
-      background: #ccc !important;
-    }
-
-    .journey-timeline-dot {
-      border-color: #000 !important;
-      background: #000 !important;
-    }
-
-    /* Show full text */
-    .history {
-      -webkit-line-clamp: unset !important;
-    }
+  /* Mobile: Reduce thickness to avoid "too thick" look */
+  .grand-ui-control {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
   }
 
-  /* Global Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
 
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .city-item {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: -0.3px;
+    /* Gain space */
+    padding: 0.4rem 0.1rem;
+    /* Ultra tight */
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #888;
+    overflow: hidden;
   }
 
-  /* --- Journey Modal Styling --- */
-  .journey-timeline {
-    position: relative;
-    border-left: 2px solid var(--accent-gold);
-    margin-left: 50%;
-    padding-bottom: 4rem;
+  .city-item.active {
+    background: var(--accent-gold);
+    color: #000;
+    border-color: var(--accent-gold);
+    font-weight: 600;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  header {
+    margin-bottom: 2rem;
+  }
+
+  header h2 {
+    font-size: 2.1rem;
+    /* Scaled down ~85% */
+  }
+
+  header p {
+    font-size: 0.95rem;
+    /* Scaled down ~85% */
+  }
+
+  .arch-grid {
+    grid-template-columns: 1fr;
+    /* Single column on mobile */
+    gap: 2rem;
+  }
+
+  /* Adjust search bar for mobile */
+  input[type="text"] {
+    font-size: 1.1rem;
+    padding: 0.7rem 1rem !important;
+  }
+
+
+
+
+
+  .sidebar>div:last-child {
+    display: none !important;
+    /* Hide footer credits on mobile as requested */
+  }
+
+  /* Target the inner div via extensive selector to override inline styles */
+  .sidebar>div:last-child>div {
+    border-top: none !important;
+    padding-top: 0 !important;
+    text-align: left !important;
+    padding-bottom: 0.2rem;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* Hide the break tag to make it one line if possible */
+  .sidebar>div:last-child br {
+    display: none;
+  }
+}
+
+/* --- Portal Mobile Responsive (Restored from Backup) --- */
+@media (max-width: 768px) {
+  .portal-content {
+    gap: 3rem;
+    padding: 0 20px;
+  }
+
+  .portal-logo {
+    font-size: 3.5rem;
+    letter-spacing: .2em;
+    padding-left: .2em;
+    line-height: 1.1;
+  }
+
+  .portal-menu {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .portal-menu-item {
+    font-size: 1.4rem;
+    letter-spacing: .1em;
+    padding: .5rem 0;
+    width: 100%;
+  }
+
+  .portal-quote {
+    margin-top: 3rem;
+  }
+
+  .quote-zh {
+    font-size: .95rem;
+    letter-spacing: .1em;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .quote-en {
+    font-size: .65rem;
+    letter-spacing: .05em;
+    line-height: 1.4;
+  }
+}
+
+/* --- Print / PDF Export Styles --- */
+@media print {
+
+  .sidebar,
+  .btn-primary,
+  .control-btn,
+  .portal-container {
+    display: none !important;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: 2rem !important;
+    width: 100% !important;
+  }
+
+  .app-container {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  body {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Force light theme for printing to save ink and look like a document */
+  .journey-container h2 {
+    color: #000 !important;
   }
 
   .journey-item {
-    position: relative;
-    width: 45%;
-    margin-bottom: 3rem;
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    page-break-inside: avoid;
   }
 
-  .journey-item:nth-child(odd) {
-    margin-left: -52%;
-    text-align: right;
+  .journey-item h3 {
+    color: #000 !important;
   }
 
+  .journey-timeline-line {
+    background: #ccc !important;
+  }
+
+  .journey-timeline-dot {
+    border-color: #000 !important;
+    background: #000 !important;
+  }
+
+  /* Show full text */
+  .history {
+    -webkit-line-clamp: unset !important;
+  }
+}
+
+/* Global Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Journey Modal Styling --- */
+.journey-timeline {
+  position: relative;
+  border-left: 2px solid var(--accent-gold);
+  margin-left: 50%;
+  padding-bottom: 4rem;
+}
+
+.journey-item {
+  position: relative;
+  width: 45%;
+  margin-bottom: 3rem;
+}
+
+.journey-item:nth-child(odd) {
+  margin-left: -52%;
+  text-align: right;
+}
+
+.journey-item:nth-child(even) {
+  margin-left: 7%;
+  text-align: left;
+}
+
+.journey-dot {
+  position: absolute;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-gold);
+}
+
+.journey-item:nth-child(odd) .journey-dot {
+  right: -13.5%;
+}
+
+.journey-item:nth-child(even) .journey-dot {
+  left: -13.5%;
+}
+
+.journey-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.journey-item:nth-child(odd) .journey-meta {
+  justify-content: flex-end;
+}
+
+.journey-item:nth-child(even) .journey-meta {
+  justify-content: flex-start;
+}
+
+/* --- Journey Mobile Responsive --- */
+@media (max-width: 768px) {
+  .journey-timeline {
+    margin-left: 1.5rem;
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 0;
+  }
+
+  .journey-item {
+    width: 85%;
+    margin-left: 2rem !important;
+    text-align: left !important;
+    margin-bottom: 2.5rem;
+  }
+
+  .journey-item:nth-child(odd),
   .journey-item:nth-child(even) {
-    margin-left: 7%;
-    text-align: left;
+    margin-left: 2rem !important;
   }
 
   .journey-dot {
-    position: absolute;
-    top: 10px;
-    width: 16px;
-    height: 16px;
-    background: var(--accent-gold);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent-gold);
-  }
-
-  .journey-item:nth-child(odd) .journey-dot {
-    right: -13.5%;
-  }
-
-  .journey-item:nth-child(even) .journey-dot {
-    left: -13.5%;
+    left: -2.45rem !important;
+    right: auto !important;
   }
 
   .journey-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    color: #888;
-    font-size: 0.85rem;
+    justify-content: flex-start !important;
   }
+}
 
-  .journey-item:nth-child(odd) .journey-meta {
-    justify-content: flex-end;
-  }
+/* --- Journey Title Input --- */
+.journey-input {
+  /* Common Styles */
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  color: #fff;
+  font-size: inherit;
+  font-family: inherit;
+  width: auto;
+  min-width: 200px;
+  max-width: 400px;
+  outline: none;
+  padding: 0 4px;
+  /* Reduced padding */
+  transition: border-color 0.3s ease;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 
-  .journey-item:nth-child(even) .journey-meta {
-    justify-content: flex-start;
-  }
+  /* Match Title Styling Precisely */
+  font-size: 2.2rem;
+  font-weight: 500;
 
-  /* --- Journey Mobile Responsive --- */
-  @media (max-width: 768px) {
-    .journey-timeline {
-      margin-left: 1.5rem;
-      border-left: 2px solid var(--accent-gold);
-      padding-left: 0;
-    }
+  /* Desktop: Right align to bring text close to the label */
+  text-align: right;
+  margin-right: -2px;
+  /* Visual optical correction */
+}
 
-    .journey-item {
-      width: 85%;
-      margin-left: 2rem !important;
-      text-align: left !important;
-      margin-bottom: 2.5rem;
-    }
+.journey-input:focus {
+  border-bottom: 1px solid var(--accent-gold);
+}
 
-    .journey-item:nth-child(odd),
-    .journey-item:nth-child(even) {
-      margin-left: 2rem !important;
-    }
-
-    .journey-dot {
-      left: -2.45rem !important;
-      right: auto !important;
-    }
-
-    .journey-meta {
-      justify-content: flex-start !important;
-    }
-  }
-
-  /* --- Journey Title Input --- */
+@media (max-width: 768px) {
   .journey-input {
-    /* Common Styles */
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid transparent;
-    color: #fff;
-    font-size: inherit;
-    font-family: inherit;
-    width: auto;
-    min-width: 200px;
-    max-width: 400px;
-    outline: none;
-    padding: 0 4px;
-    /* Reduced padding */
-    transition: border-color 0.3s ease;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-
-    /* Match Title Styling Precisely */
-    font-size: 2.2rem;
-    font-weight: 500;
-
-    /* Desktop: Right align to bring text close to the label */
-    text-align: right;
-    margin-right: -2px;
-    /* Visual optical correction */
-  }
-
-  .journey-input:focus {
-    border-bottom: 1px solid var(--accent-gold);
-  }
-
-  @media (max-width: 768px) {
-    .journey-input {
-      /* Mobile: Center align as user preferred */
-      text-align: center;
-      min-width: 150px;
-      margin-right: 0;
-      /* Reset desktop negative margin */
-      margin-bottom: -4px;
-      /* Negative margin to pull title closer, but prevent overlap */
-
-      /* Ensure no mobile scaling issues */
-      font-size: 2.2rem !important;
-    }
-  }
-
-  /* --- Journey Content Container --- */
-  .journey-container {
-    width: 100%;
-    max-width: 1000px;
-    height: 100%;
-    /* Increased top padding to 8rem to clear the top-left toolbar since Title is gone */
-    padding: 8rem 2rem 4rem 2rem;
-    overflow-y: auto;
-    /* Scrollbar hidden as requested */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE/Edge */
-  }
-
-  /* Hide scrollbar for WebKit (Chrome, Safari) */
-  .journey-container::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    .journey-container {
-      padding-top: 9rem;
-      /* Push content down on mobile to clear the buttons */
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  }
-
-  /* --- Action Buttons (Responsive) --- */
-  /* --- Action Buttons (Single Row Scrollable) --- */
-  .action-buttons-grid {
-    margin-top: auto;
-    padding-top: 1.5rem;
-    display: flex !important;
-    flex-direction: row !important;
-    overflow-x: visible !important;
-    /* Disable scroll */
-    white-space: normal;
-    gap: 0.5rem;
-    /* Gap between buttons */
-
-    /* Strict Containment: No negative margins */
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-
-    scrollbar-width: none;
-    padding-bottom: 0;
-    justify-content: space-between;
-  }
-
-  /* Hide scrollbar Webkit */
-  .action-buttons-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .action-btn,
-  .action-btn-footprint {
-    flex: 1;
-    /* Divide space equally */
-    width: auto;
-    min-width: 0;
-    /* Allow shrinking */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    /* Scaled down ~85% */
-    padding: 0.6rem 0;
-    /* Reduced padding */
-    white-space: nowrap;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    overflow: hidden;
-    text-overflow: clip;
-  }
-
-  /* Primary Button Style (Gold) */
-  .btn-primary.action-btn {
-    background-color: var(--accent-gold);
-    color: #000;
-    border: none;
-  }
-
-  /* Secondary Button Style (Outline) */
-  .btn-secondary.action-btn {
-    background: transparent;
-    border: 1px solid #444;
-    color: #ccc;
-  }
-
-  /* Footprint Button Style (Special) */
-  .action-btn-footprint {
-    background: transparent;
-    border: 1px solid #444;
-    color: #ccc;
-    font-size: 1.2rem;
-  }
-
-  /* Mobile override removed (Restored Single Row Scroll) */
-
-  /* --- Journey Title Container --- */
-  .journey-title {
-    color: var(--accent-gold);
-    font-size: 2.2rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
+    /* Mobile: Center align as user preferred */
     text-align: center;
-    margin-bottom: 4rem;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: baseline;
+    min-width: 150px;
+    margin-right: 0;
+    /* Reset desktop negative margin */
+    margin-bottom: -4px;
+    /* Negative margin to pull title closer, but prevent overlap */
+
+    /* Ensure no mobile scaling issues */
+    font-size: 2.2rem !important;
+  }
+}
+
+/* --- Journey Content Container --- */
+.journey-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  /* Increased top padding to 8rem to clear the top-left toolbar since Title is gone */
+  padding: 8rem 2rem 4rem 2rem;
+  overflow-y: auto;
+  /* Scrollbar hidden as requested */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+/* Hide scrollbar for WebKit (Chrome, Safari) */
+.journey-container::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .journey-container {
+    padding-top: 9rem;
+    /* Push content down on mobile to clear the buttons */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* --- Action Buttons (Responsive) --- */
+/* --- Action Buttons (Single Row Scrollable) --- */
+.action-buttons-grid {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  display: flex !important;
+  flex-direction: row !important;
+  overflow: hidden !important;
+  /* Strict no-scroll */
+  white-space: normal;
+  gap: 0.3rem;
+  /* Tighter gap */
+
+  /* Strict Containment: No negative margins */
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+
+  scrollbar-width: none;
+  padding-bottom: 0;
+  justify-content: space-between;
+}
+
+/* Hide scrollbar Webkit */
+.action-buttons-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.action-btn,
+.action-btn-footprint {
+  flex: 1;
+  /* Divide space equally */
+  width: auto;
+  min-width: 0;
+  /* Allow shrinking */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  /* Scaled down ~85% */
+  padding: 0.6rem 0;
+  /* Reduced padding */
+  white-space: nowrap;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+/* Primary Button Style (Gold) */
+.btn-primary.action-btn {
+  background-color: var(--accent-gold);
+  color: #000;
+  border: none;
+}
+
+/* Secondary Button Style (Outline) */
+.btn-secondary.action-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #ccc;
+}
+
+/* Footprint Button Style (Special) */
+.action-btn-footprint {
+  background: transparent;
+  border: 1px solid #444;
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+/* Mobile override removed (Restored Single Row Scroll) */
+
+/* --- Journey Title Container --- */
+.journey-title {
+  color: var(--accent-gold);
+  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 4rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  letter-spacing: 1px;
+}
+
+/* Suffix '建築旅程' styling */
+.journey-title span {
+  font-size: 0.8em;
+  /* "Two levels smaller" */
+}
+
+@media (max-width: 768px) {
+  .journey-title {
+    flex-direction: row;
+    /* KEEP ROW on mobile as requested */
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: baseline;
+    /* Align baseline */
     gap: 8px;
-    letter-spacing: 1px;
+    /* Maintain gap */
+    margin-top: 0;
   }
 
-  /* Suffix '建築旅程' styling */
   .journey-title span {
-    font-size: 0.8em;
-    /* "Two levels smaller" */
+    white-space: nowrap;
+    /* Prevent subtitle wrapping */
   }
+}
 
-  @media (max-width: 768px) {
-    .journey-title {
-      flex-direction: row;
-      /* KEEP ROW on mobile as requested */
-      flex-wrap: nowrap;
-      /* Prevent wrapping */
-      justify-content: center;
-      align-items: baseline;
-      /* Align baseline */
-      gap: 8px;
-      /* Maintain gap */
-      margin-top: 0;
-    }
+/* --- SNAPSHOT MODE (Export Fix) --- */
+/* By default, the static name is hidden */
+.journey-name-static {
+  display: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  letter-spacing: inherit;
+}
 
-    .journey-title span {
-      white-space: nowrap;
-      /* Prevent subtitle wrapping */
-    }
-  }
+/* When in snapshot mode: Hide Input, Show Static Text */
+#journey-modal.snapshot-mode .journey-input {
+  display: none !important;
+}
 
-  /* --- SNAPSHOT MODE (Export Fix) --- */
-  /* By default, the static name is hidden */
-  .journey-name-static {
-    display: none;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    color: inherit;
-    margin: 0;
-    padding: 0;
-    border: none;
-    letter-spacing: inherit;
-  }
+#journey-modal.snapshot-mode .journey-name-static {
+  display: inline !important;
+}
 
-  /* When in snapshot mode: Hide Input, Show Static Text */
-  #journey-modal.snapshot-mode .journey-input {
-    display: none !important;
-  }
+#journey-modal.snapshot-mode .journey-control-btn {
+  display: none !important;
+  /* Force hide controls via CSS class too, simpler */
+}
 
-  #journey-modal.snapshot-mode .journey-name-static {
-    display: inline !important;
-  }
+/* --- EXPORT MODE (Clear Header) --- */
+/* User requested: "Remove name and Architecture Journey text completely" */
+#journey-modal.export-mode .journey-title {
+  display: none !important;
+}
 
-  #journey-modal.snapshot-mode .journey-control-btn {
-    display: none !important;
-    /* Force hide controls via CSS class too, simpler */
-  }
-
-  /* --- EXPORT MODE (Clear Header) --- */
-  /* User requested: "Remove name and Architecture Journey text completely" */
-  #journey-modal.export-mode .journey-title {
-    display: none !important;
-  }
-
-  #journey-modal.export-mode .journey-control-btn {
-    display: none !important;
-  }
+#journey-modal.export-mode .journey-control-btn {
+  display: none !important;
+}
