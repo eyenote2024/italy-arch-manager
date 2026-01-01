@@ -1078,7 +1078,7 @@ header p {
   background: transparent;
   border: 1px solid #444;
   color: #ccc;
-  font-size: 1.2rem;
+  /* Font size unified via global .action-btn rule */
 }
 
 /* Mobile override removed (Restored Single Row Scroll) */
