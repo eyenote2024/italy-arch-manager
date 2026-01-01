@@ -563,18 +563,18 @@ function App() {
                   </span>
                 </div>
 
-                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.5rem', width: '100%', flexWrap: 'wrap' }}>
+                <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.5rem', width: '100%' }}>
                   <button
                     onClick={() => openSandbox(arch.image_url || `/arch_images/${arch.id}.png`, arch)}
                     className="btn-primary"
-                    style={{ flex: '1 1 45%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', backgroundColor: 'var(--accent-gold)', color: '#000', borderRadius: '6px' }}
+                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', backgroundColor: 'var(--accent-gold)', color: '#000', borderRadius: '6px' }}
                   >
                     寫明信片
                   </button>
                   <button
                     className="btn-secondary"
                     onClick={() => setSelectedInfo(arch)}
-                    style={{ flex: '1 1 45%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px', background: 'transparent', border: '1px solid #444', color: '#ccc' }}
+                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px', background: 'transparent', border: '1px solid #444', color: '#ccc' }}
                   >
                     導覽攻略
                   </button>
@@ -584,7 +584,7 @@ function App() {
                       e.stopPropagation();
                       setSelectedStory(arch);
                     }}
-                    style={{ flex: '1 1 45%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px', border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', background: 'transparent' }}
+                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px', border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', background: 'transparent' }}
                   >
                     建築故事
                   </button>
@@ -594,7 +594,7 @@ function App() {
                       openFootprintModal(arch);
                     }}
                     style={{
-                      flex: '1 1 45%',
+                      flex: 1,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -608,7 +608,7 @@ function App() {
                       fontWeight: hasFootprint(arch.id) ? '600' : '400'
                     }}
                   >
-                    {hasFootprint(arch.id) ? '✨ 我的足跡' : '💭 留下足跡'}
+                    {hasFootprint(arch.id) ? '我的足跡' : '留下足跡'}
                   </button>
                 </div>
               </div>
