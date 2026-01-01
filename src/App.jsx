@@ -914,7 +914,7 @@ function App() {
                   <div className="features">
                     {arch.features}
                   </div>
-                  <p className="history" style={{ color: '#eee', lineHeight: '1.6', marginBottom: '0.8rem', fontSize: '1.25rem', fontWeight: '300' }}>
+                  <p className="history" style={{ color: '#eee', lineHeight: '1.6', marginBottom: '0.8rem', fontSize: '1.05rem', fontWeight: '300' }}>
                     {arch.history_text}
                   </p>
                   {/* Audio Player Control */}
