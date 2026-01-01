@@ -241,7 +241,8 @@ header p {
 }
 
 .card-body h3 {
-  font-size: 1.8rem;
+  font-size: 1.55rem;
+  /* Scaled down to 85% of 1.8rem */
   color: var(--accent-gold);
   margin-bottom: 0.8rem;
   letter-spacing: 1px;
@@ -249,13 +250,15 @@ header p {
 
 .features {
   color: var(--text-dim);
-  font-size: 1.2rem;
+  font-size: 1.0rem;
+  /* Scaled down to 85% of 1.2rem */
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 
 .history {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
+  /* Scaled down to 85% of 1.25rem */
   color: #888;
   line-height: 1.6;
   opacity: 1;
