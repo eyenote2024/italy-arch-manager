@@ -649,10 +649,10 @@ header p {
 
 
   .city-item {
-    font-size: 0.8rem;
-    /* Reduced from 1.1rem (~70%) */
-    padding: 0.4rem 0.8rem;
-    /* Reduced padding */
+    font-size: 0.95rem;
+    /* Increased legibility */
+    padding: 0.5rem 0.6rem;
+    /* Tighter padding to reduce whitespace */
     background: transparent;
     border: 1px solid #333;
     border-radius: 6px;
