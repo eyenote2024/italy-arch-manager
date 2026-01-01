@@ -14,7 +14,7 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
     const [text, setText] = useState(initialText || '我在大理石的詩篇中，聽見了妳的低語。');
     const [source, setSource] = useState(initialSource || '— 馬克．吐溫');
     const [signature, setSignature] = useState('From: Romeo');
-    const [fontSize, setFontSize] = useState(14); // 預設下修至 14級 (14px)
+    const [fontSize, setFontSize] = useState(14); // 預設下調至 14級 (符合手機閱讀)
     const [isManualFontSize, setIsManualFontSize] = useState(false);
     const [textAlign, setTextAlign] = useState('left');
     const [isCapturing, setIsCapturing] = useState(false);
@@ -29,13 +29,13 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // 🕵️ 智慧排版邏輯：以 16級 為核心基準
+    // 🕵️ 智慧排版邏輯：以 14級 為核心基準 (手機優化)
     React.useEffect(() => {
         if (!isManualFontSize) {
             const len = text.length;
             if (len < 30) setFontSize(14); // 預設 14 級
             else if (len < 60) setFontSize(12); // 中長文縮小
-            else setFontSize(10); // 極長文縮小
+            else setFontSize(11); // 極長文縮小
         }
     }, [text, isManualFontSize]);
 
@@ -102,8 +102,8 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                 width: '100%'
             }}>
                 <div>
-                    <h1 style={{ color: '#d4af37', margin: 0, fontSize: '2rem', letterSpacing: '2px', fontWeight: '700' }}>EYE 數位明信片</h1>
-                    <p style={{ color: '#666', margin: '8px 0 0', fontWeight: '300', fontSize: '1rem', letterSpacing: '1px' }}>
+                    <h1 style={{ color: '#d4af37', margin: 0, fontSize: isMobile ? '2.2rem' : '2.8rem', letterSpacing: '2px', fontWeight: '700' }}>EYE 數位明信片</h1>
+                    <p style={{ color: '#666', margin: '8px 0 0', fontWeight: '300', fontSize: isMobile ? '1.1rem' : '1.4rem', letterSpacing: '1px' }}>
                         將建築的永恆，化作美的寄語
                     </p>
                 </div>
@@ -111,13 +111,14 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                     onClick={onBack}
                     className="btn-secondary"
                     style={{
-                        padding: '0.7rem 1.5rem',
-                        borderRadius: '40px', // 圓角化更現代
-                        fontSize: '0.85rem',
+                        padding: '0.6rem 1.4rem', // 縮小 Padding
+                        borderRadius: '40px',
+                        fontSize: isMobile ? '1.0rem' : '1.2rem', // 手機端進一步縮小
                         border: '1px solid rgba(255,255,255,0.2)',
                         backgroundColor: 'transparent',
                         color: '#fff',
-                        cursor: 'pointer'
+                        cursor: 'pointer',
+                        whiteSpace: 'nowrap' // 防止換行
                     }}
                 >
                     ← 返回巡禮
@@ -241,40 +242,40 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
 
                     <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '2rem' }}>
                         <div className="input-group">
-                            <label style={{ color: '#d4af37', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                            <label style={{ color: '#d4af37', fontSize: '0.9rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                                 致 (To)
                             </label>
                             <input
                                 value={recipient}
                                 onChange={(e) => setRecipient(e.target.value)}
-                                style={{ width: '100%', padding: '0.5rem 0.8rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '6px', fontSize: '0.85rem', outline: 'none' }}
+                                style={{ width: '100%', padding: '0.5rem 0.8rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '6px', fontSize: '1.1rem', outline: 'none' }}
                             />
                         </div>
                         <div className="input-group">
-                            <label style={{ color: '#d4af37', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                            <label style={{ color: '#d4af37', fontSize: '0.9rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                                 落款 (From)
                             </label>
                             <input
                                 value={signature}
                                 onChange={(e) => setSignature(e.target.value)}
-                                style={{ width: '100%', padding: '0.5rem 0.8rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '6px', fontSize: '0.85rem', outline: 'none' }}
+                                style={{ width: '100%', padding: '0.5rem 0.8rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '6px', fontSize: '1.1rem', outline: 'none' }}
                             />
                         </div>
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '2rem' }}>
                         <div className="input-group">
-                            <label style={{ color: '#d4af37', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                            <label style={{ color: '#d4af37', fontSize: '0.9rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                                 日期 (Date)
                             </label>
                             <input
                                 value={date}
                                 onChange={(e) => setDate(e.target.value)}
-                                style={{ width: '100%', padding: '0.8rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '8px', fontSize: '0.85rem', outline: 'none' }}
+                                style={{ width: '100%', padding: '0.8rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '8px', fontSize: '1.1rem', outline: 'none' }}
                             />
                         </div>
                         <div className="input-group">
-                            <label style={{ color: '#d4af37', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                            <label style={{ color: '#d4af37', fontSize: '0.9rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                                 寄語級別 ({fontSize}px)
                             </label>
                             <input
@@ -291,45 +292,45 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                         </div>
                     </div>
 
-                    <div style={{ flex: isMobile ? 'none' : 1, display: 'flex', flexDirection: 'column', minHeight: isMobile ? '120px' : 'auto' }}>
-                        <label style={{ color: '#d4af37', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                    <div style={{ flex: isMobile ? 'none' : 1, display: 'flex', flexDirection: 'column', minHeight: isMobile ? '240px' : 'auto' }}>
+                        <label style={{ color: '#d4af37', fontSize: '0.9rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                             美的寄語
                         </label>
                         <textarea
                             value={text}
                             onChange={(e) => setText(e.target.value)}
-                            style={{ flex: 1, width: '100%', padding: '1rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '8px', fontSize: '0.9rem', lineHeight: '1.6', outline: 'none', resize: 'none' }}
+                            style={{ flex: 1, width: '100%', padding: '1rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '8px', fontSize: isMobile ? '1.15rem' : '1.25rem', lineHeight: '1.6', outline: 'none', resize: 'none' }}
                         />
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '2rem' }}>
                         <div className="input-group">
-                            <label style={{ color: '#666', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px' }}>
+                            <label style={{ color: '#d4af37', fontSize: '0.9rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px' }}>
                                 水平佈局
                             </label>
                             <div style={{ display: 'flex', gap: '0.5rem', backgroundColor: 'rgba(255,255,255,0.05)', padding: '4px', borderRadius: '10px', width: 'fit-content' }}>
                                 <button
                                     onClick={() => setTextAlign('left')}
-                                    style={{ padding: '0.5rem 1.5rem', backgroundColor: textAlign === 'left' ? '#d4af37' : 'transparent', color: textAlign === 'left' ? '#000' : '#888', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '0.8rem', transition: 'all 0.3s' }}
+                                    style={{ padding: '0.5rem 1.5rem', backgroundColor: textAlign === 'left' ? '#d4af37' : 'transparent', color: textAlign === 'left' ? '#000' : '#888', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '1.1rem', transition: 'all 0.3s' }}
                                 >
                                     靠左
                                 </button>
                                 <button
                                     onClick={() => setTextAlign('center')}
-                                    style={{ padding: '0.5rem 1.5rem', backgroundColor: textAlign === 'center' ? '#d4af37' : 'transparent', color: textAlign === 'center' ? '#000' : '#888', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '0.8rem', transition: 'all 0.3s' }}
+                                    style={{ padding: '0.5rem 1.5rem', backgroundColor: textAlign === 'center' ? '#d4af37' : 'transparent', color: textAlign === 'center' ? '#000' : '#888', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '1.1rem', transition: 'all 0.3s' }}
                                 >
                                     置中
                                 </button>
                             </div>
                         </div>
                         <div className="input-group">
-                            <label style={{ color: '#d4af37', fontSize: '0.7rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                            <label style={{ color: '#d4af37', fontSize: '0.9rem', display: 'block', marginBottom: '0.2rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
                                 出處 (Source)
                             </label>
                             <input
                                 value={source}
                                 onChange={(e) => setSource(e.target.value)}
-                                style={{ width: '100%', padding: '0.5rem 0.8rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '6px', fontSize: '0.85rem', outline: 'none' }}
+                                style={{ width: '100%', padding: '0.5rem 0.8rem', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '6px', fontSize: '1.1rem', outline: 'none' }}
                                 placeholder="例如: — Mark Twain"
                             />
                         </div>
@@ -344,7 +345,7 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                             backgroundColor: '#d4af37',
                             color: '#000',
                             fontWeight: '700',
-                            fontSize: '1rem',
+                            fontSize: '1.3rem',
                             border: 'none',
                             borderRadius: '50px',
                             cursor: 'pointer',
@@ -355,7 +356,15 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                         onMouseOver={(e) => e.target.style.transform = 'translateY(-3px)'}
                         onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
                     >
-                        {isCapturing ? '🎞️ 正在沖印...' : '📸 沖印明信片'}
+                        {isCapturing ? '🎞️ 正在沖印...' : (
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                    <circle cx="12" cy="13" r="4" />
+                                </svg>
+                                沖印明信片
+                            </div>
+                        )}
                     </button>
                 </div>
 

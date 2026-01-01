@@ -6,8 +6,33 @@
   --accent-gold: #d4af37;
   --text-main: #f0f0f0;
   --text-dim: #a0a0a0;
-  --sidebar-w: 260px;
+  --sidebar-w: 300px;
+  /* Increased from 260px to fit larger fonts */
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ... (rest of css) ... */
+
+.city-item {
+  padding: 1rem 1.2rem;
+  /* Increased padding */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-dim);
+  font-size: 1.25rem;
+  /* Ensure consistent generous size */
+  font-weight: 500;
+  white-space: nowrap;
+  /* Prevent messy wrapping */
+  letter-spacing: 0.5px;
+}
+
+.city-item:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--text-main);
+  padding-left: 1.5rem;
+  /* Subtle slide effect */
 }
 
 * {
@@ -52,7 +77,7 @@ h3 {
 }
 
 .logo {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--accent-gold);
   letter-spacing: 1px;
@@ -74,7 +99,7 @@ h3 {
 
 
 .logo-subtext {
-  font-size: 0.72rem;
+  font-size: 1.2rem;
   font-weight: 300;
   color: #666;
   letter-spacing: 0;
@@ -107,7 +132,7 @@ h3 {
   cursor: pointer;
   transition: var(--transition);
   color: var(--text-dim);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -133,14 +158,14 @@ header {
 }
 
 header h2 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   color: var(--text-main);
   margin-bottom: 0.5rem;
 }
 
 header p {
   color: var(--text-dim);
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 /* Grid Layout */
@@ -216,7 +241,7 @@ header p {
 }
 
 .card-body h3 {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: var(--accent-gold);
   margin-bottom: 0.8rem;
   letter-spacing: 1px;
@@ -224,13 +249,13 @@ header p {
 
 .features {
   color: var(--text-dim);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 
 .history {
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   color: #888;
   line-height: 1.6;
   opacity: 1;
@@ -244,11 +269,13 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.85);
+  /* Slightly more transparent to avoid total blackout */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 3000;
+  /* Ensure it's above everything */
   padding: 2rem;
 }
 
@@ -280,15 +307,19 @@ header p {
 
 /* Portal Styling */
 .portal-container {
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
+  height: 100vh;
+  z-index: 2000;
   background-color: #000;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  justify-content: center;
   overflow: hidden;
+  transition: opacity .8s cubic-bezier(.4, 0, .2, 1);
 }
 
 .portal-bg {
@@ -299,31 +330,50 @@ header p {
   height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0.4;
-  /* Darken bg for text readability */
-  filter: blur(8px);
-  /* Cinematic blur */
-  transform: scale(1.1);
+  background-repeat: no-repeat;
+  /* Reset scale */
 }
 
 .portal-content {
+  position: relative;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2rem, 5vh, 4rem);
   text-align: center;
-  max-width: 800px;
-  padding: 2rem;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid var(--accent-gold);
-  border-radius: 4px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  animation: fadeIn 1.5s ease-out;
 }
 
 .portal-logo {
-  font-size: 4rem;
-  color: var(--text-main);
-  letter-spacing: 8px;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 15vw, 7.5rem);
+  font-weight: 400;
+  letter-spacing: .25em;
+  color: var(--accent-gold);
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 30px rgba(0, 0, 0, .6), 0 0 60px rgba(255, 255, 255, .05);
+  opacity: .9;
+  animation: fadeInLogo 2.5s ease-out forwards;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+  line-height: 1.1;
+}
+
+@keyframes fadeInLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(.98);
+    letter-spacing: .1em;
+  }
+
+  to {
+    opacity: .9;
+    transform: translateY(0) scale(1);
+    letter-spacing: .25em;
+  }
 }
 
 .portal-subtitle {
@@ -340,49 +390,79 @@ header p {
 
 .portal-menu {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  z-index: 10;
+  padding: 1.5rem 3rem;
+  background: transparent;
 }
 
 .portal-menu-item {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--text-main);
-  padding: 0.8rem 2rem;
-  font-size: 0.9rem;
+  color: #fffc;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: .1em;
+  transition: all .6s cubic-bezier(.4, 0, .2, 1);
   cursor: pointer;
-  transition: all 0.3s ease;
+  padding: .6rem 1rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: relative;
   font-family: 'Outfit', sans-serif;
-  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+}
+
+.portal-menu-item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: #fffc;
+  transition: all .6s cubic-bezier(.4, 0, .2, 1);
+  transform: translate(-50%);
 }
 
 .portal-menu-item:hover {
-  background: var(--accent-gold);
-  color: #000;
-  border-color: var(--accent-gold);
+  color: #fff;
+  letter-spacing: .35em;
+  text-shadow: 0 0 20px rgba(255, 255, 255, .4);
+}
+
+.portal-menu-item:hover:after {
+  width: 60%;
 }
 
 .portal-quote {
-  color: #ccc;
-  font-style: italic;
-  font-family: 'Playfair Display', serif;
-  line-height: 1.8;
-  font-size: 1.1rem;
+  margin-top: 4rem;
+  text-align: center;
+  opacity: .8;
+  animation: fadeIn 3s ease-out;
+  max-width: 90%;
+  text-wrap: balance;
 }
 
 .quote-zh {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-main);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  letter-spacing: .2em;
+  color: #fff;
+  margin-bottom: .8rem;
+  font-weight: 300;
 }
 
 .quote-en {
-  font-size: 0.9rem;
-  color: var(--accent-gold);
   font-family: 'Outfit', sans-serif;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-size: .9rem;
+  letter-spacing: .1em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  font-weight: 200;
+  opacity: .7;
 }
 
 /* Postcard Sandbox Style */
@@ -465,6 +545,17 @@ header p {
   resize: vertical;
 }
 
+/* --- Grand UI Control (Global) --- */
+.grand-ui-control {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
 /* --- Mobile Responsive (The Big Overhaul) --- */
 @media (max-width: 768px) {
   .app-container {
@@ -493,7 +584,7 @@ header p {
   }
 
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
@@ -516,7 +607,7 @@ header p {
     display: block !important;
     /* Force show */
     text-align: right;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     line-height: 1.2;
     background: transparent;
     /* Slight bg for readability */
@@ -539,22 +630,30 @@ header p {
     -webkit-overflow-scrolling: touch;
     /* Smooth scrolling on iOS */
     scrollbar-width: none;
-    /* Hide scrollbar for Firefox */
+
   }
 
   .city-nav::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbar for Chrome/Safari */
   }
 
+  /* Mobile: Reduce thickness to avoid "too thick" look */
+  .grand-ui-control {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+
   .city-item {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     padding: 0.5rem 1rem;
     background: transparent;
     border: 1px solid #333;
     border-radius: 6px;
     /* Slightly rounded as requested */
     color: #888;
+    text-align: center;
+    min-width: 80px;
   }
 
   .city-item.active {
@@ -575,7 +674,7 @@ header p {
   }
 
   header h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .arch-grid {
@@ -586,22 +685,13 @@ header p {
 
   /* Adjust search bar for mobile */
   input[type="text"] {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     padding: 0.7rem 1rem !important;
   }
 
-  /* Portal Menu Mobile Fix */
-  .portal-menu {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    padding: 0 2rem;
-  }
 
-  .portal-menu-item {
-    width: 100%;
-    text-align: center;
-  }
+
+
 
   .sidebar>div:last-child {
     display: none !important;
@@ -624,4 +714,365 @@ header p {
   .sidebar>div:last-child br {
     display: none;
   }
+}
+
+/* --- Portal Mobile Responsive (Restored from Backup) --- */
+@media (max-width: 768px) {
+  .portal-content {
+    gap: 3rem;
+    padding: 0 20px;
+  }
+
+  .portal-logo {
+    font-size: 3.5rem;
+    letter-spacing: .2em;
+    padding-left: .2em;
+    line-height: 1.1;
+  }
+
+  .portal-menu {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .portal-menu-item {
+    font-size: 1.4rem;
+    letter-spacing: .1em;
+    padding: .5rem 0;
+    width: 100%;
+  }
+
+  .portal-quote {
+    margin-top: 3rem;
+  }
+
+  .quote-zh {
+    font-size: .95rem;
+    letter-spacing: .1em;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .quote-en {
+    font-size: .65rem;
+    letter-spacing: .05em;
+    line-height: 1.4;
+  }
+}
+
+/* --- Print / PDF Export Styles --- */
+@media print {
+
+  .sidebar,
+  .btn-primary,
+  .control-btn,
+  .portal-container {
+    display: none !important;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: 2rem !important;
+    width: 100% !important;
+  }
+
+  .app-container {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  body {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Force light theme for printing to save ink and look like a document */
+  .journey-container h2 {
+    color: #000 !important;
+  }
+
+  .journey-item {
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    page-break-inside: avoid;
+  }
+
+  .journey-item h3 {
+    color: #000 !important;
+  }
+
+  .journey-timeline-line {
+    background: #ccc !important;
+  }
+
+  .journey-timeline-dot {
+    border-color: #000 !important;
+    background: #000 !important;
+  }
+
+  /* Show full text */
+  .history {
+    -webkit-line-clamp: unset !important;
+  }
+}
+
+/* Global Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Journey Modal Styling --- */
+.journey-timeline {
+  position: relative;
+  border-left: 2px solid var(--accent-gold);
+  margin-left: 50%;
+  padding-bottom: 4rem;
+}
+
+.journey-item {
+  position: relative;
+  width: 45%;
+  margin-bottom: 3rem;
+}
+
+.journey-item:nth-child(odd) {
+  margin-left: -52%;
+  text-align: right;
+}
+
+.journey-item:nth-child(even) {
+  margin-left: 7%;
+  text-align: left;
+}
+
+.journey-dot {
+  position: absolute;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-gold);
+}
+
+.journey-item:nth-child(odd) .journey-dot {
+  right: -13.5%;
+}
+
+.journey-item:nth-child(even) .journey-dot {
+  left: -13.5%;
+}
+
+.journey-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.journey-item:nth-child(odd) .journey-meta {
+  justify-content: flex-end;
+}
+
+.journey-item:nth-child(even) .journey-meta {
+  justify-content: flex-start;
+}
+
+/* --- Journey Mobile Responsive --- */
+@media (max-width: 768px) {
+  .journey-timeline {
+    margin-left: 1.5rem;
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 0;
+  }
+
+  .journey-item {
+    width: 85%;
+    margin-left: 2rem !important;
+    text-align: left !important;
+    margin-bottom: 2.5rem;
+  }
+
+  .journey-item:nth-child(odd),
+  .journey-item:nth-child(even) {
+    margin-left: 2rem !important;
+  }
+
+  .journey-dot {
+    left: -2.45rem !important;
+    right: auto !important;
+  }
+
+  .journey-meta {
+    justify-content: flex-start !important;
+  }
+}
+
+/* --- Journey Title Input --- */
+.journey-input {
+  /* Common Styles */
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  color: #fff;
+  font-size: inherit;
+  font-family: inherit;
+  width: auto;
+  min-width: 200px;
+  max-width: 400px;
+  outline: none;
+  padding: 0 4px;
+  /* Reduced padding */
+  transition: border-color 0.3s ease;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+  /* Match Title Styling Precisely */
+  font-size: 2.2rem;
+  font-weight: 500;
+
+  /* Desktop: Right align to bring text close to the label */
+  text-align: right;
+  margin-right: -2px;
+  /* Visual optical correction */
+}
+
+.journey-input:focus {
+  border-bottom: 1px solid var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+  .journey-input {
+    /* Mobile: Center align as user preferred */
+    text-align: center;
+    min-width: 150px;
+    margin-right: 0;
+    /* Reset desktop negative margin */
+    margin-bottom: -4px;
+    /* Negative margin to pull title closer, but prevent overlap */
+
+    /* Ensure no mobile scaling issues */
+    font-size: 2.2rem !important;
+  }
+}
+
+/* --- Journey Content Container --- */
+.journey-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  /* Increased top padding to 8rem to clear the top-left toolbar since Title is gone */
+  padding: 8rem 2rem 4rem 2rem;
+  overflow-y: auto;
+  /* Scrollbar hidden as requested */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+/* Hide scrollbar for WebKit (Chrome, Safari) */
+.journey-container::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .journey-container {
+    padding-top: 9rem;
+    /* Push content down on mobile to clear the buttons */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* --- Journey Title Container --- */
+.journey-title {
+  color: var(--accent-gold);
+  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 4rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  letter-spacing: 1px;
+}
+
+/* Suffix '建築旅程' styling */
+.journey-title span {
+  font-size: 0.8em;
+  /* "Two levels smaller" */
+}
+
+@media (max-width: 768px) {
+  .journey-title {
+    flex-direction: row;
+    /* KEEP ROW on mobile as requested */
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+    justify-content: center;
+    align-items: baseline;
+    /* Align baseline */
+    gap: 8px;
+    /* Maintain gap */
+    margin-top: 0;
+  }
+
+  .journey-title span {
+    white-space: nowrap;
+    /* Prevent subtitle wrapping */
+  }
+}
+
+/* --- SNAPSHOT MODE (Export Fix) --- */
+/* By default, the static name is hidden */
+.journey-name-static {
+  display: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  letter-spacing: inherit;
+}
+
+/* When in snapshot mode: Hide Input, Show Static Text */
+#journey-modal.snapshot-mode .journey-input {
+  display: none !important;
+}
+
+#journey-modal.snapshot-mode .journey-name-static {
+  display: inline !important;
+}
+
+#journey-modal.snapshot-mode .journey-control-btn {
+  display: none !important;
+  /* Force hide controls via CSS class too, simpler */
+}
+
+/* --- EXPORT MODE (Clear Header) --- */
+/* User requested: "Remove name and Architecture Journey text completely" */
+#journey-modal.export-mode .journey-title {
+  display: none !important;
+}
+
+#journey-modal.export-mode .journey-control-btn {
+  display: none !important;
 }
