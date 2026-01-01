@@ -690,8 +690,14 @@ function App() {
           ))}
         </nav>
 
-        <div className="search-journey-row" style={{ marginTop: '0.8rem', width: '100%', display: 'flex', gap: '0.5rem' }}>
-          <div style={{ flex: 2 }}>
+        <div className="search-journey-row" style={{
+          marginTop: '0.8rem',
+          width: '100%',
+          display: 'flex',
+          gap: '0.5rem',
+          alignItems: 'stretch'
+        }}>
+          <div style={{ flex: 2, height: '42px' }}>
             <input
               type="text"
               className="grand-ui-control"
@@ -703,12 +709,15 @@ function App() {
                 border: '1px solid #333',
                 color: '#fff',
                 textAlign: 'left',
-                width: '100%'
+                width: '100%',
+                height: '100%',
+                boxSizing: 'border-box',
+                padding: '0 0.8rem'
               }}
             />
           </div>
 
-          <div style={{ flex: 1 }}>
+          <div style={{ flex: 1, height: '42px' }}>
             <button
               className="grand-ui-control"
               onClick={() => setShowJourneyModal(true)}
@@ -723,15 +732,16 @@ function App() {
                 gap: '0.4rem',
                 letterSpacing: '1px',
                 width: '100%',
-                padding: '0.75rem 0'
+                height: '100%',
+                padding: '0'
               }}
               onMouseEnter={(e) => {
-                e.target.style.background = 'var(--accent-gold)';
-                e.target.style.color = '#000';
+                e.currentTarget.style.background = 'var(--accent-gold)';
+                e.currentTarget.style.color = '#000';
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = 'transparent';
-                e.target.style.color = 'var(--accent-gold)';
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = 'var(--accent-gold)';
               }}
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
