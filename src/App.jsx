@@ -690,58 +690,62 @@ function App() {
           ))}
         </nav>
 
-        <div style={{ marginTop: '0.5rem', width: '100%' }}>
-          <input
-            type="text"
-            className="grand-ui-control"
-            placeholder="搜尋建築名稱、風格或歷史軼事..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            style={{
-              backgroundColor: 'rgba(255,255,255,0.05)',
-              border: '1px solid #333',
-              color: '#fff',
-              textAlign: 'left',
-            }}
-          />
-        </div>
+        <div className="search-journey-row" style={{ marginTop: '0.8rem', width: '100%', display: 'flex', gap: '0.5rem' }}>
+          <div style={{ flex: 2 }}>
+            <input
+              type="text"
+              className="grand-ui-control"
+              placeholder="搜尋建築名稱、風格..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              style={{
+                backgroundColor: 'rgba(255,255,255,0.05)',
+                border: '1px solid #333',
+                color: '#fff',
+                textAlign: 'left',
+                width: '100%'
+              }}
+            />
+          </div>
 
-        <div style={{ marginTop: '1rem', width: '100%' }}>
-          <button
-            className="grand-ui-control"
-            onClick={() => setShowJourneyModal(true)}
-            style={{
-              backgroundColor: 'transparent',
-              border: '1px solid var(--accent-gold)',
-              color: 'var(--accent-gold)',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '0.5rem',
-              letterSpacing: '1px'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.background = 'var(--accent-gold)';
-              e.target.style.color = '#000';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = 'transparent';
-              e.target.style.color = 'var(--accent-gold)';
-            }}
-          >
-            {/* Pilgrim Shell Icon (SVG) - Enlarged */}
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" style={{ opacity: 0.1, fill: 'currentColor', stroke: 'none' }} />
-              <path d="M12 18v-7" />
-              <path d="M8 17l4-6" />
-              <path d="M16 17l-4-6" />
-              <path d="M4.2 14l7.8-3" />
-              <path d="M19.8 14l-7.8-3" />
-              <path d="M2 13a10 10 0 0 1 20 0" />
-            </svg>
-            我的旅程
-          </button>
+          <div style={{ flex: 1 }}>
+            <button
+              className="grand-ui-control"
+              onClick={() => setShowJourneyModal(true)}
+              style={{
+                backgroundColor: 'transparent',
+                border: '1px solid var(--accent-gold)',
+                color: 'var(--accent-gold)',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.4rem',
+                letterSpacing: '1px',
+                width: '100%',
+                padding: '0.75rem 0'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = 'var(--accent-gold)';
+                e.target.style.color = '#000';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = 'transparent';
+                e.target.style.color = 'var(--accent-gold)';
+              }}
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" style={{ opacity: 0.1, fill: 'currentColor', stroke: 'none' }} />
+                <path d="M12 18v-7" />
+                <path d="M8 17l4-6" />
+                <path d="M16 17l-4-6" />
+                <path d="M4.2 14l7.8-3" />
+                <path d="M19.8 14l-7.8-3" />
+                <path d="M2 13a10 10 0 0 1 20 0" />
+              </svg>
+              <span>旅程</span>
+            </button>
+          </div>
         </div>
 
         <div style={{ marginTop: 'auto', padding: '1rem' }}>
