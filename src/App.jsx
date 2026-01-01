@@ -897,13 +897,13 @@ function App() {
                       onClick={() => openSandbox(arch.image_url || `/arch_images/${arch.id}.png`, arch)}
                       className="btn-primary action-btn"
                     >
-                      寫明信片
+                      明信片
                     </button>
                     <button
                       className="btn-secondary action-btn"
                       onClick={() => setSelectedInfo(arch)}
                     >
-                      導覽攻略
+                      攻略
                     </button>
                     <button
                       className="btn-primary action-btn"
@@ -912,7 +912,7 @@ function App() {
                         setSelectedStory(arch);
                       }}
                     >
-                      建築故事
+                      故事
                     </button>
                     <button
                       className="action-btn-footprint"
@@ -947,7 +947,7 @@ function App() {
                               <path d="M12 18C13.5 18 14.5 16.5 14.5 15C14.5 13.5 13.5 12 12 12C10.5 12 9.5 13.5 9.5 15C9.5 16.5 10.5 18 12 18Z" fill="#D4AF37" fillOpacity="0.5" />
                             </svg>
                           </span>
-                          留下足跡
+                          足跡
                         </>
                       )}
                     </button>
