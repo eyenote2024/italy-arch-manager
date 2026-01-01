@@ -607,7 +607,8 @@ header p {
     display: block !important;
     /* Force show */
     text-align: right;
-    font-size: 1.2rem;
+    font-size: 0.85rem;
+    /* Reduced to ~70% of 1.2rem */
     line-height: 1.2;
     background: transparent;
     /* Slight bg for readability */
@@ -647,8 +648,10 @@ header p {
 
 
   .city-item {
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    /* Reduced from 1.1rem (~70%) */
+    padding: 0.4rem 0.8rem;
+    /* Reduced padding */
     background: transparent;
     border: 1px solid #333;
     border-radius: 6px;
@@ -677,6 +680,11 @@ header p {
 
   header h2 {
     font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    /* Reduced from 1.4rem (~80%) */
   }
 
   .arch-grid {
@@ -1023,12 +1031,15 @@ header p {
 .action-btn-footprint {
   flex: 0 0 auto;
   width: auto;
-  min-width: 100px;
+  min-width: unset;
+  /* Remove min-width to allow tighter packing */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
-  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  /* Reduced from 1.15rem */
+  padding: 0.6rem 0.8rem;
+  /* Reduced padding */
   white-space: nowrap;
   border-radius: 6px;
   cursor: pointer;
