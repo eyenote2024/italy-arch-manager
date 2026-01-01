@@ -996,6 +996,67 @@ header p {
   }
 }
 
+/* --- Action Buttons (Responsive) --- */
+.action-buttons-grid {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.action-btn,
+.action-btn-footprint {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  padding: 0.7rem 0;
+  white-space: nowrap;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Primary Button Style (Gold) */
+.btn-primary.action-btn {
+  background-color: var(--accent-gold);
+  color: #000;
+  border: none;
+}
+
+/* Secondary Button Style (Outline) */
+.btn-secondary.action-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #ccc;
+}
+
+/* Footprint Button Style (Special) */
+.action-btn-footprint {
+  background: transparent;
+  border: 1px solid #444;
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+/* Mobile Layout: 2x2 Grid */
+@media (max-width: 768px) {
+  .action-buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  .action-btn,
+  .action-btn-footprint {
+    width: 100%;
+    padding: 1rem 0;
+    /* Increase touch target */
+  }
+}
+
 /* --- Journey Title Container --- */
 .journey-title {
   color: var(--accent-gold);

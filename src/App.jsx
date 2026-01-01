@@ -888,49 +888,38 @@ function App() {
                     </span>
                   </div>
 
-                  <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.5rem', width: '100%' }}>
+                  <div className="action-buttons-grid">
                     <button
                       onClick={() => openSandbox(arch.image_url || `/arch_images/${arch.id}.png`, arch)}
-                      className="btn-primary"
-                      style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.15rem', padding: '0.7rem 0', whiteSpace: 'nowrap', backgroundColor: 'var(--accent-gold)', color: '#000', borderRadius: '6px' }}
+                      className="btn-primary action-btn"
                     >
                       寫明信片
                     </button>
                     <button
-                      className="btn-secondary"
+                      className="btn-secondary action-btn"
                       onClick={() => setSelectedInfo(arch)}
-                      style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.15rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px', background: 'transparent', border: '1px solid #444', color: '#ccc' }}
                     >
                       導覽攻略
                     </button>
                     <button
-                      className="btn-primary"
+                      className="btn-primary action-btn"
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedStory(arch);
                       }}
-                      style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.15rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px', border: '1px solid #444', color: '#ccc', background: 'transparent' }}
                     >
                       建築故事
                     </button>
                     <button
+                      className="action-btn-footprint"
                       onClick={(e) => {
                         e.stopPropagation();
                         openFootprintModal(arch);
                       }}
                       style={{
-                        flex: 1,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '1.15rem',
-                        padding: '0.7rem 0',
-                        whiteSpace: 'nowrap',
-                        borderRadius: '6px',
-                        background: 'transparent',
-                        border: hasFootprint(arch.id) ? '1px solid var(--accent-gold)' : '1px solid #444',
-                        color: hasFootprint(arch.id) ? 'var(--accent-gold)' : '#ccc',
-                        fontWeight: hasFootprint(arch.id) ? '600' : '400'
+                        border: hasFootprint(arch.id) ? '1px solid var(--accent-gold)' : undefined,
+                        color: hasFootprint(arch.id) ? 'var(--accent-gold)' : undefined,
+                        fontWeight: hasFootprint(arch.id) ? '600' : undefined
                       }}
                     >
                       {hasFootprint(arch.id) ? (
@@ -946,7 +935,17 @@ function App() {
                           </svg>
                           足跡
                         </>
-                      ) : '留下足跡'}
+                      ) : (
+                        <>
+                          <span style={{ fontSize: '1.2rem', marginRight: '4px', display: 'flex' }}>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 2C13.5 2 14.8 2.8 15.6 4H19C20.1 4 21 4.9 21 6V18C21 19.1 20.1 20 19 20H5C3.9 20 3 19.1 3 18V6C3 4.9 3.9 4 5 4H8.4C9.2 2.8 10.5 2 12 2ZM12 4C11.1 4 10.3 4.6 10.1 5.5L10 6H5V18H19V6H14L13.9 5.5C13.7 4.6 12.9 4 12 4Z" fill="#D4AF37" />
+                              <path d="M12 18C13.5 18 14.5 16.5 14.5 15C14.5 13.5 13.5 12 12 12C10.5 12 9.5 13.5 9.5 15C9.5 16.5 10.5 18 12 18Z" fill="#D4AF37" fillOpacity="0.5" />
+                            </svg>
+                          </span>
+                          留下足跡
+                        </>
+                      )}
                     </button>
                   </div>
                 </div>
