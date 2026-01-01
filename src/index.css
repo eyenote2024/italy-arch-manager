@@ -1049,7 +1049,9 @@ header p {
   justify-content: center;
   font-size: 0.8rem;
   /* Scaled down ~85% */
-  padding: 0.6rem 0;
+  letter-spacing: -0.3px;
+  /* Gain space */
+  padding: 0.6rem 0.1rem;
   /* Reduced padding */
   white-space: nowrap;
   border-radius: 6px;
