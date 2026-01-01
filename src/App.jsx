@@ -904,17 +904,17 @@ function App() {
                       )}
                     </div>
                     <span style={{
-                      fontSize: '1.1rem',
+                      fontSize: '0.95rem',
                       display: 'block',
                       color: '#666',
                       fontWeight: 400,
                       marginTop: '4px'
                     }}>{arch.name_en || arch.name}</span>
                   </h3>
-                  <div className="features">
+                  <div className="features" style={{ fontSize: '0.85rem' }}>
                     {arch.features}
                   </div>
-                  <p className="history" style={{ color: '#eee', lineHeight: '1.6', marginBottom: '0.8rem', fontSize: '0.9rem', fontWeight: '300' }}>
+                  <p className="history" style={{ color: '#eee', lineHeight: '1.6', marginBottom: '0.8rem', fontSize: '0.8rem', fontWeight: '300' }}>
                     {arch.history_text}
                   </p>
                   {/* Audio Player Control */}
