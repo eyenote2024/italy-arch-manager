@@ -652,10 +652,10 @@ header p {
       min-width: 0;
       /* Allow shrinking */
       text-align: center;
-      font-size: 0.95rem;
-      /* Maintain legibility */
-      padding: 0.5rem 0.2rem;
-      /* Reduce side padding to fit */
+      font-size: 0.8rem;
+      /* Scaled down ~85% */
+      padding: 0.4rem 0.2rem;
+      /* Tighter padding */
       background: transparent;
       border: 1px solid #333;
       border-radius: 6px;
@@ -680,12 +680,13 @@ header p {
     }
 
     header h2 {
-      font-size: 2.5rem;
+      font-size: 2.1rem;
+      /* Scaled down ~85% */
     }
 
     header p {
-      font-size: 1.1rem;
-      /* Reduced from 1.4rem (~80%) */
+      font-size: 0.95rem;
+      /* Scaled down ~85% */
     }
 
     .arch-grid {
@@ -1020,14 +1021,12 @@ header p {
     gap: 0.5rem;
     /* Gap between buttons */
 
-    /* Full Width Hack */
-    width: calc(100% + 3rem);
-    /* Break out of parent padding */
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-    padding-left: 1.5rem;
-    /* Restore visual alignment for first item */
-    padding-right: 1.5rem;
+    /* Strict Containment: No negative margins */
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 
     scrollbar-width: none;
     padding-bottom: 0;
@@ -1049,9 +1048,10 @@ header p {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.95rem;
-    padding: 0.8rem 0;
-    /* Vertical padding only */
+    font-size: 0.8rem;
+    /* Scaled down ~85% */
+    padding: 0.6rem 0;
+    /* Reduced padding */
     white-space: nowrap;
     border-radius: 6px;
     cursor: pointer;
