@@ -602,9 +602,9 @@ function App() {
                       padding: '0.7rem 0',
                       whiteSpace: 'nowrap',
                       borderRadius: '6px',
-                      background: hasFootprint(arch.id) ? 'var(--accent-gold)' : 'transparent',
-                      border: hasFootprint(arch.id) ? 'none' : '1px solid #444',
-                      color: hasFootprint(arch.id) ? '#000' : '#ccc',
+                      background: 'transparent',
+                      border: hasFootprint(arch.id) ? '1px solid var(--accent-gold)' : '1px solid #444',
+                      color: hasFootprint(arch.id) ? 'var(--accent-gold)' : '#ccc',
                       fontWeight: hasFootprint(arch.id) ? '600' : '400'
                     }}
                   >
