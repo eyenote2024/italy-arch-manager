@@ -6,6 +6,146 @@ import romeData from './data/rome.json'
 import veronaData from './data/verona.json'
 import PostcardSandbox from './PostcardSandbox'
 
+// Footprint Form Component
+function FootprintForm({ arch, existingFootprint, onSave, onDelete, onCancel }) {
+  const [note, setNote] = useState(existingFootprint?.note || '');
+  const [mood, setMood] = useState(existingFootprint?.mood || '');
+
+  const moods = ['震撼', '平靜', '浪漫', '孤獨', '感動', '其他'];
+
+  const handleSubmit = () => {
+    if (!note.trim()) {
+      alert('請寫下您的感受');
+      return;
+    }
+    onSave(note, mood);
+  };
+
+  return (
+    <div style={{ color: '#fff' }}>
+      <header style={{ marginBottom: '1.5rem', borderBottom: '1px solid #333', paddingBottom: '1rem' }}>
+        <h2 style={{ color: 'var(--accent-gold)', fontSize: '1.3rem', marginBottom: '0.5rem' }}>
+          {arch.name} - {existingFootprint ? '我的足跡' : '留下足跡'}
+        </h2>
+        <p style={{ fontSize: '0.85rem', color: '#888' }}>
+          📅 {new Date(existingFootprint?.timestamp || Date.now()).toLocaleString('zh-TW', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit'
+          })}
+        </p>
+      </header>
+
+      <div style={{ marginBottom: '1.5rem' }}>
+        <label style={{ display: 'block', marginBottom: '0.5rem', color: '#ccc', fontSize: '0.9rem' }}>
+          📝 寫下你的感受...
+        </label>
+        <textarea
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          placeholder="下午三點的陽光從玫瑰窗灑進來，那一刻我想起了..."
+          style={{
+            width: '100%',
+            minHeight: '120px',
+            padding: '0.8rem',
+            backgroundColor: '#1a1a1a',
+            border: '1px solid #333',
+            borderRadius: '6px',
+            color: '#fff',
+            fontSize: '0.9rem',
+            lineHeight: '1.6',
+            resize: 'vertical',
+            fontFamily: 'inherit'
+          }}
+          maxLength={500}
+        />
+        <p style={{ fontSize: '0.75rem', color: '#666', marginTop: '0.3rem', textAlign: 'right' }}>
+          {note.length}/500
+        </p>
+      </div>
+
+      <div style={{ marginBottom: '2rem' }}>
+        <label style={{ display: 'block', marginBottom: '0.8rem', color: '#ccc', fontSize: '0.9rem' }}>
+          😊 選擇情緒標籤
+        </label>
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+          {moods.map(m => (
+            <button
+              key={m}
+              onClick={() => setMood(m)}
+              style={{
+                padding: '0.5rem 1rem',
+                borderRadius: '20px',
+                border: mood === m ? '2px solid var(--accent-gold)' : '1px solid #444',
+                background: mood === m ? 'rgba(212, 175, 55, 0.2)' : 'transparent',
+                color: mood === m ? 'var(--accent-gold)' : '#ccc',
+                fontSize: '0.85rem',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              {m}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', gap: '0.5rem' }}>
+        {existingFootprint && (
+          <button
+            onClick={onDelete}
+            style={{
+              flex: 1,
+              padding: '0.8rem',
+              borderRadius: '6px',
+              border: '1px solid #d32f2f',
+              background: 'transparent',
+              color: '#d32f2f',
+              fontSize: '0.9rem',
+              cursor: 'pointer'
+            }}
+          >
+            刪除
+          </button>
+        )}
+        <button
+          onClick={onCancel}
+          style={{
+            flex: 1,
+            padding: '0.8rem',
+            borderRadius: '6px',
+            border: '1px solid #444',
+            background: 'transparent',
+            color: '#888',
+            fontSize: '0.9rem',
+            cursor: 'pointer'
+          }}
+        >
+          取消
+        </button>
+        <button
+          onClick={handleSubmit}
+          style={{
+            flex: 1,
+            padding: '0.8rem',
+            borderRadius: '6px',
+            border: 'none',
+            background: 'var(--accent-gold)',
+            color: '#000',
+            fontSize: '0.9rem',
+            fontWeight: '600',
+            cursor: 'pointer'
+          }}
+        >
+          儲存足跡
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function App() {
 
   const cities = [
@@ -37,6 +177,65 @@ function App() {
     } else {
       handleSpeak(text, archId);
     }
+  };
+
+  // --- Footprint System ---
+  const [footprints, setFootprints] = useState([]);
+  const [showFootprintModal, setShowFootprintModal] = useState(false);
+  const [currentFootprintArch, setCurrentFootprintArch] = useState(null);
+
+  // Load footprints from LocalStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('footprints');
+    if (saved) {
+      try {
+        setFootprints(JSON.parse(saved));
+      } catch (e) {
+        console.error('Failed to load footprints:', e);
+      }
+    }
+  }, []);
+
+  // Save footprints to LocalStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('footprints', JSON.stringify(footprints));
+  }, [footprints]);
+
+  // Check if architecture has footprint
+  const hasFootprint = (archId) => {
+    return footprints.some(f => f.archId === archId);
+  };
+
+  // Get footprint for architecture
+  const getFootprint = (archId) => {
+    return footprints.find(f => f.archId === archId);
+  };
+
+  // Add or update footprint
+  const saveFootprint = (archId, archName, cityName, note, mood) => {
+    const timestamp = Date.now();
+    const existingIndex = footprints.findIndex(f => f.archId === archId);
+
+    if (existingIndex >= 0) {
+      // Update existing
+      const updated = [...footprints];
+      updated[existingIndex] = { archId, archName, cityName, timestamp, note, mood };
+      setFootprints(updated);
+    } else {
+      // Add new
+      setFootprints([...footprints, { archId, archName, cityName, timestamp, note, mood }]);
+    }
+  };
+
+  // Delete footprint
+  const deleteFootprint = (archId) => {
+    setFootprints(footprints.filter(f => f.archId !== archId));
+  };
+
+  // Open footprint modal
+  const openFootprintModal = (arch) => {
+    setCurrentFootprintArch(arch);
+    setShowFootprintModal(true);
   };
 
   const [activeCity, setActiveCity] = useState(cities[0]);
@@ -389,6 +588,28 @@ function App() {
                   >
                     建築故事
                   </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openFootprintModal(arch);
+                    }}
+                    style={{
+                      flex: 1,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '0.8rem',
+                      padding: '0.7rem 0',
+                      whiteSpace: 'nowrap',
+                      borderRadius: '6px',
+                      background: hasFootprint(arch.id) ? 'var(--accent-gold)' : 'transparent',
+                      border: hasFootprint(arch.id) ? 'none' : '1px solid var(--accent-gold)',
+                      color: hasFootprint(arch.id) ? '#000' : 'var(--accent-gold)',
+                      fontWeight: hasFootprint(arch.id) ? '600' : '400'
+                    }}
+                  >
+                    {hasFootprint(arch.id) ? '✨ 我的足跡' : '💭 留下足跡'}
+                  </button>
                 </div>
               </div>
             </article>
@@ -729,6 +950,33 @@ function App() {
                   返回畫廊
                 </button>
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* Footprint Modal */}
+        {showFootprintModal && currentFootprintArch && (
+          <div className="lightbox" onClick={() => setShowFootprintModal(false)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '500px', padding: '2rem' }}>
+              <FootprintForm
+                arch={currentFootprintArch}
+                existingFootprint={getFootprint(currentFootprintArch.id)}
+                onSave={(note, mood) => {
+                  saveFootprint(
+                    currentFootprintArch.id,
+                    currentFootprintArch.name,
+                    currentFootprintArch.cityName || activeCity.name,
+                    note,
+                    mood
+                  );
+                  setShowFootprintModal(false);
+                }}
+                onDelete={() => {
+                  deleteFootprint(currentFootprintArch.id);
+                  setShowFootprintModal(false);
+                }}
+                onCancel={() => setShowFootprintModal(false)}
+              />
             </div>
           </div>
         )}
