@@ -16,6 +16,29 @@ function App() {
     { id: 'rome', name: '羅馬', en: 'ROMA', intro: '永恆之城的帝國榮光與廢墟美學', data: romeData }
   ];
 
+  // --- Voice Engine ---
+  const [currentPlayingId, setCurrentPlayingId] = useState(null);
+
+  const handleSpeak = (text, archId) => {
+    window.speechSynthesis.cancel(); // Stop previous
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'zh-TW'; // Chinese Taiwan
+    utterance.rate = 1.0;
+    utterance.pitch = 1.0;
+    utterance.onend = () => setCurrentPlayingId(null);
+    window.speechSynthesis.speak(utterance);
+    setCurrentPlayingId(archId);
+  };
+
+  const handleToggleAudio = (text, archId) => {
+    if (currentPlayingId === archId) {
+      window.speechSynthesis.cancel();
+      setCurrentPlayingId(null);
+    } else {
+      handleSpeak(text, archId);
+    }
+  };
+
   const [activeCity, setActiveCity] = useState(cities[0]);
   const [search, setSearch] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
@@ -316,9 +339,30 @@ function App() {
                 <div className="features">
                   {arch.features}
                 </div>
-                <p className="history" style={{ color: '#eee', lineHeight: '1.6', marginBottom: '1.2rem', fontSize: '0.95rem', fontWeight: '300' }}>
+                <p className="history" style={{ color: '#eee', lineHeight: '1.6', marginBottom: '0.8rem', fontSize: '0.95rem', fontWeight: '300' }}>
                   {arch.history_text}
                 </p>
+                {/* Audio Player Control */}
+                <div
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleToggleAudio(arch.story || arch.history_text, arch.id);
+                  }}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    marginBottom: '1.2rem',
+                    cursor: 'pointer',
+                    opacity: currentPlayingId === arch.id ? 1 : 0.7,
+                    transition: 'opacity 0.3s ease'
+                  }}
+                >
+                  <span style={{ fontSize: '1.1rem', color: 'var(--accent-gold)', width: '1.2rem', display: 'inline-block', textAlign: 'center' }}>{currentPlayingId === arch.id ? '⊡' : '♪'}</span>
+                  <span style={{ color: 'var(--accent-gold)', fontSize: '0.95rem', fontWeight: '600' }}>
+                    {currentPlayingId === arch.id ? '正在播放...' : '語音導覽'}
+                  </span>
+                </div>
 
                 <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.5rem', width: '100%' }}>
                   <button

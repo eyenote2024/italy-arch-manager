@@ -460,36 +460,5 @@
     ],
     "story": "如果你想尋找空氣中飄散著「權力味」的現場，你必須踏入領主廣場。這座廣場不僅是公共空間，更是佛羅倫斯近七百年的政治擂台。美第奇家族透過藝術鞏固其絕對權力，尤其是「傭兵涼廊」，這座行政典禮亭在科西莫一世時期，被改造成了旨在展示「美學統治權」的露天博物館。\n\n在涼廊雕塑中，最傳奇的莫過於切利尼（Cellini）鑄造的青銅巨作《珀耳修斯》。切利尼在熔爐青銅即將凝固的絕望時刻，下令將家中所有錫製餐具丟進熔爐以增加流動性，最終救回神作。這種將「家產與藝術野心」一併投入爐火的決絕，定義了文藝復興人的性格。領主廣場告訴我們：翡冷翠的政治就是視覺博弈。今日站在石質地坪上，你會明白城市如何將殘酷歷史優雅地凝結成每一英吋不讓的大理石美景。",
     "is_unesco": true
-  },
-  {
-    "id": "firenze_13",
-    "name": "比薩斜塔",
-    "cityName": "Pisa",
-    "features": "奇蹟廣場上最著名的白色大理石鐘樓，以其違背地心引力的傾斜度聞名。",
-    "key_visual": "The iconic leaning white marble tower on a green lawn",
-    "history_text": "這是一場長達800年的工程災難與修復奇蹟。塔樓在蓋到第三層時就因為地基不穩開始傾斜，建築師試圖把能在上面的樓層蓋得「歪回來」以修正重心，結果反而造就了這個獨一無二的香蕉形狀。",
-    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: LEANING TOWER OF PISA.\n\nStyle & Vibe: (CRITICAL) Subtle High-Quality Antique Paper. Light creamy texture. Very faint aging. FULL BLEED TEXTURE (Edge-to-Edge). The paper must fill the entire canvas 100%. NO visible paper edges. NO borders. NO background surface. Elegant Architect's Manuscript.\n\nLayout Strategy:\n[CRITICAL CONSTRAINT: GRID SYSTEM] The image is strictly divided by a **VISIBLE THIN VERTICAL LINE** down the center.\n**[LOCKED CENTRAL AXIS]:** The dividing line MUST remain exactly in the center (50%). **NO SHIFTING.**\nLEFT SIDE (Locked 50%): Architectural Analysis. Content MUST NOT cross the center line.\nRIGHT SIDE (Locked 50%): Historical Narrative. Content MUST NOT cross the center line.\n**Margins:** Keep text and diagrams away from the absolute edges (Safe Zone).\n\n**Instructions for the LEFT SIDE (50% - Strict Original Framework):**\n(Strictly following the User's Original Chinese Framework)\n\n1. **Top Section (Upper 1/3):**\n   *   **Key Visual:** The iconic white marble tower leaning on a green lawn (Full Color Photo).\n   *   **[CRITICAL: PURE PHOTOGRAPHY]:** Visual Impact ONLY.\n       *   **NO TEXT.** NO Captions. NO Summaries. NO Labels in this section.\n       *   **Lighting:** **PERFECT LIGHTING** (Golden Hour / Dramatic God Rays). Best moment of the day.\n       *   **Quality:** 8k Masterpiece, High Res.\n       *   **Composition:** Immersive, wide-angle interior shot.\n\n2. **Middle Section (Middle 1/3):**\n   *   **Left Half:** LEANING TOWER OF PISA 最具代表性的「正立面圖」，繪製 **色彩鮮豔的精細水彩 (Vibrant Full Color Watercolor)**。\n   *   **Right Half:** 繪製精細的工程剖面圖，展示內部結構和施工方法。\n   *   **[CRITICAL: RED DOTS 錨定協議]:** 必須精確包含 4-6 個 **小巧、精緻、細膩的寶石紅圓點 (Small, Delicate, Exquisite Ruby-Red Dots)**。\n       *   **Refined Size:** Dots must be small and elegant, not large.\n       *   **標籤:** 每個紅點帶有細緻的黑色墨水引導線，指向 **Visible English Text Labels**.\n\n3. **Bottom Section (Lower 1/3):**\n   *   **Left Plan (Layout & Flow):** LEANING TOWER OF PISA 主要樓層的詳細平面圖 (仿古藍圖風格)。\n       *   **[參觀動線]:** 繪製一條清晰的 **帶箭頭虛線 (Dashed Vector Line)**。\n       *   **[POI]:** 4-6 **SOLID DOTS with VISIBLE NUMBER DIGITS (1, 2, 3...)**. Numbers MUST be visible.\n       *   **[相機圖標]:** 放置 2-3 個帶有視野錐形的相機圖標。\n       *   **[圖例]:** 在旁提供清晰的 **Legend List**, with numbered text items explaining the points.\n   *   **Right Map (Context):** 建築物城市背景地圖，包含街道、English Labels、比例尺與指北針。\n\n4. **Footer:**\n   *   帶有裝飾性古典雙重邊框的矩形區域。\n   *   **Title:** \"LEANING TOWER OF PISA\" in **Bold Didot Typeface (Heavy Weight)**. Use consistent thick strokes.\n   *   **Description:** \"1173 • ROMANESQUE • ENGINEERING WONDER\" in Modern Sans-serif.\n   *   **[Watermark]:** Clearly display small text \"**eyenote@gmail.com**\" in the bottom corner.\n\n**Instructions for the RIGHT SIDE (50% - The Story):**\n*   **Concept:** Storytelling space with **Specimens**.\n*   **Background:** Clean antique paper.\n*   **Primary Content (Historical Anecdote & Illustrations):**\n    *   **Position:** Center.\n    *   **The Text:** A block of English text titled \"HISTORICAL LEGEND\".\n    *   **Style:** **Smaller Font Size (Elegant Book Body)**. Much smaller than the title. High-Legibility Sans-serif.\n    *   **[Visual Integration]:** **Text Wrapping**. The text block MUST integreate/wrap around **2-3 small detailed spot illustrations** (e.g., an antique Coin, a Mason's Tool, or a small Sketch Fragment).\n    *   **Content (EXACT TEXT):** \"Galileo famously dropped two cannonballs of different masses from the top to prove that they fall at the same speed, defying Aristotle's physics.\"\n*   **Visual Balance (Typography):**\n    *   **Numbering:** \"No.13\" in **Bold Didot Typeface**. **SIZE: Medium/Small**. Consistent Weight.\n    *   **Logotype:** Vertical **Artistic Typography** for \"LEANING TOWER OF PISA\".\n\nTechnical Specs: [Square 1:1 Layout], [50/50 Symmetrical Split], [Subtle Antique Texture], [Full Color Mode], [Visible Text Integretation], [Watermark eyenote@gmail.com], Best Quality:1.2.\n--ar 1:1",
-    "name_en": "LEANING TOWER OF PISA",
-    "key_visual_en": "The iconic white marble tower leaning on a green lawn",
-    "history_text_en": "Galileo famously dropped two cannonballs of different masses from the top to prove that they fall at the same speed, defying Aristotle's physics.",
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=%E6%AF%94%E8%96%A9%E6%96%9C%E5%A1%94%20%E6%AF%94%E8%96%A9%20Italy",
-    "visit_highlights": [
-      "一定要拍一張「借位」推倒或扶正塔樓的趣味照片",
-      "登上塔頂感受傾斜帶來的奇妙重心失衡感",
-      "在奇蹟廣場草坪上欣賞整組潔白大理石建築群",
-      "參觀旁邊巨大的比薩主教座堂與洗禮堂"
-    ],
-    "quotes": [
-      {
-        "text": "一個美麗的錯誤，\n勝過一千個平庸的正確。",
-        "source": "— 建築哲學"
-      },
-      {
-        "text": "它在跌倒的邊緣優雅地站了八百年，\n告訴我們缺憾有時比完美更永恆。",
-        "source": "— eyenote@gmail.com"
-      }
-    ],
-    "story": "如果說佛羅倫斯代表了文藝復興的完美與精確，那麼比薩斜塔就是一場關於「失誤」的偉大慶典。這座鐘樓的傾斜並非設計初衷，而是因為 12 世紀動工時工匠對地質的誤判。然而，正是這場長達幾世紀的「搶救工程」，造就了建築史上最迷人的意外。傳說伽利略（Galileo）就是在這裡扔下了兩顆鐵球，推翻了亞里斯多德的物理學霸權，讓這座塔成為科學革命的起點。\n\n斜塔所在的「奇蹟廣場（Piazza dei Miracoli）」是少數擁有大片綠茵草坪的義大利宗教中心。潔白的大理石建築群在藍天綠地間顯得神聖而超現實，彷彿是比薩作為曾經的海上共和國，向上帝獻上的最純淨禮物。比薩斜塔告訴我們：有時候，讓世界記住你的不是你的完美，而是你如何優雅地與你的缺點共存。今日在這裏拍這張「推塔」照片，依然是每一個造訪義大利的旅人最快樂的俗氣儀式。",
-    "is_unesco": true
   }
 ]
