@@ -208,24 +208,61 @@ function App() {
     localStorage.setItem('userName', userName);
   }, [userName]);
 
-  // --- Voice Engine ---
+  // --- UI & Navigation State ---
+  const [view, setView] = useState('portal'); // 'portal' or 'architecture'
+  const [activeCity, setActiveCity] = useState(milanData);
+  const [search, setSearch] = useState('');
+  const [selectedInfo, setSelectedInfo] = useState(null);
+  const [selectedStory, setSelectedStory] = useState(null);
+
+  // --- Voice Engine (Mobile Optimized) ---
   const [currentPlayingId, setCurrentPlayingId] = useState(null);
+  const utteranceRef = useRef(null); // Prevents garbage collection on mobile Chrome
 
   const handleSpeak = (text, archId) => {
-    window.speechSynthesis.cancel(); // Stop previous
+    // Robust cleanup for mobile engines
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.cancel();
+
+    // Wakes up the engine on mobile devices
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
+
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'zh-TW'; // Chinese Taiwan
+    utteranceRef.current = utterance; // Lock reference
+
+    utterance.lang = 'zh-TW';
     utterance.rate = 1.0;
     utterance.pitch = 1.0;
-    utterance.onend = () => setCurrentPlayingId(null);
+
+    utterance.onstart = () => {
+      console.log('🔊 Speech started for:', archId);
+      setCurrentPlayingId(archId);
+    };
+
+    utterance.onend = () => {
+      console.log('🔇 Speech ended');
+      setCurrentPlayingId(null);
+      utteranceRef.current = null;
+    };
+
+    utterance.onerror = (event) => {
+      console.error('❌ Speech synthesis error:', event);
+      setCurrentPlayingId(null);
+      utteranceRef.current = null;
+    };
+
+    // Final defensive resume before speak
+    window.speechSynthesis.resume();
     window.speechSynthesis.speak(utterance);
-    setCurrentPlayingId(archId);
   };
 
   const handleToggleAudio = (text, archId) => {
     if (currentPlayingId === archId) {
       window.speechSynthesis.cancel();
       setCurrentPlayingId(null);
+      utteranceRef.current = null;
     } else {
       handleSpeak(text, archId);
     }
