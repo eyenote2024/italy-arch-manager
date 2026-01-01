@@ -241,8 +241,8 @@ header p {
 }
 
 .card-body h3 {
-  font-size: 1.55rem;
-  /* Scaled down to 85% of 1.8rem */
+  font-size: 1.85rem;
+  /* Enlarge for hierarchy Alpha dominance */
   color: var(--accent-gold);
   margin-bottom: 0.8rem;
   letter-spacing: 1px;
@@ -685,6 +685,10 @@ header p {
   header h2 {
     font-size: 1.7rem;
     /* Scaled down to 80% of 2.1rem */
+  }
+
+  .card-body h3 {
+    font-size: 1.7rem !important;
   }
 
   header p {
