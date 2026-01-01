@@ -3,30 +3,112 @@ import milanData from './data/milan.json'
 import florenceData from './data/florence.json'
 import veniceData from './data/venice.json'
 import romeData from './data/rome.json'
+import veronaData from './data/verona.json'
 import PostcardSandbox from './PostcardSandbox'
 
 function App() {
 
   const cities = [
-    { id: 'milan', name: '米蘭', data: milanData },
-    { id: 'florence', name: '佛羅倫斯', data: florenceData },
-    { id: 'venice', name: '威尼斯', data: veniceData },
-    { id: 'rome', name: '羅馬', data: romeData }
+    { id: 'milan', name: '米蘭', en: 'MILANO', intro: '哥德尖塔與現代時尚的垂直交匯', data: milanData },
+    { id: 'venice', name: '威尼斯', en: 'VENEZIA', intro: '漂浮於潟湖之上的拜占庭夢境', data: veniceData },
+    { id: 'verona', name: '維羅納', en: 'VERONA', intro: '羅馬遺跡與中世紀紅磚的層疊', data: veronaData },
+    { id: 'florence', name: '佛羅倫斯', en: 'FIRENZE', intro: '文藝復興與理性美學的起源地', data: florenceData },
+    { id: 'rome', name: '羅馬', en: 'ROMA', intro: '永恆之城的帝國榮光與廢墟美學', data: romeData }
   ];
 
   const [activeCity, setActiveCity] = useState(cities[0]);
   const [search, setSearch] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
-  const [promptModal, setPromptModal] = useState({ isOpen: false, text: '' });
-  const [selectedInfo, setSelectedInfo] = useState(null); // 新增：導覽與攻略狀態
+  const [selectedStory, setSelectedStory] = useState(null);
+  const [selectedInfo, setSelectedInfo] = useState(null);
   const [showSandbox, setShowSandbox] = useState(false);
+  const [view, setView] = useState('portal'); // 'portal' or 'architecture'
   const [postcardData, setPostcardData] = useState({ image: '/arch_images/milan_01.png', text: '', source: '' });
+  const [bgImage, setBgImage] = useState('/portal_assets/desktop_bg.png');
+  const [quote, setQuote] = useState('');
 
-  const filteredData = activeCity.data.filter(item =>
-    item.name.toLowerCase().includes(search.toLowerCase()) ||
-    (item.history_text && item.history_text.toLowerCase().includes(search.toLowerCase())) ||
-    (item.features && item.features.toLowerCase().includes(search.toLowerCase()))
+  // Random Background & Quote Logic
+  useEffect(() => {
+    // Backgrounds
+    const backgrounds = [
+      '/portal_assets/desktop_bg.png',
+      '/portal_assets/portal_bg_2.png',
+      '/portal_assets/portal_bg_3.png',
+      '/portal_assets/portal_bg_4.png',
+      '/portal_assets/portal_bg_5.png',
+      '/portal_assets/portal_bg_6.png',
+      '/portal_assets/portal_bg_7.png',
+      '/portal_assets/portal_bg_8.png',
+      '/portal_assets/portal_bg_9.png',
+      '/portal_assets/portal_bg_10.png',
+      '/portal_assets/portal_bg_11.png',
+      '/portal_assets/portal_bg_12.png'
+    ];
+    // Golden Quotes (Literature, Art, Cinema, Architecture)
+    const quotes = [
+      "城市猶如夢境，是用渴望與恐懼構築而成的。\nCities, like dreams, are made of desires and fears. — Italo Calvino",
+      "我看見大理石中的天使，於是我不停雕刻，直到讓他自由。\nI saw the angel in the marble and carved until I set him free. — Michelangelo",
+      "夢境與現實之間，並沒有界線。\nThere is no line between the imaginary and the real. — Federico Fellini",
+      "簡約是細膩的極致。\nSimplicity is the ultimate sophistication. — Leonardo da Vinci",
+      "電影，就是雕刻時光。\nDirecting is sculpting in time. — Andrei Tarkovsky",
+      "建築是凝固的音樂，而電影是流動的建築。\nArchitecture is frozen music, Cinema is fluid architecture."
+    ];
+
+    // Randomly select one on mount
+    const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+    setBgImage(randomBg);
+    setQuote(randomQuote);
+  }, []); // Empty dependency array ensures this runs only once on mount
+
+  // Handle Browser History & Routing
+  useEffect(() => {
+    // 1. Initial Load: Check URL path
+    const path = window.location.pathname;
+    if (path === '/architecture') {
+      setView('architecture');
+    } else {
+      setView('portal');
+    }
+
+    // 2. Handle Back/Forward Button
+    const handlePopState = (event) => {
+      const currentPath = window.location.pathname;
+      if (currentPath === '/architecture') {
+        setView('architecture');
+      } else {
+        setView('portal');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Navigation Helper
+  const navigateTo = (targetView) => {
+    if (targetView === 'architecture') {
+      window.history.pushState({ view: 'architecture' }, '', '/architecture');
+      setView('architecture');
+    } else {
+      window.history.pushState({ view: 'portal' }, '', '/');
+      setView('portal');
+    }
+  };
+
+  // Global Search Logic
+  const allData = cities.flatMap(city =>
+    city.data.map(item => ({ ...item, cityName: city.name, cityId: city.id }))
   );
+
+  const filteredData = search
+    ? allData.filter(item =>
+      item.name.toLowerCase().includes(search.toLowerCase()) ||
+      (item.history_text && item.history_text.toLowerCase().includes(search.toLowerCase())) ||
+      (item.features && item.features.toLowerCase().includes(search.toLowerCase()))
+    )
+    : activeCity.data;
 
   // 進入實驗室的智慧邏輯
   const openSandbox = (imageSrc, buildingData) => {
@@ -57,18 +139,51 @@ function App() {
     );
   }
 
+  if (view === 'portal') {
+    return (
+      <div className="portal-container">
+        <div className="portal-bg" style={{ backgroundImage: `url('${bgImage}')` }}></div>
+        <div className="portal-content">
+          <h1 className="portal-logo">EYENOTE<br />STUDIO</h1>
+          <div className="portal-menu">
+            <button
+              className="portal-menu-item"
+              onClick={() => navigateTo('architecture')}
+            >
+              [ 建築巡禮 ]
+            </button>
+            <button className="portal-menu-item" onClick={() => alert('劇本研究模組開發中...')}>[ 電影開發 ]</button>
+            <button className="portal-menu-item" onClick={() => alert('關於導演頁面開發中...')}>[ 關於導演 ]</button>
+            <button className="portal-menu-item" onClick={() => window.location.href = 'mailto:eyenote@gmail.com'}>[ 聯絡我們 ]</button>
+          </div>
+
+          <div className="portal-quote">
+            {quote.split('\n').map((line, i) => (
+              <p key={i} className={i === 0 ? "quote-zh" : "quote-en"}>{line}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="app-container">
       {/* Sidebar Navigation */}
       <aside className="sidebar">
-        <div className="logo">
-          EYE 建築工作室
+        <div
+          className="logo"
+          onClick={() => navigateTo('portal')}
+          title="返回首頁 (Back to Portal)"
+        >
+          <div>
+            EYE 建築巡禮
+            <span className="logo-subtitle">
+              AI 視角重構世界經典建築
+            </span>
+          </div>
           <span className="logo-subtext">
-            設計: <span style={{ color: 'var(--accent-gold)' }}>陸拾陸電影</span>
-            <br />
-            聯繫: <a href="mailto:eyenote@gmail.com" style={{ color: 'var(--accent-gold)', textDecoration: 'underline' }}>eyenote@gmail.com</a>
-            <br />
-            狀態: 創意開發模式
+            聯繫: <a href="mailto:eyenote@gmail.com" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>＠eyenote</a>
           </span>
         </div>
         <nav className="city-nav">
@@ -82,6 +197,27 @@ function App() {
             </div>
           ))}
         </nav>
+
+        <div style={{ marginTop: '0.5rem', width: '100%' }}>
+          <input
+            type="text"
+            placeholder="搜尋建築名稱、風格或歷史軼事..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            style={{
+              width: '100%',
+              padding: '0.8rem 1rem', // Increased padding for "Grand" feel
+              backgroundColor: 'rgba(255,255,255,0.05)',
+              border: '1px solid #333',
+              borderRadius: '6px', // Less rounded as requested
+              color: '#fff',
+              outline: 'none',
+              fontSize: '0.9rem', // Slightly larger text
+              textAlign: 'left' // Standard input alignment
+            }}
+          />
+        </div>
+
         <div style={{ marginTop: 'auto', padding: '1rem' }}>
           <div style={{ color: '#444', fontSize: '0.65rem', textAlign: 'center', letterSpacing: '2px', borderTop: '1px solid #222', paddingTop: '1rem' }}>
             EYE@note STUDIO
@@ -92,27 +228,14 @@ function App() {
       {/* Main Exhibition Area */}
       <main className="main-content">
         <header>
-          <h2>{activeCity.name} 建築巡禮</h2>
-          <p className="subtitle">AI 視角：重構義大利經典</p>
+          <h2>
+            {activeCity.name} <span style={{ color: 'var(--accent-gold)', fontWeight: 300, fontSize: '0.6em', marginLeft: '10px', letterSpacing: '2px' }}>{activeCity.en}</span>
+          </h2>
+          <p style={{ color: '#888', marginTop: '0.5rem', fontSize: '1rem', fontWeight: 300, letterSpacing: '1px' }}>
+            {activeCity.intro}
+          </p>
 
-          <div style={{ marginTop: '1.5rem' }}>
-            <input
-              type="text"
-              placeholder="搜尋建築名稱、風格或歷史軼事..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              style={{
-                width: '100%',
-                padding: '0.8rem 1.2rem',
-                backgroundColor: '#1a1a1a',
-                border: '1px solid #333',
-                borderRadius: '8px',
-                color: '#fff',
-                outline: 'none',
-                fontFamily: 'Outfit'
-              }}
-            />
-          </div>
+
         </header>
 
         <section className="arch-grid">
@@ -120,25 +243,68 @@ function App() {
             <article key={arch.id} className="arch-card">
               <div
                 className="card-image-container"
-                onClick={() => setSelectedImage(`/arch_images/${arch.id}.png`)}
-                style={{ cursor: 'zoom-in' }}
               >
-                <img
-                  src={`/arch_images/${arch.id}.png`}
-                  alt={arch.name}
-                  onError={(e) => {
-                    e.target.parentElement.style.pointerEvents = 'none';
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                <div className="card-img-placeholder" style={{ display: 'none' }}>
-                  [ AI 視覺預覽: {arch.key_visual ? arch.key_visual.substring(0, 30) : 'No Visual'}... ]
+                <div
+                  className="card-img"
+                  style={{ position: 'relative' }}
+                  onClick={() => setSelectedImage(`/arch_images/${arch.id}.png`)}
+                  style={{ cursor: 'zoom-in' }}
+                >
+                  <img
+                    src={arch.image_url || `/arch_images/${arch.id}.png`}
+                    alt={arch.name}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="card-img-placeholder" style={{ display: 'none' }}>
+                    [ AI 視覺預覽: {arch.key_visual ? arch.key_visual.substring(0, 30) : 'No Visual'}... ]
+                  </div>
                 </div>
               </div>
               <div className="card-body">
                 <h3>
-                  {arch.name}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                    {arch.name}
+                    {search && arch.cityName && (
+                      <span style={{
+                        backgroundColor: '#333',
+                        color: '#eee',
+                        borderRadius: '4px',
+                        padding: '2px 6px',
+                        fontSize: '0.65rem',
+                        marginLeft: '4px',
+                        fontWeight: 400,
+                        border: '1px solid #444'
+                      }}>
+                        📍 {arch.cityName}
+                      </span>
+                    )}
+                    {arch.is_unesco && (
+                      <span style={{
+                        backgroundColor: 'rgba(0,0,0,0.7)',
+                        border: '1px solid var(--accent-gold)',
+                        borderRadius: '4px',
+                        padding: '2px 8px',
+                        color: 'var(--accent-gold)',
+                        fontSize: '0.65rem',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: 'fit-content',
+                        letterSpacing: '1px',
+                        fontWeight: 400,
+                        backdropFilter: 'blur(4px)',
+                        boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                        gap: '4px',
+                        marginLeft: '4px'
+                      }}>
+                        <span style={{ fontSize: '0.8rem' }}>🏛️</span>
+                        <span style={{ transform: 'translateY(1px)' }}>UNESCO</span>
+                      </span>
+                    )}
+                  </div>
                   <span style={{
                     fontSize: '0.8rem',
                     display: 'block',
@@ -150,34 +316,34 @@ function App() {
                 <div className="features">
                   {arch.features}
                 </div>
-                <p className="history">
+                <p className="history" style={{ color: '#eee', lineHeight: '1.6', marginBottom: '1.2rem', fontSize: '0.95rem', fontWeight: '300' }}>
                   {arch.history_text}
                 </p>
 
                 <div style={{ marginTop: 'auto', paddingTop: '1.5rem', display: 'flex', gap: '0.5rem', width: '100%' }}>
                   <button
-                    onClick={() => openSandbox(`/arch_images/${arch.id}.png`, arch)}
+                    onClick={() => openSandbox(arch.image_url || `/arch_images/${arch.id}.png`, arch)}
                     className="btn-primary"
                     style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', backgroundColor: 'var(--accent-gold)', color: '#000', borderRadius: '6px' }}
                   >
-                    🖋️ 寫明信片
+                    寫明信片
                   </button>
                   <button
                     className="btn-secondary"
                     onClick={() => setSelectedInfo(arch)}
-                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px' }}
+                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px', background: 'transparent', border: '1px solid #444', color: '#ccc' }}
                   >
-                    📍 導覽攻略
+                    導覽攻略
                   </button>
                   <button
                     className="btn-primary"
                     onClick={(e) => {
                       e.stopPropagation();
-                      setPromptModal({ isOpen: true, text: arch.prompt || "咒語尚未建立" });
+                      setSelectedStory(arch);
                     }}
-                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px' }}
+                    style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', padding: '0.7rem 0', whiteSpace: 'nowrap', borderRadius: '6px', border: '1px solid var(--accent-gold)', color: 'var(--accent-gold)', background: 'transparent' }}
                   >
-                    🪄 AI 咒語
+                    建築故事
                   </button>
                 </div>
               </div>
@@ -275,7 +441,7 @@ function App() {
                 <section style={{ marginBottom: '1rem' }}>
                   <button
                     onClick={() => {
-                      openSandbox(`/arch_images/${selectedInfo.id}.png`, selectedInfo);
+                      openSandbox(selectedInfo.image_url || `/arch_images/${selectedInfo.id}.png`, selectedInfo);
                       setSelectedInfo(null);
                     }}
                     className="btn-primary"
@@ -317,7 +483,10 @@ function App() {
                         textDecoration: 'none',
                         fontSize: '1rem',
                         fontWeight: '700',
-                        borderRadius: '6px'
+                        borderRadius: '6px',
+                        background: 'transparent',
+                        border: '1px solid var(--accent-gold)',
+                        color: 'var(--accent-gold)'
                       }}
                     >
                       🚀 在 Google Maps 中開啟定位
@@ -328,7 +497,7 @@ function App() {
                 </section>
               </div>
               <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1rem' }}>
-                <button className="btn-secondary" onClick={() => setSelectedInfo(null)} style={{ width: '100%' }}>
+                <button className="btn-secondary" onClick={() => setSelectedInfo(null)} style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', cursor: 'pointer', background: 'transparent', border: '1px solid #444', color: '#888' }}>
                   返回畫廊
                 </button>
               </div>
@@ -371,11 +540,10 @@ function App() {
           </div>
         )}
 
-        {/* Prompt Modal */}
-        {promptModal.isOpen && (
+        {/* Building Story Drawer (建築故事) - 改為居中彈窗對齊導演偏好 */}
+        {selectedStory && (
           <div
             className="lightbox"
-            onClick={() => setPromptModal({ isOpen: false, text: '' })}
             style={{
               position: 'fixed',
               top: 0,
@@ -383,59 +551,138 @@ function App() {
               width: '100%',
               height: '100%',
               backgroundColor: 'rgba(0,0,0,0.8)',
+              backdropFilter: 'blur(8px)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               zIndex: 1100,
+              animation: 'fadeIn 0.3s forwards',
+              padding: '1rem'
             }}
+            onClick={() => setSelectedStory(null)}
           >
             <div
               onClick={(e) => e.stopPropagation()}
               style={{
-                backgroundColor: '#1a1a1a',
-                padding: '2rem',
-                borderRadius: '8px',
-                border: '1px solid var(--accent-gold)',
-                width: '80%',
+                width: '100%',
                 maxWidth: '600px',
-                maxHeight: '80vh',
+                maxHeight: '85vh',
+                backgroundColor: '#1a1a1a',
+                borderRadius: '16px',
+                padding: '2rem 1.5rem',
+                position: 'relative',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '1rem'
+                boxShadow: '0 20px 60px rgba(0,0,0,0.6)',
+                border: '1px solid #333'
               }}
             >
-              <h3 style={{ color: 'var(--accent-gold)', fontFamily: 'Playfair Display' }}>AI 生成提示詞</h3>
-              <textarea
-                readOnly
-                value={promptModal.text}
+              <button
+                onClick={() => setSelectedStory(null)}
                 style={{
-                  width: '100%',
-                  height: '300px',
-                  backgroundColor: '#111',
-                  color: '#ccc',
-                  border: '1px solid #333',
-                  padding: '1rem',
-                  fontFamily: 'monospace',
-                  fontSize: '0.8rem',
-                  borderRadius: '4px',
-                  resize: 'none'
+                  position: 'absolute',
+                  top: '1rem',
+                  right: '1rem',
+                  background: 'none',
+                  border: 'none',
+                  color: '#fff',
+                  fontSize: '1.8rem',
+                  cursor: 'pointer',
+                  zIndex: 10,
+                  opacity: 0.6
                 }}
-              />
-              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '1rem' }}>
+              >
+                ×
+              </button>
+
+              <div className="custom-scrollbar" style={{ overflowY: 'auto', paddingRight: '0.5rem' }}>
+                <header style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
+                  <h3 style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: '1.6rem',
+                    color: 'var(--accent-gold)',
+                    marginBottom: '0.3rem',
+                    letterSpacing: '1px'
+                  }}>
+                    {selectedStory.name_en || selectedStory.name.split('/')[0]}
+                  </h3>
+                  <div style={{
+                    fontFamily: "'Noto Serif TC', serif",
+                    fontSize: '1.25rem',
+                    color: 'var(--accent-gold)',
+                    fontWeight: '700',
+                    marginTop: '0.2rem'
+                  }}>
+                    {selectedStory.name}
+                  </div>
+                  <div style={{
+                    width: '80%',
+                    height: '1px',
+                    background: 'linear-gradient(90deg, transparent, var(--accent-gold), transparent)',
+                    opacity: 0.55,
+                    margin: '1.5rem auto'
+                  }} />
+                </header>
+
+                <div style={{
+                  fontSize: '0.9rem',
+                  lineHeight: '1.6',
+                  color: '#ddd',
+                  textAlign: 'justify',
+                  whiteSpace: 'pre-wrap',
+                  marginBottom: '2rem',
+                  fontFamily: "var(--font-sans, sans-serif)",
+                  fontWeight: '300',
+                  opacity: 0.95
+                }}>
+                  {selectedStory.story || "這座建築的故事正在歷史的塵埃中甦醒，敬請期待。"}
+                </div>
+
+                {selectedStory.quotes && selectedStory.quotes.length > 0 && (
+                  <footer style={{
+                    marginTop: '1.5rem',
+                    padding: '1rem 1.2rem',
+                    backgroundColor: 'var(--accent-gold)',
+                    borderRadius: '10px',
+                    marginBottom: '1rem',
+                    boxShadow: '0 4px 20px rgba(212, 175, 55, 0.2)'
+                  }}>
+                    {selectedStory.quotes.map((q, i) => (
+                      <div key={i} style={{ marginBottom: i === selectedStory.quotes.length - 1 ? 0 : '1rem' }}>
+                        <p style={{
+                          color: '#000',
+                          fontSize: '0.92rem',
+                          fontStyle: 'normal',
+                          fontFamily: "'Noto Serif TC', serif",
+                          fontWeight: '600',
+                          lineHeight: '1.6',
+                          letterSpacing: '0px'
+                        }}>
+                          {q.text}
+                          <span style={{
+                            color: '#000',
+                            fontSize: '0.75rem',
+                            marginLeft: '12px',
+                            fontFamily: "var(--font-sans, sans-serif)",
+                            fontStyle: 'normal',
+                            opacity: 0.7,
+                            whiteSpace: 'nowrap',
+                            fontWeight: '700'
+                          }}>
+                            {q.source}
+                          </span>
+                        </p>
+                      </div>
+                    ))}
+                  </footer>
+                )}
+
                 <button
                   className="btn-secondary"
-                  onClick={() => setPromptModal({ isOpen: false, text: '' })}
+                  onClick={() => setSelectedStory(null)}
+                  style={{ width: '100%', padding: '0.8rem', borderRadius: '8px', cursor: 'pointer', background: 'transparent', border: '1px solid #444', color: '#888' }}
                 >
-                  關閉
-                </button>
-                <button
-                  className="btn-primary"
-                  onClick={() => {
-                    navigator.clipboard.writeText(promptModal.text);
-                    alert("提示詞已複製到剪貼簿！Prompt Copied!");
-                  }}
-                >
-                  📋 複製全部
+                  返回畫廊
                 </button>
               </div>
             </div>

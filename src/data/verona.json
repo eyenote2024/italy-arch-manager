@@ -1,0 +1,366 @@
+[
+  {
+    "id": "verona_01",
+    "name": "帕利奧門",
+    "features": "1561 • 米凱萊·聖米凱利 • 軍事文藝復興風格",
+    "key_visual": "雄偉的多立克柱式立面，展現石柱間的光影張力",
+    "history_text": "它是維羅納防禦工事中最優雅的一環。聖米凱利將其設計得像一座凱旋門，外側是嚴謹肅穆的多立克柱，內側卻是粗獷、富有層次的岩石風，展現出一種內外兼修的建築威嚴。",
+    "image_url": "/arch_images/Verona_Porta_Palio.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: PORTA PALIO.\n\nStyle & Vibe: (CRITICAL) Subtle High-Quality Antique Paper. Light creamy texture. Very faint aging. FULL BLEED TEXTURE (Edge-to-Edge). The paper must fill the entire canvas 100%. NO visible paper edges. NO borders. NO background surface. Elegant Architect's Manuscript.\n\nLayout Strategy:\n[CRITICAL CONSTRAINT: GRID SYSTEM] The image is strictly divided by a **VISIBLE THIN VERTICAL LINE** down the center.\n**[LOCKED CENTRAL AXIS]:** The dividing line MUST remain exactly in the center (50%). **NO SHIFTING.**\nLEFT SIDE (Locked 50%): Architectural Analysis.\nRIGHT SIDE (Locked 50%): Historical Narrative.\n\n**Instructions for the LEFT SIDE (50%):**\n1. Key Visual: The majestic Doric facade, shadow play on columns.\n2. Middle: Watercolor vs Engineering section. 4-6 Red Dots with English Labels.\n3. Bottom: Floor plan with dashed vector line (Visit flow), camera icons, and map.\n\n**Instructions for the RIGHT SIDE (50%):**\n- Historical Anecdote wrapping around small spot illustrations.\n- Title: PORTA PALIO in Bold Didot Typeface.\n- Watermark: eyenote@gmail.com",
+    "name_en": "Porta Palio",
+    "key_visual_en": "The majestic Doric facade of the city gate, strong shadow play on the columns",
+    "history_text_en": "Sanmicheli designed this gate not just for defense, but as a triumphal entry. The exterior is Doric and severe, while the interior facade is rustic and welcoming—a true 'Janus' face of architecture.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "欣賞對比強烈的雙面立面設計",
+      "觀察細節精密的古典柱式構成",
+      "感受當年做為維羅納正式入口的氣勢"
+    ],
+    "quotes": [
+      {
+        "text": "這是古老城牆與優雅藝術最完美的交界。",
+        "author": "維羅納史學家"
+      }
+    ],
+    "story": "1561 年完工的帕利奧門，是威尼斯共和國軍事巨擘米凱萊·聖米凱利（Michele Sanmicheli）的巔峰遺產。這座城門並不只是一道防禦關口，而是聖米凱利對古羅馬古典主義發起的一場私密且壯觀的對話。城門內外立面的巨大視覺落差，展示了一種「雅努斯雙面神」式的邏輯：面對外部荒野的立面採用了極其奢華的多立克柱式與粗石裝飾，其目的不僅是實體上的屏障，更是為了通過建築語彙的文明高度，對來者產生心智上的壓制。而面對城內的一側則展現出退讓後的樸素，將空間的主體性歸還給了維羅納人的日常生活。\n\n「Palio」一詞源於當時在城門外舉行的古老賽馬競技。聖米凱利大膽地在軍事工事中引進了羅馬劇院式的拱洞與比例，試圖讓每一個進入維羅納的人在跨過門檻的第一秒，就感受到這座城市建築血統的純度。這座城門展現了一種高級的野心：將冰冷的戰爭機器轉化為藝術的凱旋。遺憾的是，聖米凱利在城門最終落成前兩年便去世，未能親眼見證這座耗費他後半生心血的作品，如何在陽光下折射出他夢寐以求的古典榮光。今日當你穿過這道厚重的拱門，石材上那些精密計算過的倒角與陰影，依然在無聲地對話，訴說著一個軍事建築師如何在鋼鐵與石塊之間，尋求美學的避難所。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_02",
+    "name": "朱麗葉之墓",
+    "features": "13 世紀 • 羅曼式地下室 • 紅色大理石",
+    "key_visual": "地窖中寂靜的紅色大理石石棺，一道孤寂的光投射其上",
+    "history_text": "這裡曾是聖法蘭西斯科修道院的地窖。莎士比亞筆下的愛情悲劇成名後，這具紅大理石石棺成了全球旅人的朝聖地。就連狄更斯造訪後，也忍不住在筆下寫出這份深刻的感概。",
+    "image_url": "/arch_images/Verona_Juliets_Tomb.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: TOMBA DI GIULIETTA.\n\nStyle & Vibe: (CRITICAL) Subtle High-Quality Antique Paper. Elegant Architect's Manuscript.\n\nLayout Strategy:\n[CRITICAL CONSTRAINT: GRID SYSTEM] The image is strictly divided by a **VISIBLE THIN VERTICAL LINE** down the center.\n\n**Instructions for the LEFT SIDE (50%):**\n1. Key Visual: The empty red marble sarcophagus in the crypt, dramatic shaft of light.\n2. Middle: Watercolor vs Engineering section. 4-6 Red Dots.\n3. Bottom: Map & Plan with POIs.\n\n**Instructions for the RIGHT SIDE (50%):**\n- Text: \"Located in a former monastery, this empty sarcophagus became a pilgrimage site...\"\n- Logotype: Vertical Artistic Typography for TOMBA DI GIULIETTA.",
+    "name_en": "Juliet's Tomb",
+    "key_visual_en": "The empty red marble sarcophagus in the crypt, dramatic shaft of light",
+    "history_text_en": "Located in a former monastery, this empty sarcophagus became a pilgrimage site after Shakespeare's play. Charles Dickens wrote about visiting it in 1846, calling it a 'water-trough'.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "感受地下室（Crypt）特有的靜謐淒美氛圍",
+      "細看古老紅色大理石石棺的質感",
+      "參觀周邊展示的中世紀壁畫博物館"
+    ],
+    "quotes": [
+      {
+        "text": "這裡不僅是傳說的終點，更是文學想像力的起點。",
+        "author": "文學評論家"
+      }
+    ],
+    "story": "在聖法蘭西斯科修道院地窖的孤光下，躺著一具斑駁空蕩的紅大理石石棺。這具本質普通的 13 世紀墓葬，其神聖性完全源於對悲劇記憶的集體投射。18 世紀時，這棺木曾被棄置中庭充當清洗農具的洗手槽；這種在神聖與市井間的擺盪，刻畫了維羅納對遺產的冷靜。隨著莎翁劇本發酵，19 世紀文豪湧入，拜倫取走石塊紀念，史坦達爾則記錄下心碎的寂靜。\n\n狄更斯曾觀察到石棺的破敗，卻認為這種「空虛的真實感」比華麗更有力量，因為它迫使訪客用想像力填補缺席的愛情。1936 年，館長阿維那為配合電影宣傳正式現代化修整墓穴，引進哥德式細節。這座地標證明：想像力能讓遺棄的水槽轉化為朝聖中心。今日在陰冷地底凝視空棺，這種文學與石材交織出的虛實感，正是維羅納最迷人的命運陷阱。這具空石棺重申：文字能穿透石頭，讓虛構悲劇成為這塊土地上最堅硬的真實。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_03",
+    "name": "聖芝諾大教堂",
+    "features": "967 年 • 羅曼式傑作 • 命運之輪玫瑰窗",
+    "key_visual": "巨大的「命運之輪」玫瑰窗，襯托著紅白相間的條紋立面",
+    "history_text": "被譽為義大利最美的羅曼式教堂之一。它那標誌性的「斑馬紋」立面在陽光下閃耀，而那扇擁有 1100 多年歷史的青銅大門，至今仍訴說著古老的聖經故事。在文學愛好者心中，這裡更是羅密歐與茱麗葉秘密成婚的地點。",
+    "image_url": "/arch_images/Verona_San_Zeno.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: BASILICA DI SAN ZENO.\n\nLeft Visual: The massive Rose Window (Wheel of Fortune) and the striped brick facade.\n\nHistory: \"According to Shakespeare, the crypt of this Basilica is where the secret marriage of Romeo and Juliet took place...\"",
+    "name_en": "Basilica di San Zeno",
+    "key_visual_en": "The massive Rose Window (Wheel of Fortune) and the striped brick facade",
+    "history_text_en": "According to Shakespeare, the crypt of this Basilica is where the secret marriage of Romeo and Juliet took place. The Rose Window is known as the 'Wheel of Fortune', symbolizing the fickleness of fate.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "觀察象徵命運起伏的巨大玫瑰窗（Wheel of Fortune）",
+      "研究青銅大門上精美的手工面板細節",
+      "進入教堂感受紅白石材交織出的神聖空間感"
+    ],
+    "quotes": [
+      {
+        "text": "其門廊每一道光輝，都記錄了信仰與藝術的虔誠融合。",
+        "author": "文藝復興學者"
+      }
+    ],
+    "story": "站在典型的紅白石材「斑馬紋」立面前，首先接收到的是羅曼式對秩序的病態追求。這座教堂是聖芝諾長眠處，這位被暱稱為「微笑主教」的神職人員在雕像中手持釣魚竿，親民地展現了 4 世紀平民的生存底底色。立面核心隱藏著關於命運的冷靜計算：布里奧托設計的「命運之輪」玫瑰窗。窗沿六具人像有人登基有人墜落，這不僅是宗教警示，更是對維羅納家族內鬥與動盪政局的物理化隱喻。\n\n莎翁筆下羅密歐與朱麗葉的秘婚發生在地下墓室入口。這非巧合，因為命運無常唯有在這種能吞噬光線、由古柱支撐的幽暗空間裡，才能得到精準詮釋。正門 48 塊青銅面板被譽為「中世紀漫畫」，製作年代跨越兩世紀，每一處金屬凹陷都記錄了歷史轉場時的手震。步入室內，罕見的「船底型」天花板讓信徒產生置身諾亞方舟穿越歷史洪流的錯覺。這種木質結構與底層死亡氣息石室的對比，構成了聖芝諾教堂最深沉的人文張力。它重申：在廢墟中尋求平衡，才是維羅納工藝最堅韌的骨髓。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_04",
+    "name": "卡斯泰爾韋基奧博物館",
+    "features": "1354 (1964 修復) • 卡羅·史卡帕 • 跨時空修復典範",
+    "key_visual": "懸浮在半空中的康格蘭德雕像，與史卡帕設計的現代節點",
+    "history_text": "這裡是建築師史卡帕展露魔力的現場。他在中世紀的古老城牆中，「切」開了空間，讓鋼、木頭與混凝土精準地介入歷史。每個轉角、每道光線的處理，都讓這座原本沈重的堡壘顯得靈動且詩情畫意。",
+    "image_url": "/arch_images/Verona_Castelvecchio.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: CASTELVECCHIO.\n\nLeft Visual: The floating equestrian statue of Cangrande I della Scala, on Scarpa's plinth.\n\nHistory: \"Carlo Scarpa's restoration is world-famous for the 'reveal'—a intentional gap between the old walls and the new roof.\"",
+    "name_en": "Castelvecchio",
+    "key_visual_en": "The floating equestrian statue of Cangrande I della Scala, positioned on Scarpa's concrete plinth",
+    "history_text_en": "Carlo Scarpa's restoration is world-famous for the 'reveal'—a intentional gap between the old walls and the new roof. It symbolizes that history and modernity can coexist without touching/destroying each other.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "尋找那個像是「漂浮」在空中的康格蘭德一世騎馬像",
+      "細品史卡帕對於不同建材銜接處的「神聖細節」",
+      "漫步於橫跨河面的老城堡橋（Castelvecchio Bridge）"
+    ],
+    "quotes": [
+      {
+        "text": "史卡帕讓歷史不再是冰冷的牆，而是可以呼吸的對話。",
+        "author": "建築設計雜誌"
+      }
+    ],
+    "story": "康格蘭德二世在 14 世紀建立這座紅磚要塞，起初並非為禦敵，而是源於極度的家庭焦慮——躲避家人的暗殺。然而，讓陰森古堡煥發第二次生命的是卡羅·史卡帕（Carlo Scarpa）。他不採取「修舊如舊」，而是透過外科手術般的「剝離」術，將不同時層的歷史傷痕、防禦構造與現代支撐完全攤開。他在牆面間刻意留下狹窄縫隙，那是對歷史真相最冷靜的切割。\n\n露台上的康格蘭德一世騎馬雕像，是史卡帕設計的視覺陷阱。他拒絕讓雕像正面對訪客，逼迫你必須為了看清披肩細節而進行物理位移。大師手中，卡斯泰爾韋基歐不再是塵封庫房，而是一場流動的視覺實驗：地板紋理、金屬架與新舊層次的連結，都在編織一段關於時間與權力的史詩。它告訴我們：對過去最誠實的對話是留下空隙。當你踏過懸空鋼橋，看著紅磚與清水混凝土共舞，這座恐懼之城的堡壘，已被轉化為美學意志永不陷落的凱旋。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_05",
+    "name": "維羅納競技場",
+    "features": "西元 30 年 • 羅馬圓形劇場 • 粉紅色大理石",
+    "key_visual": "巨大的石造觀眾席與壯麗的歌劇舞台搭建現場",
+    "history_text": "它比著名的羅馬競技場還要古老。兩千年前這裡是血腥的格鬥場，現在則是全世界最頂尖的露天歌劇聖殿。1117 年的大地震雖然震毀了它的外層環廊，但剩下的「Ala」殘壁反而成為了維羅納的精神象徵。",
+    "image_url": "/arch_images/Verona_Arena.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: ARENA DI VERONA.\n\nLeft Visual: The interior amphitheater filled with opera stage sets.\n\nHistory: \"Built in the 1st century AD, it is older than the Colosseum...\"",
+    "name_en": "Arena di Verona",
+    "key_visual_en": "The interior amphitheater filled with opera stage sets, showing the massive stone tiers",
+    "history_text_en": "Built in the 1st century AD, it is older than the Colosseum. In 1117, a massive earthquake destroyed the outer ring (the 'Ala'), leaving the iconic shape we see today.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "親腳踩上兩千年前完美的粉紅大理石階梯",
+      "仰望那段碩果僅存的原始外環牆殘跡（Ala）",
+      "感受在此舉行的露天演出所帶來的強大音場魅力"
+    ],
+    "quotes": [
+      {
+        "text": "兩千年的石頭，在歌劇的詠嘆中依然能聽見心跳。",
+        "author": "歌劇愛好者"
+      }
+    ],
+    "story": "西元 30 年的維羅納急於向羅馬證明血統，執政官下令用紅狀灰岩（Rosso di Verona）砌築這座巨獸。這種石材本非為了美學，而是為了耐受數萬觀眾對角鬥廝殺的踐踏。它比羅馬競技場早半世紀，面對 1117 年大地震時展現了結構傲骨：即便外環震塌，僅留的「翅膀」（Ala）四連拱殘壁孤懸，依然是羅馬工學的可怕精度證明。\n\n中世紀人將這巨石編織進惡魔契約：傳說死刑貴族為見黎明，賣靈魂給地獄換取惡魔一夜建成劇場。惡魔驚覺悔意祈求聖母，聖母竟讓黎明提前，驚走幽靈，留下未竟殘壁。這反映了維羅納在信仰與古技術間的集體焦慮。\n\n然而，歷史最精準的嘲弄發生在 1913 年。男高音贊納泰羅發現這片曾吸飽鮮血的死亡場域，竟對頻率極其敏感。自此，隔離死亡的容器轉型為全球最溫柔的聲學聖殿。當《阿伊達》詠嘆調在夏夜震盪，兩千年前的石階正吸收著文明的音旋。這是一場緩慢的洗罪，競技場不再是帝國爪牙，而是維羅納在石頭與靈魂中，對時間最沈著的凱旋。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_06",
+    "name": "維羅納人民銀行",
+    "features": "1973-1981 • 卡羅·史卡帕 • 現代主義超現實之作",
+    "key_visual": "帶有圓孔窗與突出凸窗的奇幻立面，光影變化極致",
+    "history_text": "這是史卡帕留給世界的最後一份禮物。這座銀行建築完全打破了金融機構的嚴肅，他用精密的幾何圖案、圓形的孔徑以及像是眼睛一樣的窗戶，在維羅納的老街區中創造出一種充滿超現實感的現代詩篇。",
+    "image_url": "/arch_images/Verona_Banca_Popolare.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: BANCA POPOLARE DI VERONA.\n\nLeft Visual: The surreal facade with the protruding Bow Window.\n\nHistory: \"Scarpa's final work. The facade is a complex game of light and shadow...\"",
+    "name_en": "Banca Popolare di Verona",
+    "key_visual_en": "The surreal facade with the protruding Bow Window and circular openings",
+    "history_text_en": "Scarpa's final work. The facade is a complex game of light and shadow, capturing the changing daylight. The strange circular windows break all rules of traditional bank architecture.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "觀察立面上隨陽光角度變化的層疊陰影",
+      "尋找史卡帕標誌性的金屬構件與石材接縫細節",
+      "體悟這座前衛建築如何完美與古城氛圍和諧共處"
+    ],
+    "quotes": [
+      {
+        "text": "這不是一座銀行，而是一場關於幾何與光影的夢境。",
+        "author": "現代建築評論家"
+      }
+    ],
+    "story": "當卡羅·史卡帕（Carlo Scarpa）在 1970 年代接下銀行增建計畫時，他腦中並非金融的冰冷，而是如何在這座古城的紅磚肌理中，嵌入一場光影與材料的博弈。立面上那排彷彿「眼睛」的圓窗曾遭抨擊，但史卡帕堅持用幾何比例將其轉化為觀測城市的濾鏡，讓內部金融業務與外部文藝復興廣場的金黃陽光共振。\n\n史卡帕對建材的偏執達到了巔峰：接合石塊的銅質裝飾並非單純裝飾，而是他切割時間與空間的節點。他將銀行視為「光影實驗室」，透過石板疊加創造富有音樂韻律的視覺層次。他想證明：處理金錢的場域也能擁有史詩韻律。每一道扶手、轉角排水口，都經過瘋狂的細部推敲。這座銀行不只是保險箱，更是史卡帕將現代精度與手工溫潤融合的深情回饋。它昭告世人：對建材的誠實，能為功利場域開闢出靈魂的自由之地。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_07",
+    "name": "茱麗葉之家",
+    "features": "13 世紀 • 哥德式塔樓建築 • 著名的陽台",
+    "key_visual": "布滿藤蔓的中庭、著名的陽台以及下方被摸得發亮的茱麗葉像",
+    "history_text": "它是全維羅納門牌號碼最熱門的地方。這座古老的卡佩羅家族宅邸，因為愛情的名義而重生。雖然陽台是為了戲劇而增建的產物，但這並不阻礙每天成千上萬的人來到這裡，在中庭的茱麗葉像前尋求愛情的永恆祝福。",
+    "image_url": "/arch_images/Verona_Juliets_House.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: CASA DI GIULIETTA.\n\nLeft Visual: The iconic Balcony covered in ivy.\n\nHistory: \"The famous balcony was actually added in the 1930s...\"",
+    "name_en": "Juliet's House",
+    "key_visual_en": "The iconic Balcony covered in ivy, overlooking the crowded courtyard",
+    "history_text_en": "The famous balcony was actually added in the 1930s, using pieces of a 14th-century sarcophagus. The bronze statue in the courtyard is worn shiny by thousands of hopeful lovers seeking luck.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "在著名的陽台下重溫那段雋永的愛情對白",
+      "伸手輕觸中庭的茱麗葉雕像祈求好運",
+      "研究典型的中世紀塔樓建築構造與磚牆質地"
+    ],
+    "quotes": [
+      {
+        "text": "愛情的傳奇，讓這座冰冷的磚牆充滿了溫暖的光輝。",
+        "author": "旅行詩人"
+      }
+    ],
+    "story": "這座帶著卡佩洛家族（Dal Cappello）標誌的 13 世紀住宅，是維羅納歷史中最迷人也最荒謬的視覺行銷史。石帽徽在莎翁筆下演變成勢不兩立的卡普萊特家族。然而，19 世紀中葉這裡曾是環境惡劣、被嘲諷為「爛旅館」的平民客棧。當今全世界旅人徹夜排隊一睹真容的藤蔓陽台，其實是 1930 年代博物館館長阿維那的一場大膽策劃。\n\n修復工程中，阿維那為了滿足大眾對故事的渴望，從古老石棺拆下殘片拼湊出這座陽台。這場教科書級的行銷，將沉悶的家族防線轉型為全球愛情的空間錨點。觸摸銅像的迷信行為與高雅悲劇感形成荒謬對比。這座住宅告訴我們：傳說是更有力量的石質。即便陽台是 20 世紀產物，但當千萬人在此留下誓言，就具備了超越年代的心理深度。維羅納擅長在真實傷痕上敷上文學粉飾，讓中世紀權力防線折射出詩性光譜。它詰問每一位造訪者：當傳說比事實更真實，我們是否還需要冰冷的歷史？",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_08",
+    "name": "百草廣場",
+    "features": "羅馬廣場遺址 • 古老露天市集 • 壁畫宮殿群",
+    "key_visual": "撐著白色大傘的熱鬧攤位，被四周繽紛的濕壁畫建築環繞",
+    "history_text": "這裡是維羅納跳動了兩千年的心臟。在羅馬時代它是公共論壇，現在則是全義大利最迷人的廣場之一。廣場中央的噴泉雕像可以追溯到西元 380 年，而周邊建築上的濕壁畫，更是維羅納「畫中之城」美譽的來源。",
+    "image_url": "/arch_images/Verona_Piazza_Erbe.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: PIAZZA DELLE ERBE.\n\nLeft Visual: The vibrant market square with white umbrellas.",
+    "name_en": "Piazza delle Erbe",
+    "key_visual_en": "The vibrant market square with white umbrellas, the Lamberti Tower rising above, and frescoed facades",
+    "history_text_en": "Once the Roman Forum, this is the oldest square in Verona. The 'Madonna Verona' fountain in the center uses a Roman statue from 380 AD, creating a direct link to the empire.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "在熱鬧的露天市集體驗維羅納的日常活力",
+      "仰望馬費宮（Palazzo Maffei）屋頂上的希臘諸神雕像",
+      "尋找古老的維羅納噴泉（Madonna Verona）"
+    ],
+    "quotes": [
+      {
+        "text": "在那兒，時間彷彿慢了下來，只剩下香料與鮮花的氣息。",
+        "author": "義大利生活評論"
+      }
+    ],
+    "story": "要理解維羅納跳動的心臟，必須站在百草廣場市集白傘間。撥開喧囂，腳底石板精準重疊在羅馬論壇（Forum）格柵上。這非巧合，而是羅馬規劃者對空間權力的永久佔領：行走交易依然遵循羅馬直角座標。廣場中心噴泉上的「維羅納聖母」是歷史挪用的諷刺史：底座是 14 世紀工藝，神像是 4 世紀羅馬古物。這拼湊詮釋了城市對碎片的實用主義：只要能妝點權威，年代隨意剪輯。\n\n拱門下懸掛的「鯨魚肋骨」並非宗教符騰，而是 15 世紀藥房展示全球供給能力的視覺廣告——這根骨頭就是在宣告掌控權。廣場一側馬贊蒂之家的絢爛濕壁畫，曾是 16 世紀商賈間昂貴色粉的財富競賽。「Berlina」石墩座椅則有雙重身分：既是計量標準，也是懲罰詐欺者的行刑台。權威、罪行與日常在此交融，讓百草廣場成為人性與規則不斷碰撞的實驗場。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_09",
+    "name": "領主廣場",
+    "features": "文藝復興風格 • 但丁雕像 • 維羅納的客廳",
+    "key_visual": "但丁雕像靜靜矗立於典雅的廣場中央，四周圍繞著名門宮殿",
+    "history_text": "與充滿喧囂的百草廣場不同，這裡顯得優雅且肅穆，被稱為「維羅納的客廳」。但丁在被佛羅倫斯驅逐後，曾在此受到斯卡拉家族的款待，他在這裡完成了《神曲》的部分篇章，因此他的雕像至今仍守望著這座廣場。",
+    "image_url": "/arch_images/Verona_Piazza_Signori.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: PIAZZA DEI SIGNORI.\n\nLeft Visual: The elegant square dominated by the statue of Dante Alighieri.",
+    "name_en": "Piazza dei Signori",
+    "key_visual_en": "The elegant square dominated by the statue of Dante Alighieri, surrounded by Renaissance palaces",
+    "history_text_en": "Known as 'Dante's Square', this was the political heart of Verona. Dante found refuge here with the Scaligeri family after his exile from Florence, writing parts of the Divine Comedy.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "與憂鬱的詩人但丁（Dante）雕像合影",
+      "欣賞四周環繞的精緻文藝復興拱廊建築",
+      "感受中世紀權力核心那種內斂且高貴的氣場"
+    ],
+    "quotes": [
+      {
+        "text": "它是權力與詩意的完美融合，安靜得能聽見歷史的腳步。",
+        "author": "文藝復興史學者"
+      }
+    ],
+    "story": "與百草廣場的市井喧囂不同，領主廣場是端莊冷靜的「政治客廳」。這座被宮殿環繞的空間是斯卡拉家族（della Scala）統治兩百年的權力場。帶著紅磚拱廊的建築展示了文藝復興早期對比例的病態追求，這類語彙本質上是為了給暗殺與篡位的中世紀史，一個理智的背景。廣場中央矗立著但丁像，他背對權力核心，目光憂鬱，紀念他在被驅逐後受到領主康格蘭德一世慷慨護佑的流亡歲月。\n\n維羅納對但丁而言不只是避難所，更是《神曲》天堂篇的思想溫床。斯卡拉家族將大詩人視為「文明勳章」，展示在廣場心臟。拱洞連廊記錄了流亡者思索秩序的節奏。最有權威的是市政廳宮，其巨大的庭院見證了維羅納從自強鎮演變為家族領國的血腥。這裡的石頭傳遞的是紀律與意志。領主廣場詮釋了權力動態：燈火映照下，你依然能感到那股流亡與護佑、權力與文明共生的史詩氣息。它是在優雅中，對人性博弈最沈默的見證。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_10",
+    "name": "羅密歐之家",
+    "features": "14 世紀 • 中世紀堡壘民宅 • 燕尾形城垛",
+    "key_visual": "厚實的紅磚牆與燕尾形城垛，充滿防禦感的禁欲美學",
+    "history_text": "相較於茱麗葉之家的浪漫開放，這裡更像是一座封閉的堡壘。高聳的紅磚牆與鋸齒狀的燕尾城垛，記錄了 14 世紀 Montecchi 家族與仇敵爭鬥的緊張歲月。雖然內部不對外開放，但其厚重的外觀完美詮釋了那段衝突不斷的歷史。",
+    "image_url": "/arch_images/Verona_Romeos_House.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: CASA DI ROMEO.\n\nLeft Visual: The imposing medieval fortress facade with Ghibelline crenellations.",
+    "name_en": "Romeo's House",
+    "key_visual_en": "The imposing medieval fortress facade with Ghibelline crenellations (swallow-tail shape), dark and foreboding",
+    "history_text_en": "Unlike Juliet's house, this is a true fortress. The high walls and swallow-tail merlons (Ghibelline style) reflect the violent clan wars of the Montecchi family. It remains a private fortress to this day.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "觀察極具中世紀代表性的「燕尾形城垛」（Ghibelline Merlons）",
+      "體悟中世紀貴族為了保命而設計的防衛式豪宅",
+      "感受與「茱麗葉之家」截然不同的寫實基調"
+    ],
+    "quotes": [
+      {
+        "text": "真正的歷史，往往藏在那些不給你看的厚重牆扉之後。",
+        "author": "中世紀研究家"
+      }
+    ],
+    "story": "在維羅納街巷深處，矗立著一座拒絕與世界對話的紅磚堡壘。與朱麗葉家那種被過度包裝的浪漫主義不同，羅密歐之家保留了中世紀家族內鬥中極端且冷酷的「禁欲美學」。這座建築展現了最原始的防禦特徵：厚重的紅磚牆幾乎不設低層窗戶，頂部則是典型的「燕尾形」吉伯林（Ghibelline）城垛。這在當時不只是裝飾，而是一個危險且明確的政治號誌——它在宣告主人堅定站在神聖羅馬帝國皇權一側。這種將政治立場刻進建築脊樑的做法，是中世紀義大利城市內戰的空間物證。\n\n這座住宅的傳記具體化了莎士比亞劇本中被略過的殘酷現實：在一座被家族宿怨切割得粉碎的城市裡，純真的愛情往往只能寄存在這類堡壘的裂縫中。諾加羅拉家族將住宅設計成一個自給自足、隨時準備迎接圍困的微型要塞。沿著外牆走上一圈，你會發現那些位置極高的通風孔，那是為了防備刺客投擲火種。這種對生存的極度焦慮，透過冰冷的石材傳遞出來。羅密歐之家至今仍是私人住宅，其緊閉的大門彷彿在跨越數百年後，依然守護著不為人知的秘密。它提醒著尋找愛情的訪客：在文學的虛構之外，真實的歷史是由權力、宿怨與冷硬的紅磚堆砌而成的。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_11",
+    "name": "聖安納斯塔西亞大教堂",
+    "features": "1290 年 • 義大利哥動式 • 維羅納最大的教堂",
+    "key_visual": "挑高的哥動式中殿，布滿精緻花紋的拱頂與壯麗的大理石柱",
+    "history_text": "步入這座教堂，你會被那種深邃的垂直感震撼。這裡是維羅納哥動式建築的巔峰，紅大理石柱支撐著色彩斑斕的拱頂。最有趣的細節在柱腳下：那兩尊彎著腰、神情生動的「駝背乞丐」像，是所有訪客必看的亮點。",
+    "image_url": "/arch_images/Verona_Santa_Anastasia.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: BASILICA DI SANTA ANASTASIA.\n\nLeft Visual: The soaring Gothic nave with painted vaulted ceilings.",
+    "name_en": "Basilica di Santa Anastasia",
+    "key_visual_en": "The soaring Gothic nave with its beautifully painted vaulted ceilings and red marble columns",
+    "history_text_en": "At the base of the columns, look for the 'Hunchbacks' (Gobbi)—statues of beggars supporting the holy water fonts. Legend says touching their humps brings good luck.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "尋找柱腳下那兩尊生動有趣的「駝背乞丐」（Gobbi）雕像",
+      "欣賞佩薩內洛著名的壁畫《聖喬治與公主》",
+      "抬頭觀看壯觀且細膩、布滿幾何圖騰的哥動式拱頂"
+    ],
+    "quotes": [
+      {
+        "text": "那拱頂上的紋樣，彷彿是一座永不褪色的奇幻花園。",
+        "author": "藝術史學家"
+      }
+    ],
+    "story": "這座維羅納最大的哥德式聖殿，其宏偉程度與尚未完工的磚紅立面形成了戲劇性反差。步入其中，首先震撼訪客的是入口兩尊神態扭曲的「駝背乞丐」（Gobbi）石雕。這對洗禮池基座並非隨機，而是 15 世紀維羅納社會層級的縮影；傳說雕塑者是為了諷刺當時承受重擔卻薪資微薄的底層勞工，讓他們在神聖空間永恆負重。這種將世俗苦難鑲嵌進宗教聖殿的手法，展現了大教堂在信仰之外對人性的冷峻注視。\n\n教堂深處的佩萊格里尼禮拜堂，隱藏著 15 世紀的視覺探險：佩薩內洛（Pisanello）的壁畫《聖喬治與公主》。這不僅是宗教故事，更是這位國際哥德式大師在空間深度與服飾細節上的傲慢展示。畫中公主身著最高層級的絲綢，而聖喬治冷淡的神情預告了藝術史從單純崇拜轉向具有戲劇張力的人文敘事。教堂的傳記是由微小細節堆砌而成的：牆腳下代表貴族家族的石材飾面，以及天花板上如穿越星空的繁複花邊。聖安納斯塔西亞大教堂不只是石頭的堆疊，它是維羅納在面對來世與現世、神蹟與苦難時，交織出的一場永不落幕的華麗夢境。當光線灑在駝背石雕斑駁的背部，你依然能感受到從中世紀延續至今的尊嚴餘震。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_12",
+    "name": "維羅納主教座堂",
+    "features": "1187 年 • 羅曼式與哥德式的融合 • 提香的《聖母升天》",
+    "key_visual": "精雕細琢的羅曼式正門，守護著內部的宏偉聖殿",
+    "history_text": "它是維羅納的精神中心。壯麗的立面由紅、白兩色石材砌成，正門的兩尊雕像傳說就是查理曼大帝麾下的聖騎士。教堂內部更是大師傑作的集結地，包含威尼斯畫派大師提香唯一留在維羅納的祭壇畫真跡。",
+    "image_url": "/arch_images/Verona_Duomo.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: DUOMO DI VERONA.\n\nLeft Visual: The Romanesque portal with its twisted columns and gryphons.",
+    "name_en": "Verona Cathedral",
+    "key_visual_en": "The Romanesque portal with its twisted columns and gryphons",
+    "history_text_en": "Guarding the entrance are two legendary paladins of Charlemagne: Roland and Oliver. Carved in stone, they hold their famous swords, protecting the church for eternity.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "在祭壇前觀看提香的巔峰巨作《聖母升天》",
+      "研究教堂大門上精細無比的羅曼式石雕細節",
+      "參觀後方保存完整的古羅馬遺址噴泉區"
+    ],
+    "quotes": [
+      {
+        "text": "大理石在此被賦予了靈魂，靜靜訴說著千年的信念。",
+        "author": "宗教建築研究者"
+      }
+    ],
+    "story": "在 1117 年大地震後，維羅納以此為軸心重新站立，主教座堂是這座城市韌性的物證。穿過 12 世紀雙層門廊，會遇見守衛九百年的「老兵」：聖騎士羅蘭與奧利佛。羅蘭手持名劍 Durendarda，具體化了中世紀對保護者的渴求。這不僅是裝飾，更是向信徒聲明：神聖空間受英勇的跨時空守護。\n\n教堂結構展示了維羅納紅大理石最優雅的一面。側祭壇隱藏著珍貴靈魂——提香的《聖母升天》。二戰空襲期間，市民為了守護藝術血脈，祕密將畫作深藏入隱密防空洞，直到硝煙散盡。座堂更像城市記憶庫，記錄從 4 世紀遺蹟到文藝復興光學的追求。踩在拼花地板上，腳下覆蓋著羅馬斷層史。它的人文厚度源於未曾斷裂的生命力。當晨光灑在聖騎士斑駁盔甲上，你會明白：這是一場文明在災難縫隙中尋獲凱旋的路徑。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_13",
+    "name": "石橋",
+    "features": "西元前 100 年 • 羅馬拱橋 • 歷史與新生的見證",
+    "key_visual": "跨越阿迪傑河的紅白石拱橋，背景是優雅的山丘古堡",
+    "history_text": "它是維羅納最老的橋。西元前就矗立於此，連接著阿迪傑河兩岸。二戰時德軍為了撤離而將其炸毀，維羅納人後來從河底打撈起每一塊原始石材，像拼圖一樣將這座古老的靈魂重新「修復」回兩千年前的模樣。",
+    "image_url": "/arch_images/Verona_Ponte_Pietra.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: PONTE PIETRA.\n\nLeft Visual: The ancient Roman bridge spanning the Adige river.",
+    "name_en": "Ponte Pietra",
+    "key_visual_en": "The ancient Roman bridge spanning the Adige river, with Castel San Pietro in the background",
+    "history_text_en": "Blown up by retreating German troops in WWII, it was painfully reconstructed stone by stone. Divers recovered the original Roman blocks from the riverbed to restore its soul.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "漫步於橫跨急流的石拱上，感受兩千年的歷史重力",
+      "從橋面拍攝阿迪傑河彎道與聖彼得堡的最佳全景",
+      "細看不同時期的石材拼貼所留下的歷史痕跡"
+    ],
+    "quotes": [
+      {
+        "text": "每一塊沈入河底後又重見天日的石頭，都是維羅納不屈的靈魂。",
+        "author": "在地詩人"
+      }
+    ],
+    "story": "石橋是維羅納對抗遺忘、對抗毀滅最動人的物證。它橫跨在阿迪傑河湍急的彎道上，歷史可追溯至西元前 100 年的羅馬時期。然而，這座橋今日之所以能完整呈現，源於維羅納市民對自身血統近乎固執的忠誠。1945 年 4 月 24 日，撤退的德軍炸毀了橋樑五個跨度中的四個，將兩千年的歷史命脈沉入冰冷河底。戰後，維羅納人拒絕了現代化鋼橋的提議，選擇了一條最艱難的道路：重建這座象徵城市靈魂的石橋。\n\n這是一場集體的人文外科手術。在物資匱乏的年代，維羅納政府聘請潛水員一塊一塊地撈起原始的、被標號的古老石塊。建築師與工匠像是在拼湊一個破碎的神格，對照戰前照片，將帶著歷史溫度的石頭接回原位。今日你行走其上，那些淡黃色石材與深紅磚塊交接處的不規則接縫，正是廢墟重組後留下的「誠實疤痕」。石橋的存在證明了：最堅硬的防守不在於鋼筋水泥，而是在於一個城市願意為了一塊舊石，動用全城的靈魂進行打撈。當夕陽在河面閃耀，這座橋樑不再只是通道，它是維羅納對時間最深沉的一次宣誓，向世人展示文化意志如何戰勝戰爭的短暫斷點。",
+    "is_unesco": true
+  },
+  {
+    "id": "verona_14",
+    "name": "聖彼得堡",
+    "features": "19 世紀 • 奧地利軍營遺址 • 全城最佳全景視野",
+    "key_visual": "在布滿雪松的露台俯瞰整座紅屋頂城市，以及阿迪傑河的美麗弧線",
+    "history_text": "這裡是維羅納的發源地。早在羅馬人到來前，這裡就是核心定居點。現在這裡則是以極致的俯瞰美景聞名。當夕陽落在阿迪傑河上，映照著整座古城的紅瓦與塔樓，你會明白為什麼羅密歐與茱麗葉的故事必須發生在這裡。",
+    "image_url": "/arch_images/Verona_Castel_San_Pietro.png",
+    "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: CASTEL SAN PIETRO.\n\nLeft Visual: The cypress-lined terrace at sunset.",
+    "name_en": "Castel San Pietro",
+    "key_visual_en": "The cypress-lined terrace at sunset, looking down over the entire red-roofed city and river bend",
+    "history_text_en": "This hill is where Verona was born. Long before the Romans, this was an Iron Age settlement. It is the alpha and omega of the city—the perfect place to watch the sun set over history.",
+    "google_maps_url": "https://maps.app.goo.gl/9Z9Z9Z9Z9Z9Z9Z9Z9Z",
+    "visit_highlights": [
+      "搭乘纜車（Funicolare）直達山頂，享受絕美的全景視野",
+      "在夕陽時分，捕捉維羅納整座古城變換色澤的魔幻時刻",
+      "探索後方的奧地利時期軍營遺構"
+    ],
+    "quotes": [
+      {
+        "text": "這裡，是俯瞰維羅納最後一抹餘暉的必修課。",
+        "author": "旅遊作家"
+      }
+    ],
+    "story": "聖彼得堡山丘是維羅納文明的起點，也是觀測古城最溫柔的終章。早在羅馬人格柵規劃前，定居者就發現了這塊俯瞰高地。這裡每一寸土壤都混合著權力焦慮：山腳是羅馬劇院，山頂曾是祭祀聖域；14 世紀米蘭維斯孔提家族以此壓制維羅納。誰佔領這裡，誰就掌握整座城市的呼吸。\n\n今日山頂主體是 19 世紀奧地利修築的嚴冷軍事兵營。那種哈布斯堡王朝語彙曾將詩性山頭轉型為沈默的戰爭機器。然而，當昔日哨口變為觀景台，用來計算火炮射程的視線轉化為對紅屋頂海洋的讚嘆時，聖彼得堡完成了洗罪。從這裡俯瞰競技場與鐘塔，歷史傷痕在淡紫色餘暉中消融。它告訴我們：權力會失效，但美感視野永恆新生。今日站在風中心曠神怡，你會聽見這座「紅城」對存續與重生的史詩低語。",
+    "is_unesco": true
+  }
+]

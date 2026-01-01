@@ -115,7 +115,9 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                         borderRadius: '40px', // 圓角化更現代
                         fontSize: '0.85rem',
                         border: '1px solid rgba(255,255,255,0.2)',
-                        backgroundColor: 'transparent'
+                        backgroundColor: 'transparent',
+                        color: '#fff',
+                        cursor: 'pointer'
                     }}
                 >
                     ← 返回巡禮

@@ -2,6 +2,7 @@
   {
     "id": "milan_01",
     "name": "米蘭大教堂",
+    "is_unesco": true,
     "features": "壯麗的哥德式中殿內部、彩繪玻璃與戲劇性的室內光影。",
     "key_visual": "Grand Gothic Nave interior with stained glass and dramatic light",
     "history_text": "當時建築用的大理石塊都標記著「A.U.F.」(Ad Usum Fabricae，供工廠免費使用)，得以免稅運輸。這也成了米蘭俚語「a ufo」(免費白拿) 的由來。",
@@ -27,7 +28,8 @@
         "text": "在五百年的鑿刻中，我聽見了米蘭最安靜的喧囂。",
         "source": "— eyenote@gmail.com"
       }
-    ]
+    ],
+    "story": "若要理解米蘭隱藏在時尚立面下的倔強靈魂，你必須仰望那座由十四萬噸坎多利亞大理石（Candoglia marble）堆砌而成的白色幻象。這座自 1386 年開工、直至 1965 年才完工的巨型聖殿，其建築史本身就是一部橫跨五百年的垂直野心史。當時的領主維斯孔提捨棄紅磚，引進繁複的超哥德式風格，這標誌著米蘭與義大利傳統的決裂：它不再是一座封閉城鎮，而是一座試圖與巴黎、科隆對話的國際都會。\n\n這座大教堂最富有人情味的細節隱藏在運輸標記上。當年凡是運往工地的石材，皆標記「A.U.F.」（Ad Usum Fabricae，意指「供大教堂建築工廠使用」）以享有免稅特權。這些船隻在運河中橫行無阻，催生了米蘭著名的俚語「a ufo」——意指那些不花分文、白吃白喝的行為。這種從聖殿蔓延至街頭的幽默，正是建築與米蘭人血脈相連的證明。今日當你在 135 座尖塔組成的森林中尋找「黃金聖母」時，你所見證的並非僅是虔誠，更是這座城市如何在一塊又一塊免稅大理石中，磨煉出獨有的商業智慧。"
   },
   {
     "id": "milan_02",
@@ -57,7 +59,8 @@
         "text": "鋼鐵與玻璃交織出的弧度，是米蘭最優雅的視線。",
         "source": "— eyenote@gmail.com"
       }
-    ]
+    ],
+    "story": "與其說這是一條商業廊道，不如說這是米蘭在 19 世紀為自己搭建的最華麗「社交劇場」。這座連接大教堂與劇院的巨型建築，以鋼鐵與玻璃穹頂向世人宣告工業革命與傳統美學的擁抱。這裡的石材不只是為了遮風擋雨，更是為了讓米蘭人在此展示優雅與挑剔。然而，這座舞台的落成史卻籠罩在命運諷刺中：建築師門戈尼（Giuseppe Mengoni）在啟用前一天，竟然在檢查穹頂時意外墜落身亡。他用生命為這件傑作完成了最後的奠基。\n\n在迴廊中央廣場的地坪上，隱藏著一個關於「幸運」與「毀滅」的細節。代表都靈家族紋章的公牛馬賽克，因為一個迷信——只要腳跟踩在公牛私處旋轉三圈便能獲得好運——而遭致毀滅性損毀。每年數百萬次的旋轉，在堅毅馬賽克上磨出一個凹洞。這種集體行為藝術，深刻詮釋了米蘭人性格中將優雅與荒謬精準混合的特質。艾曼紐二世迴廊提醒我們：建築的靈魂不僅由設計者賦予，更由那些在其中行走、旋轉、甚至迷信著的人們共同鑄就。"
   },
   {
     "id": "milan_03",
@@ -87,7 +90,8 @@
         "text": "每一座堡壘下，\n都埋藏著一段不為人知的公爵情史。",
         "source": "— 米蘭野史"
       }
-    ]
+    ],
+    "story": "這座紅磚構成的龐然大物，是米蘭權力史上最深沉的一道疤痕。它曾是維斯孔提與斯福爾扎家族對抗這座城市、乃至整個義大利北部的防禦核心。站在由費拉雷特設計的中央塔樓下，你會感受到強烈的「圍困美學」：這不是款待賓客的宮殿，而是一座為了在暗殺、政變與包圍戰中求生而設計的巨型石質機器。城堡的每一塊紅磚都記錄了達文西在此作為軍事工程師忙碌的身影。\n\n城堡的傳記在拿破崙佔領時期迎來了最危急轉折。法蘭西皇帝曾下令拆除這座象徵封建壓迫的堡壘，然而米蘭市民展現了對歷史碎片一種近乎固執的愛戀：在一場無聲的集體對抗中，他們保住了這座紅磚堡壘。歷史在此展現了冷峻的諷刺——原本用來壓迫市民的防衛牆，最後卻成了市民拚死守護的城市尊嚴。斯福爾扎古堡完成了一次最成功的轉型：它從對抗人民的防線，變成了存放城市所有美感與傷痕的保險庫，如米開朗基羅最後的傑作《隆達尼尼聖殤》便安放於此。"
   },
   {
     "id": "milan_04",
@@ -117,12 +121,14 @@
         "text": "在鋼筋與葉脈之間，我找到了未來城市的棲息地。",
         "source": "— eyenote@gmail.com"
       }
-    ]
+    ],
+    "story": "如果你以為斯卡拉大劇院的紅色絲絨是為了守護純粹藝術，那你就誤解了 18 世紀米蘭貴族的脈搏。這座新古典主義神殿，本質上是一座「垂直社交擂台」。在那七層包廂背後，貴族們屏息聆聽音樂的時間並不多，更多時候是在大聲賭博、議論政事，甚至在那優雅的紅色帷幕後煮起熱騰騰的燉飯（Risotto）。只有當最扣人心弦的詠嘆調響起時，這座喧囂的客廳才會迎來片刻的屏息。\n\n這座建築與大師威爾第（Giuseppe Verdi）之間長達半世紀的愛恨糾纏，為其木製結構注入了靈魂。斯卡拉的歷史告訴我們：所謂經典，並非孤高，而是扎根於世俗的躁動。今日當你坐在那些散發古老漆木香氣的座位上，依然能感受到藏在紅絲絨深處的史詩張力。這裡的每一層包廂都像是一個歷史膠囊，在最優雅的包裝下，保存了米蘭既世俗又神聖的靈魂底片。"
   },
   {
     "id": "milan_05",
     "name": "聖母恩寵教堂",
-    "features": "修道院食堂的廣角視野，正面展示達文西《最後的晚餐》壁畫。",
+    "is_unesco": true,
+    "features": "收藏著達文西《最後的晚餐》真跡的文藝復興教堂。",
     "key_visual": "Wide-angle atmospheric view of the Refectory Hall, showing The Last Supper mural on the far wall, rays of light entering from side windows, immersive spatial depth",
     "history_text": "1943年二戰期間，盟軍轟炸將教堂大半夷為平地，唯獨保有《最後的晚餐》的那面牆奇蹟般屹立不倒，當時僅靠著外圍堆疊的沙袋保護。",
     "prompt": "[Square 1:1 Layout] [Symmetrical Split] Role: You are a lead curator. Subject: SANTA MARIA DELLE GRAZIE.\n\nStyle & Vibe: (CRITICAL) Subtle High-Quality Antique Paper. Light creamy texture. Very faint aging. FULL BLEED TEXTURE (Edge-to-Edge). The paper must fill the entire canvas 100%. NO visible paper edges. NO borders. NO background surface. Elegant Architect's Manuscript.\n\nLayout Strategy:\n[CRITICAL CONSTRAINT: GRID SYSTEM] The image is strictly divided by a **VISIBLE THIN VERTICAL LINE** down the center.\n**[LOCKED CENTRAL AXIS]:** The dividing line MUST remain exactly in the center (50%). **NO SHIFTING.**\nLEFT SIDE (Locked 50%): Architectural Analysis. Content MUST NOT cross the center line.\nRIGHT SIDE (Locked 50%): Historical Narrative. Content MUST NOT cross the center line.\n**Margins:** Keep text and diagrams away from the absolute edges (Safe Zone).\n\n**Instructions for the LEFT SIDE (50% - Strict Original Framework):**\n(Strictly following the User's Original Chinese Framework)\n\n1. **Top Section (Upper 1/3):**\n   *   **Key Visual:** Wide-angle atmospheric view of the Refectory Hall, showing The Last Supper mural on the far wall, rays of light entering from side windows, immersive spatial depth (Full Color Photo).\n   *   **[CRITICAL: PURE PHOTOGRAPHY]:** Visual Impact ONLY.\n       *   **NO TEXT.** NO Captions. NO Summaries. NO Labels in this section.\n       *   **Lighting:** **PERFECT LIGHTING** (Golden Hour / Dramatic God Rays). Best moment of the day.\n       *   **Quality:** 8k Masterpiece, High Res.\n       *   **Composition:** Immersive, wide-angle interior shot.\n\n2. **Middle Section (Middle 1/3):**\n   *   **Left Half:** SANTA MARIA DELLE GRAZIE 最具代表性的「正立面圖」，繪製 **色彩鮮豔的精細水彩 (Vibrant Full Color Watercolor)**。\n   *   **Right Half:** 繪製精細的工程剖面圖，展示內部結構和施工方法。\n   *   **[CRITICAL: RED DOTS 錨定協議]:** 必須精確包含 4-6 個 **小巧、精緻、細膩的寶石紅圓點 (Small, Delicate, Exquisite Ruby-Red Dots)**。\n       *   **Refined Size:** Dots must be small and elegant, not large.\n       *   **標籤:** 每個紅點帶有細緻的黑色墨水引導線，指向 **Visible English Text Labels**.\n\n3. **Bottom Section (Lower 1/3):**\n   *   **Left Plan (Layout & Flow):** SANTA MARIA DELLE GRAZIE 主要樓層的詳細平面圖 (仿古藍圖風格)。\n       *   **[參觀動線]:** 繪製一條清晰的 **帶箭頭虛線 (Dashed Vector Line)**。\n       *   **[POI]:** 4-6 **SOLID DOTS with VISIBLE NUMBER DIGITS (1, 2, 3...)**. Numbers MUST be visible.\n       *   **[相機圖標]:** 放置 2-3 個帶有視野錐形的相機圖標。\n       *   **[圖例]:** 在旁提供清晰的 **Legend List**, with numbered text items explaining the points.\n   *   **Right Map (Context):** 建築物城市背景地圖，包含街道、English Labels、比例尺與指北針。\n\n4. **Footer:**\n   *   帶有裝飾性古典雙重邊框的矩形區域。\n   *   **Title:** \"SANTA MARIA DELLE GRAZIE\" in **Bold Didot Typeface (Heavy Weight)**. Use consistent thick strokes.\n   *   **Description:** \"1497 • RENAISSANCE • BRAMANTE'S DOME & DA VINCI\" in Modern Sans-serif.\n   *   **[Watermark]:** Clearly display small text \"**eyenote@gmail.com**\" in the bottom corner.\n\n**Instructions for the RIGHT SIDE (50% - The Story):**\n*   **Concept:** Storytelling space with **Specimens**.\n*   **Background:** Clean antique paper.\n*   **Primary Content (Historical Anecdote & Illustrations):**\n    *   **Position:** Center.\n    *   **The Text:** A block of English text titled \"HISTORICAL LEGEND\".\n    *   **Style:** **Smaller Font Size (Elegant Book Body)**. Much smaller than the title. High-Legibility Sans-serif.\n    *   **[Visual Integration]:** **Text Wrapping**. The text block MUST integreate/wrap around **2-3 small detailed spot illustrations** (e.g., an antique Coin, a Mason's Tool, or a small Sketch Fragment).\n    *   **Content (EXACT TEXT):** \"In 1943, Allied bombs reduced the church to rubble. Miraculously, the wall holding 'The Last Supper' remained standing, protected only by sandbags. A true divine intervention.\"\n*   **Visual Balance (Typography):**\n    *   **Numbering:** \"No.05\" in **Bold Didot Typeface**. **SIZE: Medium/Small**. Consistent Weight.\n    *   **Logotype:** Vertical **Artistic Typography** for \"SANTA MARIA DELLE GRAZIE\".\n\nTechnical Specs: [Square 1:1 Layout], [50/50 Symmetrical Split], [Subtle Antique Texture], [Full Color Mode], [Visible Text Integretation], [Watermark eyenote@gmail.com], Best Quality:1.2.\n--ar 1:1",
@@ -147,7 +153,8 @@
         "text": "與耶穌對望的牆面，是時光留給透視法最溫柔的考驗。",
         "source": "— eyenote@gmail.com"
       }
-    ]
+    ],
+    "story": "若要見證城市的歷史如何在毀滅與奇蹟間橫跳，你必須在米蘭靜默的紅磚巷弄中，推開聖母恩寵教堂的木門。這座聖殿由多納托·伯拉孟特鑄造，但最震撼人的章節寫在 1943 年的火海中。盟軍空襲使大半教堂結構瞬間坍塌，歷史卻在那一刻留下神啟的停頓：當兩側牆壁皆化為瓦礫時，承載著達文西《最後的晚餐》的食堂北牆，在沙袋包裹下奇蹟地孤零零矗立著。\n\n這是一場文化意志對抗消亡的慘烈凱旋。達文西當年固執地棄用傳統濕壁畫技術，轉而使用實驗性顏料，這縮短了作品壽命，使其完成後便不斷剝落。然而，這種「天生的脆弱」卻激發了後世更瘋狂的守護慾望。這座教堂告訴我們：美麗有時因為其不穩定而獲得永恆。今日當你在食堂幽暗空間與使徒對望時，張力不只來自透視法，更是源於這片土地曾在這道牆周圍堆疊三倍厚度的沙袋，用肉身與時間進行孤注一擲的博弈。"
   },
   {
     "id": "milan_06",
@@ -177,7 +184,8 @@
         "text": "在後台煮燉飯的貴族雖然不在了，\n但那份喧囂與優雅依然迴盪。",
         "source": "— 劇院筆記"
       }
-    ]
+    ],
+    "story": "這座散發濃郁紅磚氣息、展現原始神聖感的長方形大殿，是米蘭靈魂最古老堅固的基礎。安布羅修於西元 379 年奠基，羅曼式拱券像是抵禦混亂的骨架。前庭的兩座鐘塔展示了中世紀宗教階級的博弈：9 世紀的「修士塔」與 12 世紀的「教士塔」共存千年，記錄了不同勢力如何既競爭又合作地劃定發言權。\n\n大殿外隱藏著關於邪惡的石質謎語——「惡魔之柱」。這根帶有神祕圓孔的石柱，據傳撒旦在激鬥中將彎角猛力撞入，最終狼狽逃回地獄。聖安布羅修大殿用粗糙紅磚與堅硬傳說，築起一千六百年的精神防線。這座建築並非僅展示陳跡，而是在動盪時代提供關於「如何對抗誘惑、守住根本」的空間座標。它告訴我們：真正的守護，來自於對根基的沈默堅持。"
   },
   {
     "id": "milan_07",
@@ -207,7 +215,8 @@
         "text": "現代主義的利落，\n是米蘭在戰後重拾尊嚴的線條。",
         "source": "— eyenote@gmail.com"
       }
-    ]
+    ],
+    "story": "若你想在米蘭尋找一處讓靈魂獲得「學術性避難」的港灣，必須走進布雷拉那深邃的拱廊中庭。這座由修道院演變為學院的宮殿，石磚中滲透著知識與紀律的厚重感。當你與卡諾瓦雕刻的全裸拿破崙銅像對望時，見證的是歷史最冷峻的嘲諷：這位皇帝雖然掠奪珍寶以展示霸權，卻終其一生未曾踏入這座以他為名的藝術殿堂。\n\n布雷拉最迷人的章節隱藏在後方那抹「看不見的綠意」中——隱祕的植物園。在巨大銀杏與古老紅牆間，外部昂貴時尚的氣息瞬時消散。這種知識、藝術與土地的共生，定義了布雷拉的精神座標。它拒絕對外展露炫耀式的華麗，而是將美內斂地保存。布雷拉告訴我們：在喧囂中心保留與歷史、植物與偉大靈魂對視的空間，才是對生命尊嚴最深沉的禮讚。"
   },
   {
     "id": "milan_08",
@@ -237,7 +246,8 @@
         "text": "在魏斯安德森的咖啡館裡，\n我們喝的不是濃縮，是 1950 年代的膠捲記憶。",
         "source": "— 影像指南"
       }
-    ]
+    ],
+    "story": "在米蘭大街上，聖莫里齊奧教堂平庸的石門外牆是個關於「視覺落差」的玩笑。一旦推開門，跨入的是被譽為「米蘭西斯汀小堂」的一英吋不留白壁畫風暴。牆壁、穹頂、祭壇被倫巴第畫派大師們狂熱的色彩欲望統治。這種在樸素外殼下隱藏華麗肉身的做法，詮釋了老派米蘭人的特質：不急於展露靈魂，將珍貴靈感留給推開門的尋覓者。\n\n建築最引人入勝之處在於將空間一分為二的「中央分隔牆」。這是一道優美也殘酷的社會界線：前方是世俗祭壇，後方是與世隔絕的「修女堂」。名門修女曾只能隔著格柵聆聽彌撒，但身體的監禁激發了美學大爆發。她們將禁閉室化作伊甸園窗口。聖莫里齊奧告訴我們：當外界以為這裡是靜默高牆時，她們已在色彩中建立精神主權。"
   },
   {
     "id": "milan_09",
@@ -267,7 +277,8 @@
         "text": "扭曲、直立與彎曲，\n是現代建築在米蘭上空跳的一支華爾滋。",
         "source": "— 生活風格"
       }
-    ]
+    ],
+    "story": "不要被「墓園」誤導，馬恰奇尼設計的這座空間，本質上是這座城市最驚悚也最優雅的「露天大理石博物館」。步入「名人堂（Famedio）」，你會感受到米蘭式的榮譽：這裡不再是死亡終點，而是金融與工業精英集體轉向永恆的凱旋門。它將墓葬轉型為生命贊美，讓石頭將死者的傲慢與權力實體化為視覺盛宴。\n\n沿步道漫步，金巴利（Campari）家族墓陵前的《最後的晚餐》浮雕展示了米蘭富豪對尊嚴偏執的理解：死後也要在自家祭壇前與聖徒共享。這裡的每一尊雕塑都在挑戰虛無。紀念墓園告訴我們：一座城市的尊嚴，不僅在於修築金碧輝煌，更在於如何對待噤聲的靈魂。讓他們在地中海陽光下，繼續對未來訴說卓越與權力的史詩。"
   },
   {
     "id": "milan_10",
@@ -297,7 +308,8 @@
         "text": "當你穿過雙層拱廊，\n便踏進了米蘭文藝復興的深處。",
         "source": "— 藝術之旅"
       }
-    ]
+    ],
+    "story": "在米蘭金融區，被九百棵大樹完全包裹的摩天大樓，正進行一場關於未來都會生活的溫柔挑釁。「垂直森林」本質上是關於「建築如何學會呼吸」的生物學實驗。當你仰望在微風中搖曳的葉脈，你看到的並非盆栽，而是一個與鋼筋交織在一起的城市生態系。在這裡，立面的主導權被交還給了季節。\n\n森林中最富人文色彩的細節，隱藏在 45,000 隻瓢蟲身上。為了自然病蟲害防治，物管在落成之初釋放了這些微型戰士，它們在枝葉間建立帝國，成為豪宅中最卑微卻不可或缺的成員。這種引進野性的做法，詮釋了米蘭人渴望與自然簽署和解協定的心理。垂直森林告訴我們：建築不應是試圖征服天空的冰冷機器，而應是願意為生命提供庇護的有機體。今日葉影斑駁，你會理解這份關於「生命共感」的綠色宣言。"
   },
   {
     "id": "milan_11",
@@ -327,7 +339,8 @@
         "text": "兩座鐘塔的參差，\n是修士與教士跨越千年的無聲對峙。",
         "source": "— 建築歷史"
       }
-    ]
+    ],
+    "story": "在米蘭老貿易展覽館遺址上，矗立著三座性格迥異、正在高空無聲對辯的摩天塔。這片 CityLife 區域是米蘭對「權力、動態與技術」的最貴註解。三座塔由札哈·哈蒂、磯崎新與利伯斯金操刀，挑戰著古老城市對垂直天際線的忍耐力。這是一場教科書級的「視覺博弈」：哈蒂隨高度扭曲的「Lo Storto」，對撞磯崎新理智如鏡面的「Il Dritto」，再輔比利伯斯金向內微彎的「Il Curvo」。\n\n三塔森林反映了米蘭數位景觀的野心。哈蒂的立面展示流動性霸權，磯崎新反映對秩序的渴求，利伯斯金則向傳統致敬。這種對峙使中央廣場結合成跨文化美學實驗場。這三塔森林見證不同時空的靈魂如何在共同土地上，用現代語言定義「新米蘭的尊嚴」。它們保持著危險且優美的平衡，共同編織出一場關於未來的史詩對談。"
   },
   {
     "id": "milan_12",
@@ -357,7 +370,8 @@
         "text": "在大理石雕塑的目光下，\n感受到整座城市的榮光與哀愁。",
         "source": "— 旅人隨記"
       }
-    ]
+    ],
+    "story": "在米蘭南部工業區，那棟貼滿 24K 金箔、在灰色水泥叢林中顯得既傲慢又孤獨的「鬼屋（Haunted House）」，是庫哈斯（Rem Koolhaas）對廢棄釀酒廠進行的「工業洗罪」。金箔在這裡不再是展示財富的標誌，而是對廉價建材的鍊金術式救贖；這種「黃金與廢墟」的反差，捕捉了當代米蘭最核心的美學焦慮。\n\n隱藏在冷峻結構後的，是魏斯·安德森（Wes Anderson）設計的「Bar Luce」咖啡廳。在粉綠內裝與彈珠台間，訪客踏進 1950 年代的懷舊舞台。庫哈斯在外部進行「新與舊」的建築辯證，安德森卻在內部提供「人類情感連續性」的甜美補償。普拉達基金會昭告世人：一座偉大建築應當既能承載對現代性深刻的批判，也能容納對平凡時光的深情回望。"
   },
   {
     "id": "milan_13",
@@ -387,6 +401,7 @@
         "text": "這裡的壁畫不需要仰望，\n因為它們正溫柔地包圍著每一個靈魂。",
         "source": "— eyenote@gmail.com"
       }
-    ]
+    ],
+    "story": "這座矗立於中央車站旁的「超薄」摩天大樓，是 1950 年代義大利經濟奇蹟最冷峻的註腳。吉奧·龐蒂（Gio Ponti）將建築側面切割成精確錐形，呈現出的輕盈幻覺與力量感。這不僅是技藝展示，更是米蘭從廢墟中重申現代主義潮頭的宣言。\n\n但在利落線條下，隱藏著一段與神聖權威溫柔博弈的地標史。米蘭傳統中，建築高度不可超越大教堂頂端的「金黃聖母像」。當倍耐力大樓以 127 公尺打破禁忌時，開發方並未展現傲慢，而在頂層屋頂祕密安置了縮小比例的聖母像複製品。這種「並肩而立」精煉了米蘭特質：既有挑戰傳統的雄心，也從不遺忘對土地最基礎的敬畏。倍耐力大樓告訴我們：最強大的現代主義，是懂得在雲端向古老靈魂致敬。"
   }
 ]
