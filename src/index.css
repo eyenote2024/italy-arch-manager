@@ -567,7 +567,8 @@ header p {
     height: auto;
     position: sticky;
     top: 0;
-    padding: 1rem;
+    padding: 1.5rem;
+    /* Increased from 1rem to align with card content */
     padding-bottom: 0.5rem;
     /* Slightly reduce bottom padding */
     border-right: none;
@@ -1016,7 +1017,16 @@ header p {
   overflow-x: auto !important;
   white-space: nowrap;
   gap: 0.8rem;
-  width: 100%;
+
+  /* Full Width Hack */
+  width: calc(100% + 3rem);
+  /* Break out of parent padding */
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left: 1.5rem;
+  /* Restore visual alignment for first item */
+  padding-right: 1.5rem;
+
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-bottom: 5px;
