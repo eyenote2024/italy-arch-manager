@@ -1052,14 +1052,16 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
-  /* Increased from 0.65rem due to shorter labels */
-  letter-spacing: -0.3px;
-  /* Gain space */
-  padding: 0.5rem 0.1rem;
-  /* Reduced from 0.6rem (80%) */
+  font-size: 0.85rem;
+  font-weight: 600;
+  /* Maximize legibility */
+  letter-spacing: -0.4px;
+  /* Tighten to fit larger glyphs */
+  padding: 0.4rem 0.05rem;
+  /* Minimal padding to let text fill the box */
   white-space: nowrap;
-  border-radius: 6px;
+  border-radius: 4px;
+  /* Sharper corners for a technical look */
   cursor: pointer;
   transition: all 0.2s ease;
   overflow: hidden;
