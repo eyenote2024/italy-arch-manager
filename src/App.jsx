@@ -608,7 +608,7 @@ function App() {
                       fontWeight: hasFootprint(arch.id) ? '600' : '400'
                     }}
                   >
-                    {hasFootprint(arch.id) ? '♥ 足跡' : '留下足跡'}
+                    {hasFootprint(arch.id) ? '❤️ 足跡' : '留下足跡'}
                   </button>
                 </div>
               </div>
