@@ -79,19 +79,21 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
 
     return (
         <div style={{
-            padding: isMobile ? '0.8rem' : '1.5rem', // 行動版壓縮頂部空間
+            padding: isMobile ? '0.8rem' : '1.5rem',
             minHeight: '100vh',
             backgroundColor: '#0a0a0a',
             backgroundImage: 'radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 100%)',
             color: '#fff',
             fontFamily: '"Noto Serif TC", serif',
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            WebkitTextSizeAdjust: 'none', // 強制禁用行動端字體自動放大
+            textSizeAdjust: 'none'
         }}>
 
-            {/* 頁首：比例縮納版 (極致單行化) */}
+            {/* 頁首：比例縮納版 (極致單行化 + 強制不折行) */}
             <header style={{
-                marginBottom: isMobile ? '0.2rem' : '1.5rem',
+                marginBottom: isMobile ? '0.6rem' : '1.5rem',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
@@ -99,20 +101,25 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                 borderBottom: isMobile ? 'none' : '1px solid rgba(255,255,255,0.1)',
                 maxWidth: '1000px',
                 margin: isMobile ? '0 0 1rem 0' : '0 auto 1.5rem',
-                width: '100%'
+                width: '100%',
+                overflow: 'hidden'
             }}>
                 <div style={{
                     display: 'flex',
                     flexDirection: isMobile ? 'row' : 'column',
                     alignItems: isMobile ? 'baseline' : 'flex-start',
-                    gap: isMobile ? '8px' : '0'
+                    gap: isMobile ? '6px' : '0',
+                    flex: 1,
+                    minWidth: 0 // 防止 flex 子元素溢出
                 }}>
                     <h1 style={{
                         color: '#d4af37',
                         margin: 0,
-                        fontSize: isMobile ? '1.1rem' : '2.8rem', // 標題下修，與按鈕成比例
+                        fontSize: isMobile ? '1.1rem' : '2.8rem',
                         letterSpacing: '1px',
-                        fontWeight: '700'
+                        fontWeight: '700',
+                        whiteSpace: 'nowrap', // 強制不折行
+                        flexShrink: 0
                     }}>EYE 數位明信片</h1>
                     <span style={{
                         color: '#444',
@@ -120,7 +127,10 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                         fontWeight: '300',
                         opacity: isMobile ? 0.8 : 1,
                         display: isMobile ? 'inline' : 'block',
-                        marginTop: isMobile ? '0' : '2px'
+                        marginTop: isMobile ? '0' : '2px',
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis'
                     }}>
                         {isMobile ? '| 建築寄語' : '將建築的永恆，化作美的寄語'}
                     </span>
@@ -129,13 +139,15 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                     onClick={onBack}
                     style={{
                         padding: isMobile ? '0.3rem 0.6rem' : '0.6rem 1.4rem',
-                        borderRadius: '4px', // 尖角更具比例感
+                        borderRadius: '4px',
                         fontSize: isMobile ? '0.75rem' : '1.2rem',
                         border: '1px solid rgba(255,255,255,0.1)',
                         backgroundColor: 'transparent',
-                        color: '#888', // 降低視覺權重
+                        color: '#888',
                         cursor: 'pointer',
-                        whiteSpace: 'nowrap'
+                        whiteSpace: 'nowrap',
+                        flexShrink: 0,
+                        marginLeft: '10px'
                     }}
                 >
                     {isMobile ? '關閉' : '← 返回巡禮'}
