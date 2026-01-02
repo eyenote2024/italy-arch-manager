@@ -79,49 +79,62 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
 
     return (
         <div style={{
-            padding: '1.5rem',
+            padding: isMobile ? '0.8rem' : '1.5rem', // 行動版壓縮頂部空間
             minHeight: '100vh',
-            backgroundColor: '#0a0a0a', // 更深的底層黑色
-            backgroundImage: 'radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 100%)', // 加入層次漸層
+            backgroundColor: '#0a0a0a',
+            backgroundImage: 'radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 100%)',
             color: '#fff',
             fontFamily: '"Noto Serif TC", serif',
             display: 'flex',
             flexDirection: 'column'
         }}>
 
-            {/* 頁首：增加一點影視質感 */}
+            {/* 頁首：增加一點影視質感 (行動版大清理版) */}
             <header style={{
-                marginBottom: '1rem',
+                marginBottom: isMobile ? '0.2rem' : '1rem', // 大幅縮減
                 display: 'flex',
                 justifyContent: 'space-between',
-                alignItems: 'flex-end', // 對齊底部基進線，減少歪斜感
-                borderBottom: '1px solid rgba(255,255,255,0.1)',
-                paddingBottom: '1rem',
-                maxWidth: '1000px', // 縮小最大寬度
-                margin: '0 auto 1.5rem',
+                alignItems: isMobile ? 'center' : 'flex-end',
+                borderBottom: isMobile ? 'none' : '1px solid rgba(255,255,255,0.1)', // 行動版移除分隔線以求清爽
+                paddingBottom: isMobile ? '0.5rem' : '1rem',
+                maxWidth: '1000px',
+                margin: isMobile ? '0 0 0.8rem 0' : '0 auto 1.5rem',
                 width: '100%'
             }}>
-                <div>
-                    <h1 style={{ color: '#d4af37', margin: 0, fontSize: isMobile ? '2.2rem' : '2.8rem', letterSpacing: '2px', fontWeight: '700' }}>EYE 數位明信片</h1>
-                    <p style={{ color: '#666', margin: '8px 0 0', fontWeight: '300', fontSize: isMobile ? '1.1rem' : '1.4rem', letterSpacing: '1px' }}>
-                        將建築的永恆，化作美的寄語
+                <div style={{ flex: 1 }}>
+                    <h1 style={{
+                        color: '#d4af37',
+                        margin: 0,
+                        fontSize: isMobile ? '1.4rem' : '2.8rem', // 全面縮小
+                        letterSpacing: '1px',
+                        fontWeight: '700'
+                    }}>EYE 數位明信片</h1>
+                    <p style={{
+                        color: '#444',
+                        margin: '2px 0 0',
+                        fontWeight: '300',
+                        fontSize: isMobile ? '0.7rem' : '1.4rem', // 縮小為腳注質感
+                        letterSpacing: '0.5px'
+                    }}>
+                        {isMobile ? '將建築的永恆，化作寄語' : '將建築的永恆，化作美的寄語'}
                     </p>
                 </div>
                 <button
                     onClick={onBack}
                     className="btn-secondary"
                     style={{
-                        padding: '0.6rem 1.4rem', // 縮小 Padding
-                        borderRadius: '40px',
-                        fontSize: isMobile ? '1.0rem' : '1.2rem', // 手機端進一步縮小
-                        border: '1px solid rgba(255,255,255,0.2)',
-                        backgroundColor: 'transparent',
-                        color: '#fff',
+                        padding: isMobile ? '0.4rem 0.8rem' : '0.6rem 1.4rem',
+                        borderRadius: '30px',
+                        fontSize: isMobile ? '0.85rem' : '1.2rem',
+                        border: '1px solid rgba(255,255,255,0.15)',
+                        backgroundColor: 'rgba(255,255,255,0.05)',
+                        color: '#ccc',
                         cursor: 'pointer',
-                        whiteSpace: 'nowrap' // 防止換行
+                        whiteSpace: 'nowrap',
+                        marginLeft: '10px'
                     }}
                 >
-                    ← 返回巡禮
+                    {isMobile ? '返回' : '← 返回巡禮'}
                 </button>
             </header>
 
