@@ -89,169 +89,182 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
             flexDirection: 'column'
         }}>
 
-            {/* 頁首：增加一點影視質感 (行動版大清理版) */}
+            {/* 頁首：比例縮納版 (極致單行化) */}
             <header style={{
-                marginBottom: isMobile ? '0.2rem' : '1rem', // 大幅縮減
+                marginBottom: isMobile ? '0.2rem' : '1.5rem',
                 display: 'flex',
                 justifyContent: 'space-between',
-                alignItems: isMobile ? 'center' : 'flex-end',
-                borderBottom: isMobile ? 'none' : '1px solid rgba(255,255,255,0.1)', // 行動版移除分隔線以求清爽
-                paddingBottom: isMobile ? '0.5rem' : '1rem',
+                alignItems: 'center',
+                padding: isMobile ? '0' : '0 0 1rem 0',
+                borderBottom: isMobile ? 'none' : '1px solid rgba(255,255,255,0.1)',
                 maxWidth: '1000px',
-                margin: isMobile ? '0 0 0.8rem 0' : '0 auto 1.5rem',
+                margin: isMobile ? '0 0 1rem 0' : '0 auto 1.5rem',
                 width: '100%'
             }}>
-                <div style={{ flex: 1 }}>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: isMobile ? 'row' : 'column',
+                    alignItems: isMobile ? 'baseline' : 'flex-start',
+                    gap: isMobile ? '8px' : '0'
+                }}>
                     <h1 style={{
                         color: '#d4af37',
                         margin: 0,
-                        fontSize: isMobile ? '1.4rem' : '2.8rem', // 全面縮小
+                        fontSize: isMobile ? '1.1rem' : '2.8rem', // 標題下修，與按鈕成比例
                         letterSpacing: '1px',
                         fontWeight: '700'
                     }}>EYE 數位明信片</h1>
-                    <p style={{
+                    <span style={{
                         color: '#444',
-                        margin: '2px 0 0',
+                        fontSize: isMobile ? '0.6rem' : '1.4rem',
                         fontWeight: '300',
-                        fontSize: isMobile ? '0.7rem' : '1.4rem', // 縮小為腳注質感
-                        letterSpacing: '0.5px'
+                        opacity: isMobile ? 0.8 : 1,
+                        display: isMobile ? 'inline' : 'block',
+                        marginTop: isMobile ? '0' : '2px'
                     }}>
-                        {isMobile ? '將建築的永恆，化作寄語' : '將建築的永恆，化作美的寄語'}
-                    </p>
+                        {isMobile ? '| 建築寄語' : '將建築的永恆，化作美的寄語'}
+                    </span>
                 </div>
                 <button
                     onClick={onBack}
-                    className="btn-secondary"
                     style={{
-                        padding: isMobile ? '0.4rem 0.8rem' : '0.6rem 1.4rem',
-                        borderRadius: '30px',
-                        fontSize: isMobile ? '0.85rem' : '1.2rem',
-                        border: '1px solid rgba(255,255,255,0.15)',
-                        backgroundColor: 'rgba(255,255,255,0.05)',
-                        color: '#ccc',
+                        padding: isMobile ? '0.3rem 0.6rem' : '0.6rem 1.4rem',
+                        borderRadius: '4px', // 尖角更具比例感
+                        fontSize: isMobile ? '0.75rem' : '1.2rem',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        backgroundColor: 'transparent',
+                        color: '#888', // 降低視覺權重
                         cursor: 'pointer',
-                        whiteSpace: 'nowrap',
-                        marginLeft: '10px'
+                        whiteSpace: 'nowrap'
                     }}
                 >
-                    {isMobile ? '返回' : '← 返回巡禮'}
+                    {isMobile ? '關閉' : '← 返回巡禮'}
                 </button>
             </header>
+            color: '#ccc',
+            cursor: 'pointer',
+            whiteSpace: 'nowrap',
+            marginLeft: '10px'
+                    }}
+                >
+            {isMobile ? '返回' : '← 返回巡禮'}
+        </button>
+            </header >
 
-            {/* 側邊並列布局 / 手機端自動切換為上下堆疊 */}
-            <div style={{
-                display: isMobile ? 'flex' : 'grid',
-                flexDirection: isMobile ? 'column' : 'row',
-                gridTemplateColumns: isMobile ? '1fr' : 'minmax(300px, 420px) 1fr',
+    {/* 側邊並列布局 / 手機端自動切換為上下堆疊 */ }
+    < div style = {{
+    display: isMobile ? 'flex' : 'grid',
+        flexDirection: isMobile ? 'column' : 'row',
+            gridTemplateColumns: isMobile ? '1fr' : 'minmax(300px, 420px) 1fr',
                 gap: isMobile ? '1.5rem' : '2.5rem',
-                maxWidth: '1000px',
-                margin: '0 auto',
-                width: '100%',
-                padding: isMobile ? '0 15px' : '0'
-            }}>
-
-                {/* 左側：預覽畫布 (定軸矯正版) */}
-                <div style={{ position: 'relative' }}>
-                    <div
-                        ref={postcardRef}
-                        style={{
-                            backgroundColor: '#f8f8f8',
-                            padding: '12px', // 增加護邊，確保不溢出
-                            borderRadius: '2px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            boxShadow: '0 40px 80px rgba(0,0,0,0.8)',
+                    maxWidth: '1000px',
+                        margin: '0 auto',
                             width: '100%',
-                            transform: isCapturing ? 'scale(0.98)' : 'scale(1)',
-                            transition: 'transform 0.3s ease'
-                        }}
-                    >
-                        {/* 上面：1:1 建築畫報 */}
-                        <div style={{ width: '100%', aspectRatio: '1/1', overflow: 'hidden', backgroundColor: '#e0e0e0' }}>
-                            <img
-                                src={imageSrc}
-                                alt="Preview"
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                            />
-                        </div>
+                                padding: isMobile ? '0 15px' : '0'
+}}>
 
-                        {/* 下麵：文字留言區 */}
-                        <div style={{
-                            marginTop: '12px',
-                            color: '#1a1a1a',
-                            fontStyle: 'italic',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            padding: '0 12px' // 增加橫向護邊，徹底解決「快被切掉」的感覺
-                        }}>
-                            <div style={{ fontSize: '0.8rem', color: '#666', fontWeight: 'bold', marginBottom: '4px' }}>
-                                {recipient}
-                            </div>
-                            <div style={{
-                                fontSize: `${fontSize}px`,
-                                lineHeight: '1.4',
-                                textAlign: textAlign,
-                                color: '#1a1a1a',
-                                letterSpacing: '0.5px',
-                                whiteSpace: 'pre-line' // 讓 Enter 換行生效
-                            }}>
-                                {text}
-                            </div>
-                            {source && (
-                                <div style={{ fontSize: '10px', color: '#999', textAlign: 'right', marginTop: '4px', fontStyle: 'italic' }}>
-                                    {source}
-                                </div>
-                            )}
+    {/* 左側：預覽畫布 (定軸矯正版) */ }
+    < div style = {{ position: 'relative' }}>
+        <div
+            ref={postcardRef}
+            style={{
+                backgroundColor: '#f8f8f8',
+                padding: '12px', // 增加護邊，確保不溢出
+                borderRadius: '2px',
+                display: 'flex',
+                flexDirection: 'column',
+                boxShadow: '0 40px 80px rgba(0,0,0,0.8)',
+                width: '100%',
+                transform: isCapturing ? 'scale(0.98)' : 'scale(1)',
+                transition: 'transform 0.3s ease'
+            }}
+        >
+            {/* 上面：1:1 建築畫報 */}
+            <div style={{ width: '100%', aspectRatio: '1/1', overflow: 'hidden', backgroundColor: '#e0e0e0' }}>
+                <img
+                    src={imageSrc}
+                    alt="Preview"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+            </div>
 
-                            {/* 署名區：空間優化版 */}
-                            <div style={{
-                                marginTop: '16px',
-                                display: 'flex',
-                                justifyContent: 'space-between',
-                                alignItems: 'flex-end',
-                                width: '100%'
-                            }}>
-                                <span style={{
-                                    fontSize: '4.5px', // 更小
-                                    color: '#aaa',
-                                    letterSpacing: '0.2px', // 更緊
-                                    textTransform: 'uppercase',
-                                    whiteSpace: 'nowrap',
-                                    marginBottom: '2px',
-                                    flexShrink: 1, // 允許收縮
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis' // 若真的太長則優雅省略
-                                }}>
-                                    eyenote@gmail.com | ITALY
-                                </span>
-                                <div style={{
-                                    textAlign: 'right',
-                                    whiteSpace: 'nowrap',
-                                    flexShrink: 0, // 絕對不准縮，確保羅密歐安全
-                                    marginLeft: '10px' // 強制留出安全距離
-                                }}>
-                                    <div style={{ fontSize: '0.8rem', color: '#666', fontWeight: 'bold' }}>{signature}</div>
-                                    <div style={{ fontSize: '8px', color: '#aaa', letterSpacing: '1px', marginTop: '-1px' }}>{date}</div>
-                                </div>
-                            </div>
-                        </div>
+            {/* 下麵：文字留言區 */}
+            <div style={{
+                marginTop: '12px',
+                color: '#1a1a1a',
+                fontStyle: 'italic',
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '0 12px' // 增加橫向護邊，徹底解決「快被切掉」的感覺
+            }}>
+                <div style={{ fontSize: '0.8rem', color: '#666', fontWeight: 'bold', marginBottom: '4px' }}>
+                    {recipient}
+                </div>
+                <div style={{
+                    fontSize: `${fontSize}px`,
+                    lineHeight: '1.4',
+                    textAlign: textAlign,
+                    color: '#1a1a1a',
+                    letterSpacing: '0.5px',
+                    whiteSpace: 'pre-line' // 讓 Enter 換行生效
+                }}>
+                    {text}
+                </div>
+                {source && (
+                    <div style={{ fontSize: '10px', color: '#999', textAlign: 'right', marginTop: '4px', fontStyle: 'italic' }}>
+                        {source}
+                    </div>
+                )}
+
+                {/* 署名區：空間優化版 */}
+                <div style={{
+                    marginTop: '16px',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'flex-end',
+                    width: '100%'
+                }}>
+                    <span style={{
+                        fontSize: '4.5px', // 更小
+                        color: '#aaa',
+                        letterSpacing: '0.2px', // 更緊
+                        textTransform: 'uppercase',
+                        whiteSpace: 'nowrap',
+                        marginBottom: '2px',
+                        flexShrink: 1, // 允許收縮
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis' // 若真的太長則優雅省略
+                    }}>
+                        eyenote@gmail.com | ITALY
+                    </span>
+                    <div style={{
+                        textAlign: 'right',
+                        whiteSpace: 'nowrap',
+                        flexShrink: 0, // 絕對不准縮，確保羅密歐安全
+                        marginLeft: '10px' // 強制留出安全距離
+                    }}>
+                        <div style={{ fontSize: '0.8rem', color: '#666', fontWeight: 'bold' }}>{signature}</div>
+                        <div style={{ fontSize: '8px', color: '#aaa', letterSpacing: '1px', marginTop: '-1px' }}>{date}</div>
                     </div>
                 </div>
+            </div>
+        </div>
+                </div >
 
-                {/* 右側：編輯控制台 (Glassmorphism 毛玻璃質感) */}
-                <div style={{
-                    backgroundColor: 'rgba(255,255,255,0.03)',
-                    backdropFilter: 'blur(30px)',
-                    padding: isMobile ? '1.5rem 1.2rem' : '1.2rem',
-                    borderRadius: '16px',
+    {/* 右側：編輯控制台 (Glassmorphism 毛玻璃質感) */ }
+    < div style = {{
+    backgroundColor: 'rgba(255,255,255,0.03)',
+        backdropFilter: 'blur(30px)',
+            padding: isMobile ? '1.5rem 1.2rem' : '1.2rem',
+                borderRadius: '16px',
                     border: '1px solid rgba(255,255,255,0.1)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '1rem',
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
-                    height: isMobile ? 'auto' : '100%',
-                    marginBottom: isMobile ? '40px' : '0'
-                }}>
+                        display: 'flex',
+                            flexDirection: 'column',
+                                gap: '1rem',
+                                    boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+                                        height: isMobile ? 'auto' : '100%',
+                                            marginBottom: isMobile ? '40px' : '0'
+}}>
 
                     <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '2rem' }}>
                         <div className="input-group">
@@ -379,57 +392,59 @@ const PostcardSandbox = ({ onBack, imageSrc = "/arch_images/milan_01.png", initi
                             </div>
                         )}
                     </button>
-                </div>
+                </div >
 
-                {/* 手機端長按儲存遮罩層 (覆蓋全螢幕) */}
-                {capturedImageUrl && (
-                    <div style={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        backgroundColor: 'rgba(0,0,0,0.95)',
-                        zIndex: 10000,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        padding: '20px'
-                    }}>
-                        <div style={{ color: '#d4af37', marginBottom: '15px', fontSize: '0.9rem', textAlign: 'center' }}>
-                            ✨ 已為您沖印完成 ✨<br />
-                            <span style={{ color: '#fff', fontSize: '0.8rem' }}>長按下方圖片即可「儲存影像」</span>
-                        </div>
-                        <img
-                            src={capturedImageUrl}
-                            alt="Generated Postcard"
-                            style={{
-                                maxWidth: '100%',
-                                maxHeight: '75vh',
-                                borderRadius: '4px',
-                                boxShadow: '0 20px 60px rgba(0,0,0,0.5)'
-                            }}
-                        />
-                        <button
-                            onClick={() => setCapturedImageUrl(null)}
-                            style={{
-                                marginTop: '25px',
-                                padding: '10px 30px',
-                                backgroundColor: 'transparent',
-                                border: '1px solid rgba(255,255,255,0.3)',
-                                color: '#fff',
-                                borderRadius: '50px',
-                                cursor: 'pointer'
-                            }}
-                        >
-                            關閉預覽
-                        </button>
-                    </div>
-                )}
-
+    {/* 手機端長按儲存遮罩層 (覆蓋全螢幕) */ }
+{
+    capturedImageUrl && (
+        <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0,0,0,0.95)',
+            zIndex: 10000,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px'
+        }}>
+            <div style={{ color: '#d4af37', marginBottom: '15px', fontSize: '0.9rem', textAlign: 'center' }}>
+                ✨ 已為您沖印完成 ✨<br />
+                <span style={{ color: '#fff', fontSize: '0.8rem' }}>長按下方圖片即可「儲存影像」</span>
             </div>
+            <img
+                src={capturedImageUrl}
+                alt="Generated Postcard"
+                style={{
+                    maxWidth: '100%',
+                    maxHeight: '75vh',
+                    borderRadius: '4px',
+                    boxShadow: '0 20px 60px rgba(0,0,0,0.5)'
+                }}
+            />
+            <button
+                onClick={() => setCapturedImageUrl(null)}
+                style={{
+                    marginTop: '25px',
+                    padding: '10px 30px',
+                    backgroundColor: 'transparent',
+                    border: '1px solid rgba(255,255,255,0.3)',
+                    color: '#fff',
+                    borderRadius: '50px',
+                    cursor: 'pointer'
+                }}
+            >
+                關閉預覽
+            </button>
         </div>
+    )
+}
+
+            </div >
+        </div >
     );
 };
 
